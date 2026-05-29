@@ -7,4 +7,4 @@ category: 课程笔记
 draft: false
 image: './pic.png'
 ---
-这是一个草稿
+这是一个草稿，小王真漂亮

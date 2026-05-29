@@ -8,18 +8,18 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "waiting for the modification",
-	subtitle: "waiting for the modification",
+	title: "Sleepyfish",
+	subtitle: "Own the moment",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 155, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
 		enable: true,
-		src: "waiting for the modification", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		lightSrc: "waiting for the modification", // Banner used when the site is in light mode
-		darkSrc: "waiting for the modification :assets/images/banner3.jpg", // Banner used when the site is in dark mode
+		src: "assets/images/banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		lightSrc: "assets/images/banner.png", // Banner used when the site is in light mode
+		darkSrc: "assets/images/banner.png", // Banner used when the site is in dark mode
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
@@ -34,45 +34,29 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-			src: "waiting for the modification:/favicon/favicon.png", // Path of the favicon, relative to the /public directory
-			//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-			//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+			src: "/favicon/favicon.png",
+			sizes: "any",
 		},
 	],
 };
 
-export const navBarConfig: NavBarConfig = {//waiting for the modification
+export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
-		{
-			name: "科研",
-			url: "/archive/?category=科研",
-		},
 		{
 			name: "课程笔记",
 			url: "/courses/",
 		},
 		LinkPreset.About,
-		{
-			name: "GitHub",
-			url: "https://github.com/Lazysheep2031", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "waiting for the modification：assets/images/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "waiting for the modification：Lazysheep",
-	bio: "waiting for the modification：如同夜幕降临，白日西沉",
-	links: [
-		{//waiting for the modification
-			name: "GitHub",
-			icon: "fa6-brands:github",
-			url: "https://github.com/Lazysheep2031",
-		},
-	],
+	avatar: "assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Sleepyfish",
+	bio: "Own the moment",
+	links: [],
 };
 
 export const licenseConfig: LicenseConfig = {

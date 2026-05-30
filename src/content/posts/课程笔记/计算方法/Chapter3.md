@@ -1,7 +1,7 @@
 ---
 title: Chapter3：解线性方程组的迭代法
 published: 2026-05-31
-description: Iterative Methods for Linear Systems, Jacobi, Gauss-Seidel, SOR, Convergence, Steepest Descent, Conjugate Gradient, Poisson Equation Example
+description: 对大规模、稀疏线性方程组 $Ax=b$，直接法往往代价太高，迭代法通过构造一个序列 $x^{(0)},x^{(1)},\dots$，让它逐步逼近真解 $x^*$
 tags: [计算方法]
 category: 课程笔记
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: Chapter1:误差
+title: Chapter1：误差
 published: 2026-05-29
 description: 误差来源、绝对误差、相对误差、有效数字、误差传播、算法数值稳定性、病态问题与数值计算注意事项
 tags: [计算方法]
@@ -29,6 +29,9 @@ draft: false
 本章重点讨论：**截断误差与舍入误差如何影响计算结果**。
 
 <!-- TODO: 插入课堂手写图：实际问题 → 数学模型 → 数值计算 → 近似解，并在箭头处标注误差来源。 -->
+
+
+<img src="https://lazysheep-tuchuang-1345706147.cos.ap-shanghai.myqcloud.com/blog/20260531182823.png" style="width: 420px; max-width: 100%; height: auto; display: block; margin: 0 auto;" />
 
 ---
 

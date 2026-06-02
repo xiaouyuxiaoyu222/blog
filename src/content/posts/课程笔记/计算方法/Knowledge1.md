@@ -2,7 +2,7 @@
 title: Knowledge1：对称正定矩阵
 published: 2026-05-27
 description: 对称正定矩阵的定义、判定方法、基本性质，以及它和二次函数等高线的关系
-tags: [计算方法, 线性方程组, 对称正定矩阵]
+tags: [计算方法]
 category: 课程笔记
 draft: false
 ---

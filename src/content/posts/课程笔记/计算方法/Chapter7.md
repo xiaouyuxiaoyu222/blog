@@ -1,5 +1,5 @@
 ---
-title: 数值微分与数值积分
+title: Chapter7：数值微分与数值积分
 published: 2026-06-14
 description: 数值微分的差商公式与误差、Newton-Cotes 求积、复化求积、代数精度及高斯型求积公式
 tags: [计算方法, 数值微分, 数值积分]

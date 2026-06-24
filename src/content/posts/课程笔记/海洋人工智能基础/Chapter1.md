@@ -1,5 +1,5 @@
 ---
-title: Introduction and Probability Theory
+title: OceanAI-Chapter1：概率论
 published: 2026-06-09
 description: 海洋人工智能问题背景、学习与归纳、概率空间、随机变量变换、贝叶斯推断、高斯模型、指数族、马尔可夫链与散度度量
 tags: [海洋人工智能基础]

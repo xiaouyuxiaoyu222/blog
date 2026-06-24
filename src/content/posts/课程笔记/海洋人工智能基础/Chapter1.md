@@ -16,7 +16,7 @@ draft: false
 贯穿本章的主线是：
 
 $$
-oxed{
+\boxed{
  p(x,y)
  \longrightarrow p(y)
  \longrightarrow p(x\mid y)
@@ -1205,7 +1205,7 @@ $$
 \boxed{
 \mu_{\mathrm{post}}
 =\sigma_{\mathrm{post}}^2
-\left(\frac{\mu}{\sigma^2}+rac{y}{\sigma_w^2}\right)
+\left(\frac{\mu}{\sigma^2}+frac{y}{\sigma_w^2}\right)
 =\frac{\sigma_w^2}{\sigma^2+\sigma_w^2}\mu
 +\frac{\sigma^2}{\sigma^2+\sigma_w^2}y.}
 $$

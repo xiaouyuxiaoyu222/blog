@@ -1,6 +1,7 @@
 ---
 title: Chapter3加强版：解线性方程组的迭代法
 published: 2026-05-31
+updated: 2026-06-10
 description: 对大规模、稀疏线性方程组，直接法往往代价太高，迭代法通过构造一个序列，让它逐步逼近真解
 tags: [计算方法]
 category: 课程笔记

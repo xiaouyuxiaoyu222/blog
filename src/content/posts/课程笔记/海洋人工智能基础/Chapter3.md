@@ -1,6 +1,7 @@
 ---
 title: OceanAI-Chpater3：搜索探寻与问题求解
 published: 2026-06-12
+updated: 2026-06-26
 description: 搜索问题的形式化描述、启发式搜索、A* 搜索、Minimax 搜索、Alpha-Beta 剪枝、多臂赌博机、置信上界算法（UCB）和蒙特卡洛树搜索
 tags: [海洋人工智能基础]
 category: 课程笔记

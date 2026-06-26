@@ -1,6 +1,7 @@
 ---
 title: Chapter5：特征值和特征向量/矩阵对角化
 published: 2026-06-10
+updated: 2026-06-20
 description: 特征值与特征向量、矩阵对角化、矩阵相似理论、实对称矩阵的正交对角化
 tags: [线性代数]
 category: 课程笔记

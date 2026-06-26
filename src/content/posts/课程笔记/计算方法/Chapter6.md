@@ -1,6 +1,7 @@
 ---
 title: Chapter6：函数逼近
 published: 2026-06-11
+updated: 2026-06-13
 description: 曲线拟合、最小二乘法、线性最小二乘、正交多项式、函数的最佳平方逼近
 tags: [计算方法]
 category: 课程笔记

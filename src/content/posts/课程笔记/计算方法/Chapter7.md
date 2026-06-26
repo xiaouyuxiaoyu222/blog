@@ -1,6 +1,7 @@
 ---
 title: Chapter7：数值微分与数值积分
 published: 2026-06-14
+updated: 2026-06-18
 description: 数值微分的差商公式与误差、Newton-Cotes 求积、复化求积、代数精度及高斯型求积公式
 tags: [计算方法]
 category: 课程笔记

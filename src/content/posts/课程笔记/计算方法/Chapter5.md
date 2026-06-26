@@ -1,6 +1,7 @@
 ---
 title: Chapter5：插值法
 published: 2026-06-09
+updated: 2026-06-11
 description: 拉格朗日插值、牛顿插值、差商、差分、Hermite 插值、分段插值、三次样条插值
 tags: [计算方法]
 category: 课程笔记

@@ -1,6 +1,7 @@
 ---
 title: OceanAI-Chapter1：概率论基础
 published: 2026-06-11
+updated: 2026-06-24
 description: 海洋人工智能问题背景、概率基础、贝叶斯推断、统计估计与高斯模型
 tags: [海洋人工智能基础]
 category: 课程笔记

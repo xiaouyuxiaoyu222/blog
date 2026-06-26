@@ -1,5 +1,5 @@
 ---
-title: OceanAI-Chapter6:深度学习
+title: OceanAI-Chapter6：深度学习
 published: 2026-06-10
 description: 深度学习基础、神经网络训练、CNN、RNN、Transformer、生成模型与现代深度学习
 tags: [海洋人工智能基础]

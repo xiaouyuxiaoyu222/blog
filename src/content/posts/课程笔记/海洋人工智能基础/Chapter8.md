@@ -1,6 +1,7 @@
 ---
 title: OceanAI-Chapter8：智能体
-published: 2026-06-15
+published: 2026-06-18
+updated: 2026-06-18
 description: 智能体的定义、智能体工作循环、智能体类型、大语言模型智能体、氛围编程、Claude Code 编程智能体、海洋领域应用、风险、伦理与安全
 tags: [海洋人工智能基础]
 category: 课程笔记

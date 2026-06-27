@@ -1,7 +1,7 @@
 ---
 title: OceanAI-Chapter4：机器学习/监督学习
-published: 2026-06-13
-updated: 2026-06-26
+published: 2026-06-14
+updated: 2026-06-14
 description: 机器学习基础、损失与风险、线性回归与逻辑斯蒂回归、线性判别分析、支持向量机、判别模型与生成模型
 tags: [海洋人工智能基础]
 category: 课程笔记

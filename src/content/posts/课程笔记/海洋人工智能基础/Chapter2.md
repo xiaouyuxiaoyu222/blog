@@ -1,7 +1,7 @@
 ---
 title: OceanAI-Chapter2：逻辑与推理
-published: 2026-06-11
-updated: 2026-06-26
+published: 2026-06-12
+updated: 2026-06-12
 description: 命题逻辑、谓词逻辑、因果推断、结构因果模型、贝叶斯网络、d-分离
 tags: [海洋人工智能基础]
 category: 课程笔记

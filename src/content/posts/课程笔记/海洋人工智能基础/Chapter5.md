@@ -1,6 +1,7 @@
 ---
 title: OceanAI-Chapter5：无监督学习
-published: 2026-06-14
+published: 2026-06-15
+updated: 2026-06-15
 description: 机器学习回顾、无监督学习、K 均值聚类、主成分分析、特征人脸、奇异值分解、潜在语义分析、最大似然估计、最大后验估计和期望最大化算法
 tags: [海洋人工智能基础]
 category: 课程笔记

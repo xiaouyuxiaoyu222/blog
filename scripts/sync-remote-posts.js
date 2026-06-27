@@ -65,7 +65,7 @@ async function fetchText(url) {
 	return response.text();
 }
 
-async function syncMissingRemotePosts() {
+export async function syncMissingRemotePosts() {
 	const localBefore = await listMarkdownFiles(postsDir);
 	const localPaths = new Set(
 		localBefore.map((file) => toPosix(path.relative(projectRoot, file))),
@@ -114,4 +114,10 @@ async function syncMissingRemotePosts() {
 	);
 }
 
-await syncMissingRemotePosts();
+const isCliEntrypoint =
+	process.argv[1] &&
+	path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isCliEntrypoint) {
+	await syncMissingRemotePosts();
+}

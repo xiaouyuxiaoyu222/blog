@@ -23,6 +23,16 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
+import { syncMissingRemotePosts } from "./scripts/sync-remote-posts.js";
+
+const contentSyncIntegration = () => ({
+	name: "content-sync",
+	hooks: {
+		"astro:build:start": async () => {
+			await syncMissingRemotePosts();
+		},
+	},
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,6 +40,7 @@ export default defineConfig({
 	base: "/",
 	trailingSlash: "always",
 	integrations: [
+		contentSyncIntegration(),
 		tailwind({
 			nesting: true,
 		}),

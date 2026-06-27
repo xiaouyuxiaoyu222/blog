@@ -28,7 +28,7 @@ import { syncMissingRemotePosts } from "./scripts/sync-remote-posts.js";
 const contentSyncIntegration = () => ({
 	name: "content-sync",
 	hooks: {
-		"astro:build:start": async () => {
+		"astro:config:setup": async () => {
 			await syncMissingRemotePosts();
 		},
 	},

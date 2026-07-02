@@ -748,7 +748,7 @@ $$
 
 在无压强梯度、稳态、界面无附加切向力条件下，两层剪应力相等且为常量。黏度较大的层速度梯度较小。
 
-> [插图占位] 插入课件《Basic Concepts》第 11 页“两层液体速度分布与剪应力分布图”。
+<img src="https://lazysheep-tuchuang-1345706147.cos.ap-shanghai.myqcloud.com/blog/20260702190110.png" style="width: 420px; max-width: 100%; height: auto; display: block; margin: 0 auto;" />
 
 ### 1.4.8 课件例题：斜面上的木块
 

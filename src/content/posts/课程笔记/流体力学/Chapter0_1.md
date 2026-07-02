@@ -683,7 +683,9 @@ $$
 \tau=\mu\frac{\mathrm d\theta}{\mathrm dt}
 $$
 
-> [插图占位] 插入课件《Basic Concepts》第 9–10 页“平板剪切实验与微元角变形图”。
+
+<img src="https://lazysheep-tuchuang-1345706147.cos.ap-shanghai.myqcloud.com/blog/20260702181902.png" style="width: 420px; max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+
 
 ### 1.4.6 线性速度分布
 

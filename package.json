@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
-    "build": "node scripts/sync-remote-posts.js && astro build --force && pagefind --site dist",
+    "build": "node scripts/sync-remote-posts.js && astro build --force && pagefind --site dist && node scripts/verify-built-posts.js",
     "preview": "astro preview",
     "astro": "astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",

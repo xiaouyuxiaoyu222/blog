@@ -1,1 +1,4 @@
-{}
+{
+	"buildCommand": "node scripts/sync-remote-posts.js && pnpm exec astro build --force && pnpm exec pagefind --site dist && node scripts/verify-built-posts.js",
+	"outputDirectory": "dist"
+}

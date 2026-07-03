@@ -2091,7 +2091,9 @@ $$
 
 ## A 概念与判断
 
-### 练习 1：当地加速度与迁移加速度｜Local and convective acceleration
+### A-1 当地加速度与迁移加速度｜Local and convective acceleration
+
+`【24–25 真题】`
 
 **English**
 
@@ -2101,17 +2103,19 @@ For a steady flow, the ______ acceleration is zero. For a uniform flow, the ____
 
 恒定流动的______加速度为零；均匀流动的______加速度为零。
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 $$
 \boxed{\text{local acceleration; convective acceleration}}
 $$
 
 恒定对应 $\partial\mathbf{u}/\partial t=0$；均匀对应 $(\mathbf{u}\cdot\nabla)\mathbf{u}=0$。
+</details>
 
----
+### A-2 相邻流线间的流量｜Discharge between adjacent streamlines
 
-### 练习 2：相邻流线间的流量｜Discharge between adjacent streamlines
+`【24–25 真题】`
 
 **English**
 
@@ -2121,7 +2125,8 @@ In a steady, two-dimensional incompressible flow, two adjacent streamlines diffe
 
 在恒定二维不可压缩流中，两条相邻流线的流函数差为 $d\psi$，法向间距为 $dn$。求两流线之间的单位宽度流量与平均流速。
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 $$
 \boxed{dq=d\psi}
@@ -2132,10 +2137,11 @@ $$
 $$
 
 若只问大小，应写绝对值 $|dq|=|d\psi|$、$\bar u=|d\psi|/dn$。
+</details>
 
----
+### A-3 速度场是否满足不可压缩连续性｜Continuity check
 
-### 练习 3：速度场是否满足不可压缩连续性｜Continuity check
+`【24–25 真题】`
 
 **English**
 
@@ -2153,7 +2159,8 @@ Can this velocity field exist?
 
 对不可压缩流体，给定上述速度场。判断该流动能否存在。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 不可压缩连续性方程：
 
@@ -2184,10 +2191,11 @@ $$
 $$
 \boxed{\text{The field cannot represent an incompressible flow.}}
 $$
+</details>
 
----
+### A-4 均匀流与三种线｜Uniform flow and flow-visualization lines
 
-### 练习 4：均匀流与三种线｜Uniform flow and flow-visualization lines
+`【历年卷判断题改编】`
 
 **English**
 
@@ -2197,17 +2205,19 @@ Judge the statement: “In a uniform flow, streamlines, pathlines, and streaklin
 
 判断：“在均匀流中，流线、迹线和色线一定重合。”
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 $$
 \boxed{\text{False}}
 $$
 
 三者重合的充分条件是**恒定流**。均匀流只说明空间迁移加速度为零，速度场仍可能随时间改变。
+</details>
 
----
+### A-5 势函数和流函数的存在条件｜Existence conditions
 
-### 练习 5：势函数和流函数的存在条件｜Existence conditions
+`【课堂重点改编】`
 
 **English**
 
@@ -2217,7 +2227,8 @@ State the essential condition for the existence of a velocity potential and that
 
 分别写出速度势函数与二维流函数存在的核心条件。
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 - Velocity potential:
 
@@ -2234,10 +2245,11 @@ $$
 $$
 
 二维不可压缩速度场可写成 $u_x=\psi_y, u_y=-\psi_x$。
+</details>
 
----
+### A-6 流体微团运动形式｜Basic modes of fluid-particle motion
 
-### 练习 6：流体微团运动形式｜Basic modes of fluid-particle motion
+`【教材知识点改编】`
 
 **English**
 
@@ -2247,17 +2259,19 @@ List the three basic modes of motion of a fluid particle.
 
 写出流体微团运动的三种基本形式。
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 $$
 \boxed{\text{translation, rotation, and deformation}}
 $$
 
 变形还可细分为线变形和角变形。
+</details>
 
----
+### A-7 Bernoulli 积分的适用范围｜Range of Bernoulli constant
 
-### 练习 7：Bernoulli 积分的适用范围｜Range of Bernoulli constant
+`【课堂重点改编】`
 
 **English**
 
@@ -2267,7 +2281,8 @@ For a steady, incompressible, inviscid flow under gravity, explain the differenc
 
 对恒定、不可压缩、无黏且仅受重力的流动，说明 Bernoulli 方程在有旋流与无旋流中的适用范围差异。
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 - 有旋流：
 
@@ -2278,10 +2293,11 @@ $$
 只保证同一条流线上 $C$ 相同，不同流线可不同。
 
 - 无旋流：同一连通流场内任意两点均可使用同一个 $C$。
+</details>
 
----
+### A-8 平均速度与点速度｜Mean and local velocity
 
-### 练习 8：平均速度与点速度｜Mean and local velocity
+`【历年卷改编】`
 
 **English**
 
@@ -2291,19 +2307,21 @@ At a flow cross-section, compare the mean velocity $v$ with a local point veloci
 
 在同一过流断面上，比较断面平均流速 $v$ 与某一点流速 $u$：$v<u$、$v=u$、$v>u$ 或无法确定。
 
-**答案**
+<details>
+<summary>答案与讲解</summary>
 
 $$
 \boxed{\text{Cannot be determined}}
 $$
 
 平均速度是对整个断面速度分布的面积平均。某一点速度可能高于、低于或恰好等于平均速度。
-
----
+</details>
 
 ## B 计算与综合
 
-### 练习 9：Euler acceleration｜欧拉加速度
+### B-1 Euler acceleration｜欧拉加速度
+
+`【课堂例题改编】`
 
 **English**
 
@@ -2321,7 +2339,8 @@ Find the local acceleration, convective acceleration, and total acceleration at 
 
 给定上述速度场，求点 $(x,y,t)=(1,2,1)$ 处的当地加速度、迁移加速度与总加速度。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 当地加速度：
 
@@ -2372,10 +2391,11 @@ $$
 $$
 \boxed{\mathbf{a}=(3,0,0)}
 $$
+</details>
 
----
+### B-2 教材 4-1——流线与迹线｜Streamline and pathline
 
-### 练习 10：教材 4-1——流线与迹线｜Streamline and pathline
+`【教材习题 4-1】`
 
 **English**
 
@@ -2391,7 +2411,8 @@ find the streamline at $t=1$ through $(-2,1)$ and the pathline of the particle p
 
 对上述二维流动，求 $t=1$ 时通过 $(-2,1)$ 的流线，以及 $t=1$ 经过该点的质点迹线。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 #### 1. 流线
 
@@ -2469,10 +2490,11 @@ $$
 $$
 
 本题中特定质点的迹线恰好与该时刻流线重合；这不代表所有非恒定流都如此。
+</details>
 
----
+### B-3 教材 4-2——三维流线｜A three-dimensional streamline
 
-### 练习 11：教材 4-2——三维流线｜A three-dimensional streamline
+`【教材习题 4-2】`
 
 **English**
 
@@ -2488,7 +2510,8 @@ find the streamline through $(2,1,1)$.
 
 给定上述三维速度场，求通过 $(2,1,1)$ 的流线方程。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 $$
 \frac{dx}{-x}=\frac{dy}{2y}=\frac{dz}{5-z}.
@@ -2537,10 +2560,11 @@ $$
 $$
 \boxed{x^2y=4,\qquad z=5-2x}
 $$
+</details>
 
----
+### B-4 补全可压缩流速度分量｜Complete a compressible velocity field
 
-### 练习 12：补全可压缩流速度分量｜Complete a compressible velocity field
+`【课堂例题改编】`
 
 **English**
 
@@ -2558,7 +2582,8 @@ Determine the most general $u_z$ that satisfies continuity.
 
 给定上述密度和两个速度分量，求满足连续性方程的最一般 $u_z$。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 一般连续性方程：
 
@@ -2596,10 +2621,11 @@ u_z=-\frac{(1+3x)z}{t}+\frac{f(x,y)}{t}}
 $$
 
 其中 $f(x,y)$ 是与 $z$ 无关的任意函数。
+</details>
 
----
+### B-5 教材 4-3 至 4-5——加速度与角速度｜Acceleration and angular velocity
 
-### 练习 13：教材 4-3 至 4-5——加速度与角速度｜Acceleration and angular velocity
+`【教材习题 4-3～4-5】`
 
 **English**
 
@@ -2619,7 +2645,8 @@ $$
 
 对上述恒定速度场：判断是否均匀；求点 $(1,2,3)$ 的加速度；求该点微团角速度并判断是否无旋。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 #### 1. 均匀性
 
@@ -2686,10 +2713,11 @@ $$
 $$
 \boxed{\text{The flow is rotational.}}
 $$
+</details>
 
----
+### B-6 历年卷原题——斜向均匀流的 $\varphi$ 与 $\psi$｜Uniform flow at an angle
 
-### 练习 14：历年卷原题——斜向均匀流的 $\varphi$ 与 $\psi$｜Uniform flow at an angle
+`【历年卷原题】`
 
 **English**
 
@@ -2699,7 +2727,8 @@ A two-dimensional uniform flow has speed $U$ and makes an angle $\alpha$ with th
 
 二维均匀直线流的速度大小为 $U$，与 $x$ 轴正向夹角为 $\alpha$。求势函数、流函数并说明流网形状。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 速度分量：
 
@@ -2742,10 +2771,11 @@ $$
 - $\psi=C$：一族沿速度方向的平行直线；
 - $\varphi=C$：与其正交的一族平行直线；
 - 若等间隔取值，构成旋转了 $\alpha$ 的正方形网格。
+</details>
 
----
+### B-7 教材 4-9——由流函数求势函数｜From stream function to potential
 
-### 练习 15：教材 4-9——由流函数求势函数｜From stream function to potential
+`【教材习题 4-9】`
 
 **English**
 
@@ -2761,7 +2791,8 @@ find the velocity field and the velocity potential $\varphi$.
 
 已知流函数 $\psi=2(x^2-y^2)$，求速度场与势函数。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 由流函数定义：
 
@@ -2793,10 +2824,11 @@ $$
 $$
 \boxed{\varphi=-4xy+C}
 $$
+</details>
 
----
+### B-8 教材 4-10、4-11——由势函数求流函数与速度｜From potential to stream function
 
-### 练习 16：教材 4-10、4-11——由势函数求流函数与速度｜From potential to stream function
+`【教材习题 4-10、4-11】`
 
 **English**
 
@@ -2813,7 +2845,8 @@ $$
 
 已知势函数 $\varphi=y+x^2-y^2$，求速度场与流函数；另有 $\varphi=x(2y-1)$，求点 $(4,5)$ 的速度分量。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 #### 1. 第一流动
 
@@ -2856,10 +2889,11 @@ $$
 $$
 \boxed{u_x=9,\qquad u_y=8}
 $$
+</details>
 
----
+### B-9 自由涡流网｜Free-vortex flow net
 
-### 练习 17：自由涡流网｜Free-vortex flow net
+`【教材例题改编】`
 
 **English**
 
@@ -2876,7 +2910,8 @@ find $\varphi$ and $\psi$ in polar coordinates, and describe the flow net.
 
 对上述二维环流速度场，求极坐标下势函数和流函数，并说明流网形状。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 转为极坐标：
 
@@ -2919,10 +2954,11 @@ $$
 - 两族曲线正交。
 
 注意 $\varphi=C\theta$ 绕原点一周会改变 $2\pi C$，因此在包含原点并绕原点闭合的多连通区域中是多值函数；局部区域内仍可使用。
+</details>
 
----
+### B-10 点源流的压强｜Pressure in a point-source flow
 
-### 练习 18：点源流的压强｜Pressure in a point-source flow
+`【综合变式】`
 
 **English**
 
@@ -2932,7 +2968,8 @@ A two-dimensional point source has discharge per unit width $Q$ in an inviscid i
 
 二维点源的单位宽度流量为 $Q$。理想不可压缩流体密度为 $\rho$，远处压强为 $p_\infty$、速度趋于零。求径向速度和压强分布。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 由圆周流量：
 
@@ -2962,10 +2999,11 @@ p(r)=p_\infty-\frac{\rho Q^2}{8\pi^2r^2}}
 $$
 
 $r$ 越小，速度越大，压强越低。$r=0$ 是理想模型奇点。
+</details>
 
----
+### B-11 均匀流与点源叠加｜Uniform flow plus a source
 
-### 练习 19：均匀流与点源叠加｜Uniform flow plus a source
+`【课堂例题/教材改编】`
 
 **English**
 
@@ -2979,7 +3017,8 @@ A uniform flow of speed $U$ in the positive $x$ direction is superposed with a t
 
 沿 $+x$ 方向、速度为 $U$ 的均匀流与原点处强度为 $Q>0$ 的二维点源叠加。求势函数、流函数、停滞点以及通过停滞点的分界流线函数值。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 #### 1. 势函数与流函数
 
@@ -3046,10 +3085,11 @@ $$
 $$
 Uy+\frac{Q}{2\pi}\theta=\frac{Q}{2}.
 $$
+</details>
 
----
+### B-12 流网估算速度与压强｜Estimate velocity and pressure from a flow net
 
-### 练习 20：流网估算速度与压强｜Estimate velocity and pressure from a flow net
+`【综合变式】`
 
 **English**
 
@@ -3059,7 +3099,8 @@ In a two-dimensional incompressible potential flow, adjacent streamlines have th
 
 二维不可压缩势流中，相邻流线的流函数差均为 $0.020\ \mathrm{m^2/s}$。A、B 两点附近相邻流线法向间距分别为 $0.010\ \mathrm{m}$ 和 $0.025\ \mathrm{m}$。两点等高，流体密度 $1000\ \mathrm{kg/m^3}$，已知 $p_A=80\ \mathrm{kPa}$，求理想流条件下 $u_A,u_B,p_B$。
 
-**解答**
+<details>
+<summary>答案与讲解</summary>
 
 由
 
@@ -3103,8 +3144,7 @@ $$
 $$
 
 B 点流线较疏，速度较低，压强较高。
-
----
+</details>
 
 ## 练习题结论速览
 

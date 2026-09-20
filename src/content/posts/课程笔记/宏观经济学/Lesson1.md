@@ -1,5 +1,5 @@
 ---
-title: Lesson 1 宏观经济学导论与世界主要经济体概览
+title: MacroEconomics-Lesson1：宏观经济学导论与世界主要经济体概览
 published: 2026-09-16
 description: 课程安排与考核方式，宏观经济学的研究视角，产出、失业率与通货膨胀率，世界主要经济体概览，美国、欧盟和日本的经济表现
 tags: [宏观经济学]

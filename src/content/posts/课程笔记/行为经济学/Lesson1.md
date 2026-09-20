@@ -1,5 +1,5 @@
 ---
-title: Introduction to Behavioral Economics
+title: BehavioralEconomics-Lesson1：行为经济学绪论
 published: 2026-09-15
 description: 行为经济学的学科定位、研究框架与实验方法；猜数博弈、框架效应、跨期选择、贿赂实验与贝叶斯推断
 tags: [行为经济学]

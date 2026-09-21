@@ -1,6 +1,6 @@
 ---
 title: Accountancy-Lesson 1：绪论：会计的含义、信息使用者与会计规范
-published: 2026-09-20
+published: 2026-09-21
 description: 会计的含义与目标、会计信息使用者、财务会计与管理会计、会计法规、会计核算基本前提、会计信息质量要求
 tags: [会计学]
 category: 课程笔记

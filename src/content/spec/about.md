@@ -2,6 +2,7 @@
 
 你好，我是 Sleepyfish。
 
-Own the moment.
+2026年秋冬学期学习日程表：https://econ-study-progress-2026.wangyijin2031.chatgpt.site/
 
-这里会用来记录学习、科研、工具配置和生活里的碎片想法。它不是一个一次性完成的网站，而是一个慢慢生长的个人知识库：课程笔记可以放在这里，读书摘录可以放在这里，调试工具和踩坑记录也可以放在这里。
+课程慕课平台：
+1️⃣2026《中级宏观经济学》https://www.icourse163.org/course/ZJU-1460725165

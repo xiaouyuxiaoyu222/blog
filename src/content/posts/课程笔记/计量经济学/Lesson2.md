@@ -1,5 +1,5 @@
 ---
-title: Econometrics-Lesson2：概率论与数理统计基础 & 回归分析概述
+title: 概率论与数理统计基础 & 回归分析概述
 published: 2026-09-20
 description: 计量经济学预备知识：概率论与数理统计基础；第二章一元线性回归模型 §2.1 回归分析概述
 tags: [计量经济学]
@@ -373,7 +373,7 @@ $X$ 与 $Y$ 应来自同一研究对象、相同统计范围。
 
 # 二、概率论基础
 
-![样本空间和随机事件](./Lesson2_assets/slide_03.jpg)
+![样本空间和随机事件](/images/econometrics/lesson2/slide_03.jpg)
 
 ## 1. 样本空间与随机事件
 
@@ -414,7 +414,7 @@ $$
 
 ## 2. 概率、条件概率与独立性
 
-![概率和条件概率](./Lesson2_assets/slide_04.jpg)
+![概率和条件概率](/images/econometrics/lesson2/slide_04.jpg)
 
 ### 条件概率
 
@@ -450,7 +450,7 @@ $$
 
 ## 3. 随机变量与概率分布
 
-![随机变量和概率分布](./Lesson2_assets/slide_05.jpg)
+![随机变量和概率分布](/images/econometrics/lesson2/slide_05.jpg)
 
 ### 随机变量
 
@@ -737,7 +737,7 @@ $$
 
 ### 4.3 协方差 Covariance
 
-![协方差和相关系数](./Lesson2_assets/slide_08.jpg)
+![协方差和相关系数](/images/econometrics/lesson2/slide_08.jpg)
 
 定义：
 
@@ -811,7 +811,7 @@ $$
 只说明**无线性相关**，两个变量仍可能存在明显的非线性依赖关系。
 :::
 
-![相关系数课堂PPT](./Lesson2_assets/slide_09.jpg)
+![相关系数课堂PPT](/images/econometrics/lesson2/slide_09.jpg)
 
 ---
 
@@ -852,7 +852,7 @@ $$
 
 ### 5.1 正态分布 Normal Distribution
 
-![正态分布](./Lesson2_assets/slide_10.jpg)
+![正态分布](/images/econometrics/lesson2/slide_10.jpg)
 
 若：
 
@@ -932,7 +932,7 @@ $$
 
 ### 5.2 $\chi^2$ 分布
 
-![卡方分布](./Lesson2_assets/slide_12.jpg)
+![卡方分布](/images/econometrics/lesson2/slide_12.jpg)
 
 若：
 
@@ -986,7 +986,7 @@ $$
 
 ### 5.3 $t$ 分布
 
-![t分布](./Lesson2_assets/slide_14.jpg)
+![t分布](/images/econometrics/lesson2/slide_14.jpg)
 
 若：
 
@@ -1026,7 +1026,7 @@ $$
 
 ### 5.4 $F$ 分布
 
-![F分布](./Lesson2_assets/slide_16.jpg)
+![F分布](/images/econometrics/lesson2/slide_16.jpg)
 
 若：
 
@@ -1058,7 +1058,7 @@ $F$ 分布：
 
 ### 6.1 Chebyshev 不等式
 
-![Chebyshev不等式](./Lesson2_assets/slide_17.jpg)
+![Chebyshev不等式](/images/econometrics/lesson2/slide_17.jpg)
 
 若：
 
@@ -1111,7 +1111,7 @@ Chebyshev 不等式的重要之处在于：
 
 ### 6.2 大数定律 Law of Large Numbers
 
-![大数定律](./Lesson2_assets/slide_18.jpg)
+![大数定律](/images/econometrics/lesson2/slide_18.jpg)
 
 若：
 
@@ -1156,7 +1156,7 @@ $$
 
 > “大数”指大量重复试验 / 大样本，而非“某个数值很大”。
 
-![Bernoulli大数定理](./Lesson2_assets/slide_19.jpg)
+![Bernoulli大数定理](/images/econometrics/lesson2/slide_19.jpg)
 
 对于重复 Bernoulli 试验，事件发生频率会随着试验次数增加趋近于其真实概率，这解释了为什么可以用长期频率估计概率。
 
@@ -1164,7 +1164,7 @@ $$
 
 ### 6.3 中心极限定理 Central Limit Theorem
 
-![中心极限定理](./Lesson2_assets/slide_20.jpg)
+![中心极限定理](/images/econometrics/lesson2/slide_20.jpg)
 
 若：
 
@@ -1237,7 +1237,7 @@ $$
 
 ## 1. 总体、样本与简单随机样本
 
-![总体与样本](./Lesson2_assets/slide_21.jpg)
+![总体与样本](/images/econometrics/lesson2/slide_21.jpg)
 
 ### 总体 Population
 
@@ -1319,7 +1319,7 @@ $$
 
 ## 2. 统计量与常用样本统计量
 
-![常用样本统计量](./Lesson2_assets/slide_22.jpg)
+![常用样本统计量](/images/econometrics/lesson2/slide_22.jpg)
 
 ### 统计量 Statistic
 
@@ -1378,7 +1378,7 @@ $$
 
 ## 3. 样本均值的抽样分布
 
-![样本均值的抽样分布](./Lesson2_assets/slide_23.jpg)
+![样本均值的抽样分布](/images/econometrics/lesson2/slide_23.jpg)
 
 若总体：
 
@@ -1426,7 +1426,7 @@ $n>30$ 只是课堂常用的粗略经验，并非中心极限定理的严格统�
 
 ## 4. 参数的点估计
 
-![参数点估计](./Lesson2_assets/slide_24.jpg)
+![参数点估计](/images/econometrics/lesson2/slide_24.jpg)
 
 假设总体分布中含未知参数 $\theta$。
 
@@ -1488,7 +1488,7 @@ $$
 
 ## 5. 点估计量的优良性质
 
-![点估计量的统计性质](./Lesson2_assets/slide_25.jpg)
+![点估计量的统计性质](/images/econometrics/lesson2/slide_25.jpg)
 
 ### 5.1 小样本性质
 
@@ -1560,7 +1560,7 @@ $$
 
 ## 6. 区间估计
 
-![区间估计](./Lesson2_assets/slide_26.jpg)
+![区间估计](/images/econometrics/lesson2/slide_26.jpg)
 
 若：
 
@@ -1673,7 +1673,7 @@ $$
 
 ## 7. 假设检验
 
-![假设检验逻辑](./Lesson2_assets/slide_27.jpg)
+![假设检验逻辑](/images/econometrics/lesson2/slide_27.jpg)
 
 ### 7.1 基本思想：小概率事件
 
@@ -1707,7 +1707,7 @@ $$
 2. **统计量是什么？**
 3. **结论是什么？**
 
-![假设检验基本步骤](./Lesson2_assets/slide_28.jpg)
+![假设检验基本步骤](/images/econometrics/lesson2/slide_28.jpg)
 
 完整步骤：
 
@@ -1735,7 +1735,7 @@ $$
 
 则拒绝 $H_0$。
 
-![双侧假设检验](./Lesson2_assets/slide_29.jpg)
+![双侧假设检验](/images/econometrics/lesson2/slide_29.jpg)
 
 老师强调：
 
@@ -1772,7 +1772,7 @@ $$
 
 ## 8. 两类错误
 
-![第一类和第二类错误](./Lesson2_assets/slide_30.jpg)
+![第一类和第二类错误](/images/econometrics/lesson2/slide_30.jpg)
 
 ### 第一类错误 Type I Error
 
@@ -1835,15 +1835,15 @@ $$
 **本节实际讲授内容与第五版教材 §2.1 高度对应。**
 :::
 
-![一元线性回归模型章节目录](./Lesson2_assets/slide_33.jpg)
+![一元线性回归模型章节目录](/images/econometrics/lesson2/slide_33.jpg)
 
-![回归分析概述目录](./Lesson2_assets/slide_34.jpg)
+![回归分析概述目录](/images/econometrics/lesson2/slide_34.jpg)
 
 ---
 
 ## 1. 变量之间的两类关系
 
-![变量间的关系及回归分析基本概念](./Lesson2_assets/slide_35.jpg)
+![变量间的关系及回归分析基本概念](/images/econometrics/lesson2/slide_35.jpg)
 
 ### 1.1 确定性关系 / 函数关系
 
@@ -1887,7 +1887,7 @@ $$
 
 ## 2. 相关关系的分类
 
-![相关关系的类型](./Lesson2_assets/slide_37.jpg)
+![相关关系的类型](/images/econometrics/lesson2/slide_37.jpg)
 
 ### 按变量个数
 
@@ -1905,7 +1905,7 @@ $$
 - 负相关
 - 不相关（无线性相关）
 
-![相关关系散点图](./Lesson2_assets/slide_46.jpg)
+![相关关系散点图](/images/econometrics/lesson2/slide_46.jpg)
 
 :::WARNING
 图中“非线性相关”即使相关系数可能接近 0，变量之间仍然可以存在非常强的系统关系。
@@ -1921,7 +1921,7 @@ $$
 
 ### 3.1 样本相关系数
 
-![总体和样本相关系数](./Lesson2_assets/slide_44.jpg)
+![总体和样本相关系数](/images/econometrics/lesson2/slide_44.jpg)
 
 样本线性相关系数：
 
@@ -1952,7 +1952,7 @@ $X$ 和 $Y$ 的地位通常是对称的。
 
 > 研究具有明确解释方向的统计依赖关系，即解释变量变化时，被解释变量的条件平均水平如何变化。
 
-![相关分析与回归分析](./Lesson2_assets/slide_47.jpg)
+![相关分析与回归分析](/images/econometrics/lesson2/slide_47.jpg)
 
 ### 课堂例子：鞋码与知识水平
 
@@ -2027,7 +2027,7 @@ $$
 
 组距基本为 300 元。
 
-![家庭可支配收入与消费支出统计表](./Lesson2_assets/slide_48.jpg)
+![家庭可支配收入与消费支出统计表](/images/econometrics/lesson2/slide_48.jpg)
 
 ### 老师重点展开：$X=800$ 这一组
 
@@ -2054,7 +2054,7 @@ $$
 
 ## 5. 条件分布与条件期望
 
-![条件分布与条件期望](./Lesson2_assets/slide_49.jpg)
+![条件分布与条件期望](/images/econometrics/lesson2/slide_49.jpg)
 
 ### 条件分布
 
@@ -2118,7 +2118,7 @@ $$
 
 ## 6. 总体回归线与总体回归函数 PRF
 
-![回归线](./Lesson2_assets/slide_50.jpg)
+![回归线](/images/econometrics/lesson2/slide_50.jpg)
 
 对不同的 $X$：
 
@@ -2139,7 +2139,7 @@ $$
 
 更一般地，它可能是一条曲线，因此也称总体回归曲线。
 
-![总体回归函数](./Lesson2_assets/slide_51.jpg)
+![总体回归函数](/images/econometrics/lesson2/slide_51.jpg)
 
 对应函数：
 

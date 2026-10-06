@@ -1,5 +1,5 @@
 ---
-title: 概率论与数理统计基础 & 回归分析概述
+title: Econometrics-Lesson2：概率论与数理统计基础 & 回归分析概述
 published: 2026-09-20
 description: 计量经济学预备知识：概率论与数理统计基础；第二章一元线性回归模型 §2.1 回归分析概述
 tags: [计量经济学]

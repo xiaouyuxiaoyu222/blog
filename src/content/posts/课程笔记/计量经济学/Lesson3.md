@@ -1,5 +1,5 @@
 ---
-title: 一元线性回归：从总体回归到 OLS 与经典假设
+title: Econometrics-Lesson3：一元线性回归：从总体回归到 OLS 与经典假设
 published: 2026-09-22
 description: 条件分布与条件期望、总体回归函数与样本回归函数、随机扰动项、普通最小二乘法、经典假设，以及 OLS 估计量的线性性与无偏性
 tags: [计量经济学]

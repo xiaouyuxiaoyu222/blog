@@ -1,8 +1,8 @@
 ---
-title: 一元线性回归：OLS统计性质、极大似然估计与拟合优度
+title: Econometrics-Lesson4：一元线性回归：OLS统计性质、极大似然估计与拟合优度
 published: 2026-09-29
 description: 一元线性回归模型的经典假设、OLS 的线性性/无偏性/有效性/一致性、参数估计量的抽样分布、极大似然估计、随机误差项方差估计、Stata 回归输出与拟合优度 R²。
-tags: [计量经济学, 一元线性回归, OLS, MLE, 高斯马尔可夫定理, 拟合优度]
+tags: [计量经济学]
 category: 课程笔记
 draft: false
 ---

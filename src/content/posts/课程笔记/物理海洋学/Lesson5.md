@@ -1,5 +1,5 @@
 ---
-title: Oceanography-Lesson3：海水运动方程（一）
+title: Oceanography-Lesson5：海水运动方程（一）
 published: 2026-09-28
 description: 数学预备知识、流体运动的拉格朗日与欧拉观点、随体导数、流线/迹线/染色线、连续性方程
 tags: [物理海洋学]

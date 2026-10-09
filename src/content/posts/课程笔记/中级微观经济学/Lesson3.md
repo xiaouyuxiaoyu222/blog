@@ -1,5 +1,5 @@
 ---
-title: 效用函数、边际替代率与最优化
+title: IMicroeconomics-Lesson3：效用函数、边际替代率与最优化
 published: 2026-09-28
 description: 效用函数与无差异曲线、边际效用、边际替代率、偏好凸性、替代弹性、拉格朗日法、库恩-塔克条件与多维极值
 tags: [中级微观经济学]

@@ -1,5 +1,5 @@
 ---
-title: MacroEconomics-Lesson1：怎样看经济与宏观经济学研究什么
+title: MacroEconomics-Lesson2：怎样看经济与宏观经济学研究什么
 published: 2026-09-24
 description: 三大宏观指标、美国/欧盟/日本/中国宏观经济概览、中国经济的关键阶段、经济周期/失业/通货膨胀/国际经济/宏观政策，以及宏观经济学与微观经济学的区别
 tags: [宏观经济学]

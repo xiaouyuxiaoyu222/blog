@@ -1,5 +1,5 @@
 ---
-title: "Lesson 3｜总产出及其衡量"
+title: MacroEconomics-Lesson3：总产出及其衡量
 published: 2026-10-08
 description: "国民收入六项指标、GDP 三种核算方法、增长贡献率、GDP 的核算修正及局限"
 tags: [宏观经济学]

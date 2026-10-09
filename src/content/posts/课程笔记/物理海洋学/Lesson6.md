@@ -1,5 +1,5 @@
 ---
-title: Oceanography-Lesson5：海水运动方程（二）
+title: Oceanography-Lesson6：海水运动方程（二）
 published: 2026-09-30
 description: 随体导数、连续性方程、动量方程、压强梯度力、分子黏性与湍流摩擦、重力、引潮力、位势力、旋转坐标系与科氏力
 tags: [物理海洋学]

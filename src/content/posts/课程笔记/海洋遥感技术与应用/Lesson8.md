@@ -1,7 +1,7 @@
 ---
 title: RemoteSensing-Lesson8：卫星图像的颜色系统与遥感图像校正
 published: 2026-10-13
-description: 海洋遥感技术与应用第8次课：色彩三属性、RGB与CMY、真彩色与假彩色、数字图像及BSQ/BIP/BIL、直方图、辐射校正与大气校正、地形辐射校正和几何畸变。
+description: 色彩三属性、RGB与CMY、真彩色与假彩色、数字图像及BSQ/BIP/BIL、直方图、辐射校正与大气校正、地形辐射校正和几何畸变。
 tags: [海洋遥感技术与应用]
 category: 课程笔记
 draft: false

@@ -345,8 +345,7 @@ $$\boxed{\nabla s\cdot\boldsymbol n=\frac{bs}{k}\cos\gamma}.$$
 
 对 $F=z-\zeta$ 有
 
-$$\nabla s\cdot\boldsymbol n=
-\frac{-\partial_xs\,\partial_x\zeta-\partial_ys\,\partial_y\zeta+\partial_zs}{|\nabla F|}.$$
+$$\nabla s\cdot\boldsymbol n=\frac{-\partial_xs\,\partial_x\zeta-\partial_ys\,\partial_y\zeta+\partial_zs}{|\nabla F|}.$$
 
 两边乘以 $|\nabla F|$，引入 $k_D=k/\rho$：
 

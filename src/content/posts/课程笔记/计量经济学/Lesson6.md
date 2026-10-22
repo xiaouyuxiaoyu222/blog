@@ -1,5 +1,5 @@
 ---
-title:  Econometrics-Lesson5：多元线性回归模型（一）：矩阵基础、基本假设与参数估计
+title:  Econometrics-Lesson6：多元线性回归模型（一）：矩阵基础、基本假设与参数估计
 published: 2026-10-20
 description: "计量经济学第六次课：一元回归复习、矩阵运算及向量微分、第三章多元线性回归模型、OLS推导、离差形式与Stata案例。"
 tags: [计量经济学]

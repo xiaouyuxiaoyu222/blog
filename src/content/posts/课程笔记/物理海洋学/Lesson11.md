@@ -1,5 +1,5 @@
 ---
-title: Oceanography-Lesson11：基本方程的简化、雷诺平均与波浪动力学概述
+title: "Lesson 11｜基本方程的简化、雷诺平均与波浪动力学概述"
 published: 2026-10-21
 description: "物理海洋学 2026-10-21 课堂笔记：无量纲数、四种近似、简化方程组、雷诺平均、对数边界层、海浪的定义与成长及随机波。"
 tags: [物理海洋学]
@@ -90,21 +90,30 @@ $$
 
 ### 1.2 纵横比 $\delta$
 
-$$\boxed{\delta=\frac DL},\qquad D=\text{垂向特征尺度},\ L=\text{水平特征尺度}.$$
+
+$$
+\boxed{\delta=\frac DL},\qquad D=\text{垂向特征尺度},\ L=\text{水平特征尺度}.
+$$
 
 例如，研究大洋环流时若选 $D\sim10^3\,\mathrm m$、$L\sim10^6\,\mathrm m$，那么 $\delta\sim10^{-3}\ll1$。这说明研究区域在几何上“很薄”。
 
 **由不可压缩连续方程进一步理解：**
 
-$$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0
+
+$$
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0
 \quad\Longrightarrow\quad\frac UL\sim\frac WD
-\quad\Longrightarrow\quad\boxed{\frac WU\sim\frac DL=\delta}.$$
+\quad\Longrightarrow\quad\boxed{\frac WU\sim\frac DL=\delta}.
+$$
 
 因此，在该典型尺度估计成立时，$W\sim\delta U$，垂向运动速度通常远小于水平运动速度。**注意：$W\ll U$ 不等于 $w=0$**，垂向速度仍参与物质输运与连续方程。
 
 ### 1.3 Rossby 数 $Ro$
 
-$$\boxed{Ro=\frac{U^2/L}{fU}=\frac{U}{fL}}.$$
+
+$$
+\boxed{Ro=\frac{U^2/L}{fU}=\frac{U}{fL}}.
+$$
 
 这里严格的尺度比较使用 $|f|$ 的大小；带符号的 $f$ 用于实际动力方程。
 
@@ -120,18 +129,27 @@ $$\boxed{Ro=\frac{U^2/L}{fU}=\frac{U}{fL}}.$$
 
 将局地加速度与科氏项相比：
 
-$$\boxed{Ro_T=\frac{U/T}{fU}=\frac1{fT}}\quad(\text{量级比较取 }|f|).$$
+
+$$
+\boxed{Ro_T=\frac{U/T}{fU}=\frac1{fT}}\quad(\text{量级比较取 }|f|).
+$$
 
 课堂将其解释为**地转调整特征时间 $1/|f|$ 与运动自身时间尺度 $T$ 的比值**：
 
-$$Ro_T=\frac{T_{\mathrm{rot}}}{T},\qquad T_{\mathrm{rot}}\sim\frac1{|f|}.$$
+
+$$
+Ro_T=\frac{T_{\mathrm{rot}}}{T},\qquad T_{\mathrm{rot}}\sim\frac1{|f|}.
+$$
 
 $Ro_T\ll1$ 时，局地加速度相对科氏项较小。**$Ro$ 控制非线性平流，$Ro_T$ 控制局地随时间变化，二者须分开判断。**
 
 ### 1.5 水平、垂向 Ekman 数
 
-$$\boxed{E_h=\frac{A_hU/L^2}{fU}=\frac{A_h}{fL^2}},\qquad
-\boxed{E_v=\frac{A_vU/D^2}{fU}=\frac{A_v}{fD^2}}.$$
+
+$$
+\boxed{E_h=\frac{A_hU/L^2}{fU}=\frac{A_h}{fL^2}},\qquad
+\boxed{E_v=\frac{A_vU/D^2}{fU}=\frac{A_v}{fD^2}}.
+$$
 
 实际比较力的大小时，同样使用 $|f|$。$A_h,A_v$ 是在所用模型中对应的黏性或有效涡动黏性系数，分别乘水平、垂向的速度二阶导数。
 
@@ -147,12 +165,18 @@ $$\boxed{E_h=\frac{A_hU/L^2}{fU}=\frac{A_h}{fL^2}},\qquad
 
 从温度方程的**热平流项与热扩散项**比较：
 
-$$\frac{\partial\theta}{\partial t}+\mathbf u\cdot\nabla\theta
-=K_h\nabla_h^2\theta+K_v\frac{\partial^2\theta}{\partial z^2}.$$
+
+$$
+\frac{\partial\theta}{\partial t}+\mathbf u\cdot\nabla\theta
+=K_h\nabla_h^2\theta+K_v\frac{\partial^2\theta}{\partial z^2}.
+$$
 
 典型量级为 $U\Theta/L$、$W\Theta/D$、$K_h\Theta/L^2$、$K_v\Theta/D^2$；因此
 
-$$\boxed{Pe_h=\frac{UL}{K_h}},\qquad \boxed{Pe_v=\frac{WD}{K_v}}.$$
+
+$$
+\boxed{Pe_h=\frac{UL}{K_h}},\qquad \boxed{Pe_v=\frac{WD}{K_v}}.
+$$
 
 - $Pe\gg1$：平流热输运相对扩散占优势。
 - $Pe\ll1$：扩散相对平流占优势。
@@ -170,32 +194,50 @@ $$\boxed{Pe_h=\frac{UL}{K_h}},\qquad \boxed{Pe_v=\frac{WD}{K_v}}.$$
 
 取 $z$ 轴**向上为正**，垂向动量方程的主要部分写作
 
-$$\frac{Dw}{Dt}=-\frac1\rho\frac{\partial p}{\partial z}-g+\text{旋转与摩擦修正项}.$$
+
+$$
+\frac{Dw}{Dt}=-\frac1\rho\frac{\partial p}{\partial z}-g+\text{旋转与摩擦修正项}.
+$$
 
 在相关项足够小时，得到
 
-$$0=-\frac1\rho\frac{\partial p}{\partial z}-g
-\quad\Longrightarrow\quad\boxed{\frac{\partial p}{\partial z}=-\rho g}.$$
+
+$$
+0=-\frac1\rho\frac{\partial p}{\partial z}-g
+\quad\Longrightarrow\quad\boxed{\frac{\partial p}{\partial z}=-\rho g}.
+$$
 
 **为什么有负号？** 因为 $z$ 向上增加时，头顶水柱变短，压力下降。如果把“深度 $h$”定义为**向下为正**，则形式改为 $dp/dh=\rho g$，二者表达相同的物理现象。
 
 海面在 $z=\eta(x,y,t)$，若表面压力为 $p_a$，沿垂向积分：
 
-$$p(\eta)-p(z)=\int_z^\eta \frac{\partial p}{\partial z'}dz'
-=-\int_z^\eta\rho g\,dz'$$
+
+$$
+p(\eta)-p(z)=\int_z^\eta \frac{\partial p}{\partial z'}dz'
+=-\int_z^\eta\rho g\,dz'
+$$
 
 所以
 
-$$\boxed{p(x,y,z,t)=p_a(x,y,t)+\int_z^{\eta(x,y,t)}\rho(x,y,z',t)g\,dz'}.$$
+
+$$
+\boxed{p(x,y,z,t)=p_a(x,y,t)+\int_z^{\eta(x,y,t)}\rho(x,y,z',t)g\,dz'}.
+$$
 
 当 $\rho$ 近似常数、$p_a$ 水平一致：
 
-$$\boxed{p=p_a+\rho g(\eta-z)}.$$
+
+$$
+\boxed{p=p_a+\rho g(\eta-z)}.
+$$
 
 **进一步联系水平流动：** 固定 $z$ 求水平导数，$p_x=\rho g\eta_x$、$p_y=\rho g\eta_y$。当水平地转平衡也成立时，
 
-$$-fv=-\frac1\rho p_x,\qquad fu=-\frac1\rho p_y
-\quad\Longrightarrow\quad\boxed{u_g=-\frac gf\eta_y,\quad v_g=\frac gf\eta_x}.$$
+
+$$
+-fv=-\frac1\rho p_x,\qquad fu=-\frac1\rho p_y
+\quad\Longrightarrow\quad\boxed{u_g=-\frac gf\eta_y,\quad v_g=\frac gf\eta_x}.
+$$
 
 这说明**海面的微小坡度可以对应水平方向的压力梯度，并驱动地转流**。上述最后两式另需 $f\neq0$、忽略水平加速度及摩擦等条件；**静压近似本身只处理垂向力平衡**。
 
@@ -205,11 +247,17 @@ $$-fv=-\frac1\rho p_x,\qquad fu=-\frac1\rho p_y
 
 地球自转产生的科氏参数为
 
-$$\boxed{f=2\Omega\sin\varphi}.$$
+
+$$
+\boxed{f=2\Omega\sin\varphi}.
+$$
 
 如果研究范围内纬度变化较小，取参考纬度 $\varphi_0$：
 
-$$\boxed{f\approx f_0=2\Omega\sin\varphi_0=\text{常数}}.$$
+
+$$
+\boxed{f\approx f_0=2\Omega\sin\varphi_0=\text{常数}}.
+$$
 
 **优点：** 系数恒定，方程求导和求解更容易。**局限：** 无法描述 $f$ 的纬向变化带来的效应。
 
@@ -225,24 +273,39 @@ $$\boxed{f\approx f_0=2\Omega\sin\varphi_0=\text{常数}}.$$
 
 **第 2 步：** 在 $\varphi_0$ 附近展开：
 
-$$f(\varphi)\approx f(\varphi_0)+\left.\frac{df}{d\varphi}\right|_{\varphi_0}(\varphi-\varphi_0)
-=2\Omega\sin\varphi_0+2\Omega\cos\varphi_0(\varphi-\varphi_0).$$
+
+$$
+f(\varphi)\approx f(\varphi_0)+\left.\frac{df}{d\varphi}\right|_{\varphi_0}(\varphi-\varphi_0)
+=2\Omega\sin\varphi_0+2\Omega\cos\varphi_0(\varphi-\varphi_0).
+$$
 
 **第 3 步：** 在局地直角坐标中，令 $y$ 沿正北方向，$a$ 为地球半径。较小的纬度变化满足（角度必须用**弧度**）
 
-$$y-y_0\approx a(\varphi-\varphi_0).$$
+
+$$
+y-y_0\approx a(\varphi-\varphi_0).
+$$
 
 **第 4 步：** 代回并整理：
 
-$$f(y)\approx f_0+\frac{2\Omega\cos\varphi_0}{a}(y-y_0).$$
+
+$$
+f(y)\approx f_0+\frac{2\Omega\cos\varphi_0}{a}(y-y_0).
+$$
 
 定义
 
-$$\boxed{\beta=\left.\frac{\partial f}{\partial y}\right|_{y_0}=\frac{2\Omega\cos\varphi_0}{a}}.$$
+
+$$
+\boxed{\beta=\left.\frac{\partial f}{\partial y}\right|_{y_0}=\frac{2\Omega\cos\varphi_0}{a}}.
+$$
 
 若把坐标原点取在参考纬度（$y_0=0$），即得
 
-$$\boxed{f=f_0+\beta y},\qquad \frac{\partial f}{\partial x}=0,\quad\frac{\partial f}{\partial y}=\beta.$$
+
+$$
+\boxed{f=f_0+\beta y},\qquad \frac{\partial f}{\partial x}=0,\quad\frac{\partial f}{\partial y}=\beta.
+$$
 
 **牢记：** $f$ 平面保留 $f_0$，$\beta$ 平面再增加**一阶纬向变化**；它们都属于围绕特定纬度的局地近似，$\beta$ 平面也不能无限制用于全球范围。$\beta$ 的单位为 $\mathrm{m^{-1}s^{-1}}$。
 
@@ -252,7 +315,10 @@ $$\boxed{f=f_0+\beta y},\qquad \frac{\partial f}{\partial x}=0,\quad\frac{\parti
 
 海水密度写作
 
-$$\rho=\rho_0+\rho',\qquad \left|\frac{\rho'}{\rho_0}\right|\ll1.$$
+
+$$
+\rho=\rho_0+\rho',\qquad \left|\frac{\rho'}{\rho_0}\right|\ll1.
+$$
 
 在常规海水运动中，密度变化相对于平均密度通常较小。对于**惯性项、压力梯度中的分母、连续方程等**，可使用常数参考密度 $\rho_0$；但在**重力/浮力作用**中保留密度异常 $\rho'$。
 
@@ -260,22 +326,34 @@ $$\rho=\rho_0+\rho',\qquad \left|\frac{\rho'}{\rho_0}\right|\ll1.$$
 
 从垂向力项写起，$\rho\mathbf g/\rho_0$ 可分解为：
 
-$$-\frac{\rho}{\rho_0}g=-\frac{\rho_0+\rho'}{\rho_0}g=-g-\frac{\rho'}{\rho_0}g.$$
+
+$$
+-\frac{\rho}{\rho_0}g=-\frac{\rho_0+\rho'}{\rho_0}g=-g-\frac{\rho'}{\rho_0}g.
+$$
 
 其中 $-g$ 可与参考静压压力场平衡；剩余的异常项
 
-$$\boxed{b=-g\frac{\rho'}{\rho_0}}$$
+
+$$
+\boxed{b=-g\frac{\rho'}{\rho_0}}
+$$
 
 叫做**浮力加速度（buoyancy）**：若 $\rho'<0$（相对环境较轻），则 $b>0$（向上）。若把整个密度差造成的浮力也删去，会丢掉海洋**层结、斜压效应以及很多密度驱动运动**。
 
 因此，一种常见的 Boussinesq 动量方程表达是
 
-$$\boxed{\frac{D\mathbf u}{Dt}+f\mathbf k\times\mathbf u
-=-\frac1{\rho_0}\nabla p'+b\mathbf k+\text{黏性项}}$$
+
+$$
+\boxed{\frac{D\mathbf u}{Dt}+f\mathbf k\times\mathbf u
+=-\frac1{\rho_0}\nabla p'+b\mathbf k+\text{黏性项}}
+$$
 
 这里 $p'$ 表示扣除参考静压后的压力。若像课堂课件那样使用**总压力** $p$，则垂向写作
 
-$$\frac{Dw}{Dt}=-\frac1{\rho_0}\frac{\partial p}{\partial z}-\frac\rho{\rho_0}g+\cdots.$$
+
+$$
+\frac{Dw}{Dt}=-\frac1{\rho_0}\frac{\partial p}{\partial z}-\frac\rho{\rho_0}g+\cdots.
+$$
 
 **适用条件：** 密度相对扰动小、非压缩效应适合忽略。跨淡水和盐水的强密度梯度、很强的压缩变化或某些特殊对流问题，需要重新评估近似是否有效。**Boussinesq 近似与静压近似可以同时采用，也可以分别采用。**
 
@@ -300,18 +378,24 @@ $$\frac{Dw}{Dt}=-\frac1{\rho_0}\frac{\partial p}{\partial z}-\frac\rho{\rho_0}g+
 
 在课堂选用的简化条件下，忽略**非线性平流、相应的摩擦项和垂向加速度**，**保留局地时间变化**及科氏力与水平压力梯度，得到
 
-$$\boxed{\begin{aligned}
+
+$$
+\boxed{\begin{aligned}
 \frac{\partial u}{\partial t}-fv&=-\frac1\rho\frac{\partial p}{\partial x},\\
 \frac{\partial v}{\partial t}+fu&=-\frac1\rho\frac{\partial p}{\partial y},\\
 0&=-\frac1\rho\frac{\partial p}{\partial z}-g,\\
 \frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}&=0.
-\end{aligned}}$$
+\end{aligned}}
+$$
 
 盐热输运与状态方程在这套基本方程中**仍保留**：
 
-$$\frac{Ds}{Dt}=K_{sh}(s_{xx}+s_{yy})+K_{sv}s_{zz},\quad
+
+$$
+\frac{Ds}{Dt}=K_{sh}(s_{xx}+s_{yy})+K_{sv}s_{zz},\quad
 \frac{D\theta}{Dt}=K_{\theta h}(\theta_{xx}+\theta_{yy})+K_{\theta v}\theta_{zz},\quad
-\rho=\rho(\theta,s,p).$$
+\rho=\rho(\theta,s,p).
+$$
 
 **为什么还保留 $\partial_tu$？** 因为小 $Ro$ 表示**平流**相对科氏效应小，无法单凭这一点推出 $Ro_T\ll1$。如果时间变化也弱，可进一步得到地转平衡。
 
@@ -321,11 +405,14 @@ $$\frac{Ds}{Dt}=K_{sh}(s_{xx}+s_{yy})+K_{sv}s_{zz},\quad
 
 课件第二套方程保留上面的大尺度近似，另外**在水平动量方程右侧保留水平/垂向涡动摩擦扩散**：
 
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \partial_tu-fv&=-\rho^{-1}p_x+A_h(u_{xx}+u_{yy})+A_vu_{zz},\\
 \partial_tv+fu&=-\rho^{-1}p_y+A_h(v_{xx}+v_{yy})+A_vv_{zz},\\
 0&=-\rho^{-1}p_z-g.
-\end{aligned}$$
+\end{aligned}
+$$
 
 **容易混淆的点：** “水平运动考虑摩擦”说的是**摩擦力出现在 $u,v$ 两个水平动量方程中**；不意味着其中只能有水平二阶导数。水平动量的摩擦仍可能来自**垂向的剪切 $u_{zz},v_{zz}$**。课堂的第三行**垂向动量方程**则不考虑相应的摩擦修正。
 
@@ -335,11 +422,14 @@ $$\begin{aligned}
 
 当所研究运动很小、持续时间短、$Ro\gg1$，科氏效应相对惯性小，课件考虑**删除科氏加速度项**，保留局地与平流加速度、压力梯度、重力及黏性作用。例如
 
-$$\boxed{\begin{aligned}
+
+$$
+\boxed{\begin{aligned}
 \partial_tu+u u_x+v u_y+w u_z&=-\rho^{-1}p_x+A_h\nabla_h^2u+A_vu_{zz},\\
 \partial_tv+u v_x+v v_y+w v_z&=-\rho^{-1}p_y+A_h\nabla_h^2v+A_vv_{zz},\\
 \partial_tw+u w_x+v w_y+w w_z&=-\rho^{-1}p_z-g+A_h\nabla_h^2w+A_vw_{zz}.
-\end{aligned}}$$
+\end{aligned}}
+$$
 
 课件同时配有连续方程、盐热方程，具体见下图。**小尺度也要区分高 Reynolds 数和低 Reynolds 数**：某些微小尺度下黏性可非常重要；“尺度小”不能自动等价于“层流”或“忽略黏性”。
 
@@ -352,18 +442,27 @@ $$\boxed{\begin{aligned}
 
 **现实海洋通常有湍流脉动。** 如果每一个小涡旋都精细求解，计算量十分巨大；很多海洋问题更关心某段时间内**平均的速度、盐度和温度**。于是把任意瞬时量分解为
 
-$$\boxed{q(\mathbf x,t)=\overline q(\mathbf x,t)+q'(\mathbf x,t)}.$$
+
+$$
+\boxed{q(\mathbf x,t)=\overline q(\mathbf x,t)+q'(\mathbf x,t)}.
+$$
 
 例如
 
-$$u=\overline u+u',\quad v=\overline v+v',\quad w=\overline w+w',\quad
-s=\overline s+s',\quad \theta=\overline\theta+\theta',\quad p=\overline p+p'.$$
+
+$$
+u=\overline u+u',\quad v=\overline v+v',\quad w=\overline w+w',\quad
+s=\overline s+s',\quad \theta=\overline\theta+\theta',\quad p=\overline p+p'.
+$$
 
 平均符号 $\overline{\;\cdot\;}$ 指所选时间或统计平均；脉动定义使 $\overline{q'}=0$。这里需要平均算子满足通常的雷诺规则，并假定相关空间微分与平均可交换。
 
 **关键：** 虽然 $\overline{u'}=0$、$\overline{v'}=0$，一般却有
 
-$$\boxed{\overline{u'v'}\neq0,\qquad\overline{u's'}\neq0,\qquad\overline{u'\theta'}\neq0}.$$
+
+$$
+\boxed{\overline{u'v'}\neq0,\qquad\overline{u's'}\neq0,\qquad\overline{u'\theta'}\neq0}.
+$$
 
 “平均脉动为零”仅表示正负脉动平均抵消；它们的乘积仍可能具有**相关性**，正是这种相关性导致动量和物质的湍流输运。
 
@@ -371,14 +470,17 @@ $$\boxed{\overline{u'v'}\neq0,\qquad\overline{u's'}\neq0,\qquad\overline{u'\thet
 
 课堂首先以 Boussinesq 形式列出直角坐标系的瞬时基本方程，再做平均：
 
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \frac{Du}{Dt}-fv+\widetilde f w&=-\frac1{\rho_0}\frac{\partial p}{\partial x}+\mathcal D_u,\\
 \frac{Dv}{Dt}+fu&=-\frac1{\rho_0}\frac{\partial p}{\partial y}+\mathcal D_v,\\
 \frac{Dw}{Dt}-\widetilde f u&=-\frac1{\rho_0}\frac{\partial p}{\partial z}-\frac\rho{\rho_0}g+\mathcal D_w,\\
 \nabla\cdot\mathbf u&=0,\\
 \frac{Ds}{Dt}&=K_s\nabla^2s,\qquad \frac{D\theta}{Dt}=K_\theta\nabla^2\theta,\\
 \rho&=\rho(\theta,s,p).
-\end{aligned}$$
+\end{aligned}
+$$
 
 这里 $\mathcal D_u,\mathcal D_v,\mathcal D_w$ 表示课件中给出的分子黏性/有效扩散项；上式按课件给定的 $f,\widetilde f$ 符号和 $x,y,z$ 坐标约定书写，此处主要关注**时间平均后新增的脉动乘积项**。
 
@@ -392,41 +494,61 @@ $$\begin{aligned}
 
 **第 1 步：雷诺分解。**
 
-$$u=\overline u+u'.$$
+
+$$
+u=\overline u+u'.
+$$
 
 **第 2 步：展开原来的乘积。**
 
-$$u\frac{\partial u}{\partial x}
-=(\overline u+u')\left(\frac{\partial\overline u}{\partial x}+\frac{\partial u'}{\partial x}\right).$$
+
+$$
+u\frac{\partial u}{\partial x}
+=(\overline u+u')\left(\frac{\partial\overline u}{\partial x}+\frac{\partial u'}{\partial x}\right).
+$$
 
 展开为四项：
 
-$$=\overline u\frac{\partial\overline u}{\partial x}
+
+$$
+=\overline u\frac{\partial\overline u}{\partial x}
 +\overline u\frac{\partial u'}{\partial x}
 +u'\frac{\partial\overline u}{\partial x}
-+u'\frac{\partial u'}{\partial x}.$$
++u'\frac{\partial u'}{\partial x}.
+$$
 
 **第 3 步：时间平均。** 因 $\overline{u'}=0$，中间两项平均为零；剩下
 
-$$\overline{u\frac{\partial u}{\partial x}}=
+
+$$
+\overline{u\frac{\partial u}{\partial x}}=
 \overline u\frac{\partial\overline u}{\partial x}
-+\overline{u'\frac{\partial u'}{\partial x}}.$$
++\overline{u'\frac{\partial u'}{\partial x}}.
+$$
 
 **第 4 步：利用乘积求导规则。**
 
-$$u'\frac{\partial u'}{\partial x}=\frac12\frac{\partial(u'^2)}{\partial x}
+
+$$
+u'\frac{\partial u'}{\partial x}=\frac12\frac{\partial(u'^2)}{\partial x}
 \quad\Longrightarrow\quad
-\boxed{\overline{u'\frac{\partial u'}{\partial x}}=\frac12\frac{\partial\overline{u'^2}}{\partial x}}.$$
+\boxed{\overline{u'\frac{\partial u'}{\partial x}}=\frac12\frac{\partial\overline{u'^2}}{\partial x}}.
+$$
 
 不过，**仅看 $x$ 项，还不是最后课件写出的 $\partial_x\overline{u'^2}$**。因为 $u$ 方向还有 $v\partial_yu$、$w\partial_zu$，三项需要**一起使用不可压缩连续方程**整理。
 
 利用
 
-$$u_j\partial_j u_i=\partial_j(u_i u_j)-u_i\underbrace{\partial_j u_j}_{0},$$
+
+$$
+u_j\partial_j u_i=\partial_j(u_i u_j)-u_i\underbrace{\partial_j u_j}_{0},
+$$
 
 可将所有平流合成通量散度：
 
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \overline{\mathbf u\cdot\nabla u}
 &=\nabla\cdot\overline{u\mathbf u}\\
 &=\nabla\cdot\left(\overline u\,\overline{\mathbf u}+\overline{u'\mathbf u'}\right)\\
@@ -434,16 +556,20 @@ $$\begin{aligned}
 +\frac{\partial\overline{u'u'}}{\partial x}
 +\frac{\partial\overline{u'v'}}{\partial y}
 +\frac{\partial\overline{u'w'}}{\partial z}.
-\end{aligned}$$
+\end{aligned}
+$$
 
 于是，把新增项移到动量方程右侧：
 
-$$\boxed{\begin{aligned}
+
+$$
+\boxed{\begin{aligned}
 \frac{\partial\overline u}{\partial t}
 +\overline u\,\overline u_x+\overline v\,\overline u_y+\overline w\,\overline u_z
 =&-\frac1{\rho_0}\overline p_x+f\overline v-\widetilde f\overline w+\mathcal D_{\overline u}\\
 &-\partial_x\overline{u'^2}-\partial_y\overline{u'v'}-\partial_z\overline{u'w'}.
-\end{aligned}}$$
+\end{aligned}}
+$$
 
 同理，$v$、$w$ 方程右边分别出现 $-\partial_j\overline{v'u_j'}$ 和 $-\partial_j\overline{w'u_j'}$。其中形如 $-\rho_0\overline{u_i'u_j'}$ 的量称为**雷诺应力（Reynolds stress）**，它表示湍流脉动带来的平均动量输运。
 
@@ -455,30 +581,45 @@ $$\boxed{\begin{aligned}
 
 瞬时盐度方程以通用形式写作
 
-$$\frac{\partial s}{\partial t}+\mathbf u\cdot\nabla s=K_s\nabla^2s.$$
+
+$$
+\frac{\partial s}{\partial t}+\mathbf u\cdot\nabla s=K_s\nabla^2s.
+$$
 
 对不可压缩流动，使用前面相同的通量形式和平均规则：
 
-$$\boxed{\frac{\partial\overline s}{\partial t}
+
+$$
+\boxed{\frac{\partial\overline s}{\partial t}
 +\overline{\mathbf u}\cdot\nabla\overline s
 =K_s\nabla^2\overline s
--\nabla\cdot\overline{\mathbf u's'}}.$$
+-\nabla\cdot\overline{\mathbf u's'}}.
+$$
 
 其中
 
-$$-\nabla\cdot\overline{\mathbf u's'}
-=-\partial_x\overline{u's'}-\partial_y\overline{v's'}-\partial_z\overline{w's'}.$$
+
+$$
+-\nabla\cdot\overline{\mathbf u's'}
+=-\partial_x\overline{u's'}-\partial_y\overline{v's'}-\partial_z\overline{w's'}.
+$$
 
 热传导/温度方程同理：
 
-$$\boxed{\frac{\partial\overline\theta}{\partial t}
+
+$$
+\boxed{\frac{\partial\overline\theta}{\partial t}
 +\overline{\mathbf u}\cdot\nabla\overline\theta
 =K_\theta\nabla^2\overline\theta
--\nabla\cdot\overline{\mathbf u'\theta'}}.$$
+-\nabla\cdot\overline{\mathbf u'\theta'}}.
+$$
 
 它们分别表示：**湍流盐通量** $\overline{\mathbf u's'}$ 与 **湍流热通量** $\overline{\mathbf u'\theta'}$ 对平均场的贡献。连续方程仍为
 
-$$\boxed{\partial_x\overline u+\partial_y\overline v+\partial_z\overline w=0}.$$
+
+$$
+\boxed{\partial_x\overline u+\partial_y\overline v+\partial_z\overline w=0}.
+$$
 
 ![雷诺平均后的盐量、热量输运方程](/images/physical-oceanography/lesson11/slide_051.jpg)
 
@@ -488,19 +629,28 @@ $$\boxed{\partial_x\overline u+\partial_y\overline v+\partial_z\overline w=0}.$$
 
 课堂介绍的**涡动黏性 / 梯度扩散假设**：用平均量梯度来近似难以直接求出的脉动相关项，例如
 
-$$\boxed{-\overline{u'w'}=A_v\frac{\partial\overline u}{\partial z}},\qquad
+
+$$
+\boxed{-\overline{u'w'}=A_v\frac{\partial\overline u}{\partial z}},\qquad
 \boxed{-\overline{w'\theta'}=K_{\theta v}\frac{\partial\overline\theta}{\partial z}},\qquad
-\boxed{-\overline{w's'}=K_{sv}\frac{\partial\overline s}{\partial z}}.$$
+\boxed{-\overline{w's'}=K_{sv}\frac{\partial\overline s}{\partial z}}.
+$$
 
 $A$ 是动量涡动黏性系数，$K_s$ 是盐扩散系数，$K_\theta$ 是热扩散系数。课堂还把不同方向写成 $A_{ij},K_{si},K_{\theta i}$，说明湍流混合可能具有**方向差异（各向异性）**。
 
 例如把 $-\overline{u'w'}=A_v\overline u_z$ 代入平均 $u$ 方程中的垂向雷诺应力散度：
 
-$$-\partial_z\overline{u'w'}=\partial_z\left(A_v\partial_z\overline u\right).$$
+
+$$
+-\partial_z\overline{u'w'}=\partial_z\left(A_v\partial_z\overline u\right).
+$$
 
 如果 $A_v$ 还是常数，进一步成为
 
-$$\boxed{-\partial_z\overline{u'w'}=A_v\partial_{zz}\overline u}.$$
+
+$$
+\boxed{-\partial_z\overline{u'w'}=A_v\partial_{zz}\overline u}.
+$$
 
 **这一步解释了**：为什么平均流方程里常出现形式类似分子黏性的二阶导数，但采用的是**涡动黏性系数**。需要注意：将每个 $-\overline{u_i'u_j'}$ 一概写成单个梯度乘系数，是课件介绍的**简化闭合**；严格张量形式一般需要考虑对称应变率以及各向同性部分，适用范围受到流动结构限制。
 
@@ -529,23 +679,35 @@ $$\boxed{-\partial_z\overline{u'w'}=A_v\partial_{zz}\overline u}.$$
 
 大洋内部，速度梯度有时较缓，摩擦在主导平衡中可忽略；但在海气界面、海底附近，速度会在很短的垂向距离内发生明显改变。因为
 
-$$\tau\sim\rho A_v\frac{\partial\overline u}{\partial z},$$
+
+$$
+\tau\sim\rho A_v\frac{\partial\overline u}{\partial z},
+$$
 
 即使 $A_v$ 不大，**很大的垂向速度梯度**仍可能使剪切应力很重要。
 
 课堂介绍**垂向平均场边界层模型**：对于薄边界层，设平均场主要随 $z$ 变化、垂向速度相对较小，即
 
-$$|\partial_x\overline q|,|\partial_y\overline q|\ll|\partial_z\overline q|,\qquad \overline w\approx0.$$
+
+$$
+|\partial_x\overline q|,|\partial_y\overline q|\ll|\partial_z\overline q|,\qquad \overline w\approx0.
+$$
 
 在所列的进一步假设下，水平动量方程可写成“水平科氏作用与垂向摩擦”的平衡形式，例如
 
-$$\partial_t\overline u-f\overline v=\partial_z\left(A_v\partial_z\overline u\right),\quad
-\partial_t\overline v+f\overline u=\partial_z\left(A_v\partial_z\overline v\right),$$
+
+$$
+\partial_t\overline u-f\overline v=\partial_z\left(A_v\partial_z\overline u\right),\quad
+\partial_t\overline v+f\overline u=\partial_z\left(A_v\partial_z\overline v\right),
+$$
 
 而标量场近似满足
 
-$$\partial_t\overline s=\partial_z(K_{sv}\partial_z\overline s),\qquad
-\partial_t\overline\theta=\partial_z(K_{\theta v}\partial_z\overline\theta).$$
+
+$$
+\partial_t\overline s=\partial_z(K_{sv}\partial_z\overline s),\qquad
+\partial_t\overline\theta=\partial_z(K_{\theta v}\partial_z\overline\theta).
+$$
 
 这里体现的是课件展示的**边界层化简思路**，而非任意海区通用的完整边界层方程；不同风应力、压力梯度、平流与边界条件会改变具体保留项。
 
@@ -555,37 +717,61 @@ $$\partial_t\overline s=\partial_z(K_{sv}\partial_z\overline s),\qquad
 
 在海底边界层，以 $d\ge0$ 表示**距海底的向上距离**，海底粗糙度用 $z_0$ 表示。假设应力在近底某一区间近似不随高度变化：
 
-$$\boxed{-\overline{u'w'}=u_*^2=A_v\frac{d\overline u}{dd}}.$$
+
+$$
+\boxed{-\overline{u'w'}=u_*^2=A_v\frac{d\overline u}{dd}}.
+$$
 
 $u_*$ 称**摩擦速度**，单位仍是 $\mathrm{m\,s^{-1}}$；与实际平均流速 $\overline u$ 不同，其平方对应单位密度的剪切应力。引入混合长度假设：
 
-$$\boxed{A_v=\ell u_*,\qquad \ell=\kappa(d+z_0)}.$$
+
+$$
+\boxed{A_v=\ell u_*,\qquad \ell=\kappa(d+z_0)}.
+$$
 
 其中 $\kappa$ 是 **von Kármán 常数**（典型约 $0.4$）、$\ell$ 是湍流混合长度。
 
 **第 1 步：** 代入前面的应力关系：
 
-$$u_*^2=\kappa(d+z_0)u_*\frac{d\overline u}{dd}.$$
+
+$$
+u_*^2=\kappa(d+z_0)u_*\frac{d\overline u}{dd}.
+$$
 
 **第 2 步：** 两边约去一个 $u_*$：
 
-$$\boxed{\frac{d\overline u}{dd}=\frac{u_*}{\kappa(d+z_0)}}.$$
+
+$$
+\boxed{\frac{d\overline u}{dd}=\frac{u_*}{\kappa(d+z_0)}}.
+$$
 
 **第 3 步：** 积分：
 
-$$\overline u(d)=\frac{u_*}{\kappa}\ln(d+z_0)+C.$$
+
+$$
+\overline u(d)=\frac{u_*}{\kappa}\ln(d+z_0)+C.
+$$
 
 此处 $\ln$ 的自变量必须最终写成**无量纲的比值**。以方便的参考边界条件 $\overline u(0)=0$ 为例，常数
 
-$$C=-\frac{u_*}{\kappa}\ln z_0.$$
+
+$$
+C=-\frac{u_*}{\kappa}\ln z_0.
+$$
 
 得到
 
-$$\boxed{\overline u(d)=\frac{u_*}{\kappa}\ln\left(\frac{d+z_0}{z_0}\right)}.$$
+
+$$
+\boxed{\overline u(d)=\frac{u_*}{\kappa}\ln\left(\frac{d+z_0}{z_0}\right)}.
+$$
 
 当 $d\gg z_0$，得到常见的**对数速度分布**：
 
-$$\overline u(d)\approx\frac{u_*}{\kappa}\ln\left(\frac d{z_0}\right).$$
+
+$$
+\overline u(d)\approx\frac{u_*}{\kappa}\ln\left(\frac d{z_0}\right).
+$$
 
 > **课件书写小提示：** 投影片最后直接给出含 $\ln(|z|+z_0)$ 的关系，省略了积分常数/参考长度。严格写法应如上用比值构成无量纲对数。实际海底存在黏性底层、粗糙元影响及对数层有效高度范围，不能把此关系从海底一直外推到全部水深。
 
@@ -695,14 +881,20 @@ $$\overline u(d)\approx\frac{u_*}{\kappa}\ln\left(\frac d{z_0}\right).$$
 
 **规则波的数学表示：**
 
-$$\boxed{\eta(x,t)=a\cos(kx-\omega t+\phi)},\quad
-k=\frac{2\pi}{L},\ \omega=\frac{2\pi}{T},\ c=\frac\omega k=\frac LT.$$
+
+$$
+\boxed{\eta(x,t)=a\cos(kx-\omega t+\phi)},\quad
+k=\frac{2\pi}{L},\ \omega=\frac{2\pi}{T},\ c=\frac\omega k=\frac LT.
+$$
 
 这里 $\eta$ 表示相对平均海面的位移，$\phi$ 是初相位，$k$ 为波数，$\omega$ 为角频率。
 
 **关于“波浪三要素”**：课堂进一步提到 $L,T,h$ 作为研究规则波传播的重要量。在线性**表面重力波**、无流且满足通常理想流体假设时，色散关系为
 
-$$\boxed{\omega^2=gk\tanh(kh)}.$$
+
+$$
+\boxed{\omega^2=gk\tanh(kh)}.
+$$
 
 知道水深 $h$ 和周期 $T$，即可通过色散关系求波数 $k$、波长 $L$。但**这些量不能独立确定波高 $H$**；振幅还由风能输入、初始条件与波浪能量等决定。本公式属于理解本讲波浪参数的**理论补充**，详细推导安排在下一讲。
 
@@ -714,12 +906,18 @@ $$\boxed{\omega^2=gk\tanh(kh)}.$$
 
 **原因是多个波动分量的叠加（superposition）**。用最简单的两个分量说明：
 
-$$\eta_1=a_1\cos(k_1x-\omega_1t+\phi_1),\qquad
-\eta_2=a_2\cos(k_2x-\omega_2t+\phi_2).$$
+
+$$
+\eta_1=a_1\cos(k_1x-\omega_1t+\phi_1),\qquad
+\eta_2=a_2\cos(k_2x-\omega_2t+\phi_2).
+$$
 
 在近似线性、可叠加的情况下，
 
-$$\boxed{\eta=\eta_1+\eta_2}.$$
+
+$$
+\boxed{\eta=\eta_1+\eta_2}.
+$$
 
 **课堂图例可以分成三种：**
 
@@ -731,7 +929,10 @@ $$\boxed{\eta=\eta_1+\eta_2}.$$
 
 对**相同频率和波数**的两波，合成振幅可写为
 
-$$\boxed{A=\sqrt{a_1^2+a_2^2+2a_1a_2\cos(\phi_1-\phi_2)}}.$$
+
+$$
+\boxed{A=\sqrt{a_1^2+a_2^2+2a_1a_2\cos(\phi_1-\phi_2)}}.
+$$
 
 当 $\Delta\phi=0$，$A=a_1+a_2$；当 $\Delta\phi=\pi$，$A=|a_1-a_2|$。这说明相位关系能够决定波浪是**增强还是抵消**。
 
@@ -778,7 +979,10 @@ $$\boxed{A=\sqrt{a_1^2+a_2^2+2a_1a_2\cos(\phi_1-\phi_2)}}.$$
 
 课堂给出的**经典几何极限近似**为
 
-$$\boxed{\frac HL\lesssim\frac17}.$$
+
+$$
+\boxed{\frac HL\lesssim\frac17}.
+$$
 
 **使用边界：** 这一近似对应经典极限陡峭波的数量级，主要联系深水周期重力波的理论讨论；**不能用作所有水深、所有随机波浪破碎的统一硬阈值**。浅水浪在近岸破碎时，水深及地形也十分重要。
 
@@ -790,11 +994,17 @@ $$\boxed{\frac HL\lesssim\frac17}.$$
 
 定义主频（或谱峰）处的相速度：
 
-$$c_p=\frac{L_p}{T_p}=\frac{\omega_p}{k_p}.$$
+
+$$
+c_p=\frac{L_p}{T_p}=\frac{\omega_p}{k_p}.
+$$
 
 风龄/波龄（本课叫**波龄**）定义为
 
-$$\boxed{\beta_{\mathrm{age}}=\frac{c_p}{U_{10}}}.$$
+
+$$
+\boxed{\beta_{\mathrm{age}}=\frac{c_p}{U_{10}}}.
+$$
 
 其中 $U_{10}$ 是 10 m 高度的当地风速。$c_p$ 代表谱峰波的**相速度**，而 $U_{10}$ 代表局地风速。
 
@@ -815,12 +1025,18 @@ $$\boxed{\beta_{\mathrm{age}}=\frac{c_p}{U_{10}}}.$$
 
 **可先做的理论演算（补充；不是课堂公布的标准答案）：** 假设是**无流的深水线性重力波**，其色散关系可化简为
 
-$$\omega^2=gk,\quad c_p=\frac\omega k=\sqrt{\frac gk}=\frac{gT_p}{2\pi},\quad L_p=\frac{2\pi c_p^2}{g}.$$
+
+$$
+\omega^2=gk,\quad c_p=\frac\omega k=\sqrt{\frac gk}=\frac{gT_p}{2\pi},\quad L_p=\frac{2\pi c_p^2}{g}.
+$$
 
 再假设 $\beta_{\mathrm{age}}=1$、$c_p=U_{10}=20\,\mathrm{m/s}$，则
 
-$$T_p=\frac{2\pi c_p}{g}\approx12.8\,\mathrm s,\qquad
-\boxed{L_p=\frac{2\pi(20)^2}{9.81}\approx256\,\mathrm m}.$$
+
+$$
+T_p=\frac{2\pi c_p}{g}\approx12.8\,\mathrm s,\qquad
+\boxed{L_p=\frac{2\pi(20)^2}{9.81}\approx256\,\mathrm m}.
+$$
 
 **能够得到的是这组假设下的特征波长与周期。** 仅凭 $U_{10}=20\,\mathrm{m/s}$ 无法唯一求出“最大波高”，还需要风区、风时、波能谱或经验成长关系。即便用 $H/L\sim1/7$ 得到约 $37\,\mathrm m$，它也只是特定理想深水极限陡度的形式估计，**不能视为这个风速下真实海况的最大波高**。
 
@@ -830,23 +1046,35 @@ $$T_p=\frac{2\pi c_p}{g}\approx12.8\,\mathrm s,\qquad
 
 **有效波高 $H_{1/3}$**：把某一观测记录中的**单个波高**从大到小排列，取**最高三分之一波浪的平均波高**：
 
-$$\boxed{H_{1/3}=\frac1M\sum_{i=1}^{M}H_{(i)}},\qquad M\approx N/3.$$
+
+$$
+\boxed{H_{1/3}=\frac1M\sum_{i=1}^{M}H_{(i)}},\qquad M\approx N/3.
+$$
 
 这里 $H_{(1)}\ge H_{(2)}\ge\cdots\ge H_{(N)}$ 为排序后的**单个波高**。与这部分波浪相关的平均周期可定义**有效波周期**，具体统计定义依观测规范而定。
 
 **例（便于理解的示例数据）：** 若量到 9 个单个波高（米）：
 
-$$1.2,\ 2.0,\ 0.9,\ 1.5,\ 2.4,\ 1.8,\ 0.7,\ 2.1,\ 1.4,$$
+
+$$
+1.2,\ 2.0,\ 0.9,\ 1.5,\ 2.4,\ 1.8,\ 0.7,\ 2.1,\ 1.4,
+$$
 
 排在最高三分之一的三个是 $2.4,2.1,2.0$，所以
 
-$$H_{1/3}=\frac{2.4+2.1+2.0}{3}\approx\boxed{2.17\,\mathrm m}.$$
+
+$$
+H_{1/3}=\frac{2.4+2.1+2.0}{3}\approx\boxed{2.17\,\mathrm m}.
+$$
 
 **关键校核：** 课堂口头讲述在说明叠加之后提到“把正弦波分量按波高排列”，容易引起误解。严格的**时域 $H_{1/3}$**是从记录中识别**单个实际波（如相邻上跨零点间）**、计算单波波高后排序；**不能直接把傅里叶分解出的正弦分量振幅排序充当 $H_{1/3}$**。
 
 随机波理论中，还常用基于能谱零阶矩的
 
-$$H_{m0}=4\sqrt{m_0}.$$
+
+$$
+H_{m0}=4\sqrt{m_0}.
+$$
 
 在某些波谱假设下，$H_{m0}$ 与 $H_{1/3}$ 接近，但二者的**统计构造不同**。该谱定义属于拓展内容，后续讲随机海浪时再系统掌握。
 
@@ -935,30 +1163,45 @@ $$H_{m0}=4\sqrt{m_0}.$$
 
 **第 1 步：任意控制体积的热量收支**
 
-$$\frac{d}{dt}\int_V\rho c_p\theta\,dV
-=-\oint_{\partial V}\left(\rho c_p\theta\mathbf u+\mathbf q\right)\cdot\mathbf n\,dA.$$
+
+$$
+\frac{d}{dt}\int_V\rho c_p\theta\,dV
+=-\oint_{\partial V}\left(\rho c_p\theta\mathbf u+\mathbf q\right)\cdot\mathbf n\,dA.
+$$
 
 **第 2 步：用高斯散度定理把面积分变为体积分**
 
-$$\int_V\left[\frac{\partial(\rho c_p\theta)}{\partial t}
+
+$$
+\int_V\left[\frac{\partial(\rho c_p\theta)}{\partial t}
 +\nabla\cdot(\rho c_p\theta\mathbf u)
-+\nabla\cdot\mathbf q\right]dV=0.$$
++\nabla\cdot\mathbf q\right]dV=0.
+$$
 
 **第 3 步：因为控制体积任意，所以被积函数为零**
 
-$$\frac{\partial(\rho c_p\theta)}{\partial t}
-+\nabla\cdot(\rho c_p\theta\mathbf u)=\nabla\cdot(k\nabla\theta).$$
+
+$$
+\frac{\partial(\rho c_p\theta)}{\partial t}
++\nabla\cdot(\rho c_p\theta\mathbf u)=\nabla\cdot(k\nabla\theta).
+$$
 
 **第 4 步：将左侧乘积按连续性方程展开**
 
-$$\rho c_p\left(\frac{\partial\theta}{\partial t}+\mathbf u\cdot\nabla\theta\right)
+
+$$
+\rho c_p\left(\frac{\partial\theta}{\partial t}+\mathbf u\cdot\nabla\theta\right)
 +c_p\theta\underbrace{\left[\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf u)\right]}_{=0}
-=\nabla\cdot(k\nabla\theta).$$
+=\nabla\cdot(k\nabla\theta).
+$$
 
 若 $\rho,c_p,k$ 为常数，得到
 
-$$\boxed{\frac{D\theta}{Dt}=\kappa_T\nabla^2\theta},\qquad
-\kappa_T=\frac{k}{\rho c_p}.$$
+
+$$
+\boxed{\frac{D\theta}{Dt}=\kappa_T\nabla^2\theta},\qquad
+\kappa_T=\frac{k}{\rho c_p}.
+$$
 
 这是课堂复习所说的“**热量守恒 + 高斯公式 + 连续性方程消项**”的完整主线。实际海洋还可包含太阳辐射、盐度及压缩等影响；课堂作业基础推导应先说明自己采用了哪些简化。
 
@@ -968,29 +1211,47 @@ $$\boxed{\frac{D\theta}{Dt}=\kappa_T\nabla^2\theta},\qquad
 
 令海面位置满足
 
-$$F(x,y,z,t)=z-\eta(x,y,t)=0.$$
+
+$$
+F(x,y,z,t)=z-\eta(x,y,t)=0.
+$$
 
 无质量交换时，海水质点沿自由表面运动，因此 $DF/Dt=0$，展开得到
 
-$$\boxed{\eta_t+u\eta_x+v\eta_y-w=0}.$$
+
+$$
+\boxed{\eta_t+u\eta_x+v\eta_y-w=0}.
+$$
 
 有质量交换时，令课件中的 $b$ 为法向淡水质量通量参数（符号方向按课件定义），并使用界面速度 $\mathbf C$ 与海水速度 $\mathbf u$：
 
-$$ (\mathbf u-\mathbf C)\cdot\mathbf n=\frac b\rho\cos\gamma,
+
+$$
+ (\mathbf u-\mathbf C)\cdot\mathbf n=\frac b\rho\cos\gamma,
 \quad \mathbf n=\frac{\nabla F}{|\nabla F|},\quad
-\mathbf C\cdot\mathbf n=-\frac{F_t}{|\nabla F|}.$$
+\mathbf C\cdot\mathbf n=-\frac{F_t}{|\nabla F|}.
+$$
 
 代入、乘以 $|\nabla F|$，再用 $F_z=1$：
 
-$$F_t+\mathbf u\cdot\nabla F=\frac b\rho F_z=\frac b\rho.$$
+
+$$
+F_t+\mathbf u\cdot\nabla F=\frac b\rho F_z=\frac b\rho.
+$$
 
 对 $F=z-\eta$ 展开：
 
-$$-\eta_t-u\eta_x-v\eta_y+w=\frac b\rho.$$
+
+$$
+-\eta_t-u\eta_x-v\eta_y+w=\frac b\rho.
+$$
 
 最终
 
-$$\boxed{\eta_t+u\eta_x+v\eta_y-w=-\frac b\rho}.$$
+
+$$
+\boxed{\eta_t+u\eta_x+v\eta_y-w=-\frac b\rho}.
+$$
 
 这里的右端号数与**质量通量 $b$ 的符号约定**直接相关。可用“只有蒸发、没有水平方向运动”作检验：若 $b>0$ 表示**净质量流出海洋**，则 $\eta_t=-b/\rho<0$，海面下降，符合直觉。
 
@@ -998,7 +1259,10 @@ $$\boxed{\eta_t+u\eta_x+v\eta_y-w=-\frac b\rho}.$$
 
 **有关标量边界条件的资料差异：** 这次作业列表第 4 题的投影片写的是“**温度边界条件**”，而老师在复习时切换的几张演示页详细写的是**盐量边界条件**：盐本身不随纯淡水蒸发/降雨而直接穿越界面，但淡水质量交换会影响海面盐度通量边界条件。老师给出的一个表达是
 
-$$\boxed{\nabla s\cdot\mathbf n=\frac{bs}{\rho K_s}\cos\gamma}$$
+
+$$
+\boxed{\nabla s\cdot\mathbf n=\frac{bs}{\rho K_s}\cos\gamma}
+$$
 
 （课件用 $k_D=k/\rho$ 表示盐扩散系数，正负号依前述通量约定）。
 

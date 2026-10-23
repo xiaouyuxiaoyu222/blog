@@ -1,5 +1,5 @@
 ---
-title: MacroEconomics-Lesson4：消费、储蓄、投资与货币市场
+title: MacroEconomics-Lesson5：消费、储蓄、投资与货币市场
 published: 2026-10-15
 description: 消费函数与储蓄函数、消费与储蓄倾向、投资函数及边际效率、货币需求、货币供给与货币市场均衡；包含课堂作业和课后思考题详解
 tags: [宏观经济学]

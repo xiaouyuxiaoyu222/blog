@@ -1,5 +1,5 @@
 ---
-title: 海水的基本特征和主要运动形式（二）
+title: Oceanography-Lesson4：海水的基本特征和主要运动形式（二）
 published: 2026-09-23
 description: 海水密度与状态方程、水团及 T–S 曲线、混合层与跃层、海水的四种主要运动形式
 tags: [物理海洋学]

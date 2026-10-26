@@ -1,1125 +1,1273 @@
 ---
-title: Oceanography-Lesson12：海水运动方程的简化与应用（续）· 波浪动力学概述
+title: Oceanography-Lesson12：基本方程的简化、雷诺平均与波浪动力学概述
 published: 2026-10-21
-description: "物理海洋学第12讲：无量纲数与常用近似、简化方程组、雷诺平均和垂向边界层、海浪的概念与形成、波的要素、叠加、成长和海况；含第二次作业解答。"
+description: "物理海洋学 2026-10-21 课堂笔记：无量纲数、四种近似、简化方程组、雷诺平均、对数边界层、海浪的定义与成长及随机波。"
 tags: [物理海洋学]
 category: 课程笔记
 draft: false
 ---
 
-## 重要通知：作业与期中考试
+## 作业与期中考试提醒（优先阅读）
 
-> **以下信息来自 2026-10-21 的课堂录音，涉及成绩，请优先阅读。**
+> **课堂明确事项｜2026-10-21，录音约 23:51—34:10、53:02—56:11。** 本节课讲解并要求完成**第三至第五章作业（第二次）**。老师强调：**期中前共有三次作业**，第三次预计 **10 月 28 日（周三）**布置；**强烈建议 10 月 30 日（周五）前将三次作业完成并交给助教**，便于老师批阅后在 **11 月 2 日（周一）**讲评。**11 月 4 日（周三）期中考试**，老师估计约 **80% 的试题与平时作业密切相关**。这属于老师的课堂预估，并不代表保证原题照搬。
+>
+> **成绩相关：** 老师表示，**期中考试前交作业，即使晚于 10 月 30 日，分数按同一标准处理**；**期中之后才补交可能被折算扣分**，课堂以“本来可得 100 分，可能只得 60 分”为例，**60% 并非宣布的固定折扣率**。录音机器转写将考试方式记作“B 卷”，发音疑似“闭卷”，**考试是否闭卷仍需向老师或助教确认**。
 
-- **第二次作业已布置**：覆盖第三至第五章，共 **7 道大题**，原题及参考解答见文末。第 3、4 题要求写出**推导过程**，第 2 题的运动方程须写成**矢量形式**，第 5 题须写成**直角坐标分量形式**；请注意老师对不同表示形式的要求。
-- **第三次作业**：老师预计于 **10 月 28 日（周三）**布置；期中考试前合计三次作业。
-- **建议交作业时间**：尽量于 **10 月 30 日（周五）前**将前三次作业交给助教，以便老师检查典型错误。老师表示较迟但仍在期中考试前交的作业，原则上与提前交分数相同；**期中考试后补交可能折减得分**。
-- **作业讲评**：预计 **11 月 2 日（周一）**在课上讲解典型错误和参考答案。
-- **期中考试**：预计 **11 月 4 日（周三）**，老师提到采用 **B 卷**；并表示估计**约 80% 的题目与作业密切相关**，这是老师的课堂预估，不能视作最终考卷的已确定比例。
-- **本章学习安排**：本节开始第六章波浪动力学；下周计划学习规则波理论和随机海浪统计方法。
+**第二次作业的七道题（依课堂投影片）：**
+
+1. 作用于海水微团的力有哪些？简述各力的定义、表达式与特征。
+2. 写出描述海水运动的**控制方程（运动方程）的向量形式**，解释每一项的物理意义。
+3. 基于热量守恒，**推导**海水热传导方程。
+4. **推导**自由海面**有质量交换**时的运动学边界条件和温度边界条件。
+5. 写出直角坐标系下海水**平均流**的基本方程组，说明各项意义、平均流与瞬时流方程组的异同，并导出自由海面**时间平均盐量**满足的边界条件。
+6. 简述简化海水方程组的尺度分析思路，给出 **Rossby 数**与 **Ekman 数**的定义和物理意义。
+7. 解释 **$f$ 平面、$\beta$ 平面、静压、Boussinesq 近似**，分别说明有效性条件。
+
+![老师公布的第三至第五章第二次作业题目](/images/physical-oceanography/lesson11/slide_023.jpg)
+
+**老师对作答形式的特别强调：** 第二题必须写**向量式**，手写时应在速度等向量符号上加箭头（例如 $\vec u$），不能只用普通字母假装粗体；第五题必须写出 $x,y,z$ 分量，并明确表示**时间平均**的上横线 $\overline u$。第三、四题要写出**中间推导**，只抄结果不符合要求。作业中的向量箭头与平均号代表完全不同的意思。
 
 ---
 
 ## 概述
 
-本讲分成两个相连的部分：
+**本讲的知识主线：**
 
-1. **第三至第五章的总结与收束**：如何比较动力方程各项的量级，什么时候能用静压、$f$ 平面、$\beta$ 平面和 Boussinesq 近似；如何得到大尺度、小尺度以及雷诺平均的运动方程；在海面、海底边界层为什么必须重新考虑湍流摩擦。
-2. **第六章：波浪动力学——概述**：海浪的物理意义、风浪与涌浪、规则波的基本参数、复杂海面的波浪叠加、风浪生长条件、波浪破碎、波龄和有效波高。
+**量纲分析与近似条件** $\longrightarrow$ **简化海水运动方程** $\longrightarrow$ **湍流的雷诺平均与参数化** $\longrightarrow$ **海底边界层** $\longrightarrow$ **把前面的方法用于海浪问题**。
 
-**逻辑主线**：基本方程 $\rightarrow$ 尺度分析 $\rightarrow$ 合理简化 $\rightarrow$ 适当边界条件 $\rightarrow$ 研究真实海洋现象（从海浪开始）。
+前半节承接第三至第五章，具体覆盖“常用简化方程组”“平均场方程及垂向边界层模型”；后半节正式进入**第六章《波浪动力学》第一节：概述**。本次波浪部分主要建立物理概念、研究动机和问题框架，**线性波控制方程的详细求解、随机波谱分析是老师预告的后续内容**。
+
+### 本讲最值得先掌握的结论
+
+- **Rossby 数 $Ro=U/(fL)$**：衡量平流加速度相对科氏加速度的重要性，$Ro\ll1$ 时平流项可在相应尺度下近似忽略。
+- **静压近似 $\partial p/\partial z=-\rho g$**：垂向上主要由压力梯度与重力平衡；不意味着水平速度为零。
+- **$f$ 平面 $f=f_0$** 与 **$\beta$ 平面 $f=f_0+\beta y$**：分别忽略、线性保留科氏参数的纬向变化。
+- **Boussinesq 近似**：在密度相对变化很小时，以 $\rho_0$ 处理多数惯性与梯度项，保留密度差引起的浮力效应。
+- **雷诺平均**：将瞬时量写作平均值加脉动值，非线性平流项的平均会额外产生 $-\partial_j\overline{u_i'u_j'}$；需要湍流闭合。
+- **海浪**：课堂主要讨论**风生成的表面重力波**，区分**风浪**和**涌浪**，并以风速、风区、风时、波龄等分析成长过程。
 
 ## 目录
 
-- [一、尺度分析与无量纲数（复习）](#一尺度分析与无量纲数复习)
-- [二、四种常用近似（复习）](#二四种常用近似复习)
-- [三、几种简化运动方程组](#三几种简化运动方程组)
-- [四、Boussinesq 近似下的雷诺平均方程](#四boussinesq-近似下的雷诺平均方程)
-- [五、垂向边界层与对数边界层](#五垂向边界层与对数边界层)
-- [六、波浪动力学概述](#六波浪动力学概述)
-- [七、课堂思考题](#七课堂思考题)
-- [八、第二次作业：题目及参考解答](#八第二次作业题目及参考解答)
+- [一、尺度分析与无量纲数复习](#一尺度分析与无量纲数复习)
+- [二、四种常用近似](#二四种常用近似)
+- [三、常用的几种简化方程组](#三常用的几种简化方程组)
+- [四、平均场方程：雷诺平均与湍流闭合](#四平均场方程雷诺平均与湍流闭合)
+- [五、垂向边界层模型与对数速度分布](#五垂向边界层模型与对数速度分布)
+- [六、第六章波浪动力学：概述](#六第六章波浪动力学概述)
+- [七、课堂重点与易错点](#七课堂重点与易错点)
+- [八、依据作业的自测清单](#八依据作业的自测清单)
 
 ---
 
-## 一、尺度分析与无量纲数（复习）
+## 一、尺度分析与无量纲数复习
 
-### 为什么需要尺度分析？
+### 1.1 为什么要进行尺度分析？
 
-海水运动方程包含局地加速度、平流加速度、科氏力、气压梯度力、重力以及湍流（或黏性）摩擦力。真实海洋中，各项大小随研究对象的**空间尺度、速度尺度和时间尺度**改变。
+海水动量方程包含：**局地加速度、平流加速度、科氏力、压强梯度力、重力和黏性/湍流摩擦力**。真实海洋的运动跨越厘米到千公里、秒到数年的尺度，无法让每一种过程在每个问题中都同等重要。
 
-> **尺度分析的目的**：先估计每一项的典型量级，再按量级比较决定哪些项必须保留、哪些项可以在特定前提下忽略。省略项时一定要说明其相对于哪一项很小。
+尺度分析的逻辑：
 
-取特征尺度：水平尺度 $L$、垂向尺度 $D$、水平流速 $U$、垂向流速 $W$、时间尺度 $T$、科氏参数量级 $F=|f|$；水平和垂向黏性系数分别记为 $A_h$、$A_z$。
+1. 为所研究运动选取典型尺度：水平长度 $L$、垂向厚度 $D$、水平速度 $U$、垂向速度 $W$、时间尺度 $T$。
+2. 把方程中的每一项估计为具有相同量纲的**特征大小**，例如 $\partial u/\partial t\sim U/T$，$u\partial u/\partial x\sim U^2/L$。
+3. 以某个参考项（课堂以**科氏加速度 $fU$**）除遍全式，得到无量纲系数。
+4. 判断系数相对于 $1$ 的量级；**明显远小于 $1$ 的项**在满足假设时才能略去。
 
-以 $x$ 向动量方程为例：
-
-$$
-\frac{\partial u}{\partial t}
-+u\frac{\partial u}{\partial x}
-+v\frac{\partial u}{\partial y}
-+w\frac{\partial u}{\partial z}
--fv+f\cot\varphi\,w
-=-\frac{1}{\rho}\frac{\partial p}{\partial x}
-+A_h\nabla_h^2u+A_z\frac{\partial^2u}{\partial z^2}.
-$$
-
-各项（按加速度量纲）对应的尺度为：
-
-| 项 | 特征量级 | 说明 |
-| --- | --- | --- |
-| 局地加速度 $\partial u/\partial t$ | $U/T$ | 固定位置上的速度随时间变化 |
-| 水平平流 $u\partial_xu+v\partial_yu$ | $U^2/L$ | 流动将速度差异输送到别处 |
-| 垂向平流 $w\partial_zu$ | $WU/D$ | 流动在上下层间的输运 |
-| 科氏加速度 $fv$ | $FU$ | 地球自转的作用 |
-| 水平压强梯度加速度 | $P/(\rho L)$ | 受压力场空间变化驱动 |
-| 水平黏性项 | $A_hU/L^2$ | 水平方向动量扩散 |
-| 垂向黏性项 | $A_zU/D^2$ | 垂直方向动量扩散 |
-
-如果流动近似不可压缩，连续性方程给出 $U/L\sim W/D$，因此
+以包含水平/垂向黏性系数 $A_h,A_v$ 的 $x$ 方向方程为例（暂用 $fU$ 代表科氏项的量级）：
 
 $$
-\frac{W}{U}\sim\frac{D}{L}.
+\underbrace{\frac{\partial u}{\partial t}}_{U/T}
++\underbrace{u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}}_{U^2/L}
++\underbrace{w\frac{\partial u}{\partial z}}_{UW/D}
+-\underbrace{fv}_{fU}
++\underbrace{\widetilde f w}_{\widetilde f W}
+=-\frac1\rho\frac{\partial p}{\partial x}
++A_h\nabla_h^2u+A_v\frac{\partial^2u}{\partial z^2}.
 $$
 
-![尺度分析与 Rossby、Ekman 数的原课件](/images/physical-oceanography/lesson12/slide_004.jpg)
+其中 $\widetilde f=2\Omega\cos\varphi$ 为旋转矢量水平分量对应的系数；$f=2\Omega\sin\varphi$ 为常用科氏参数。绝大多数大尺度海洋方程中，$\widetilde fw$ 也可以进一步略去，但需满足垂向速度很小等条件。
 
-### 1. 纵横比 $\delta$
+![水平动量方程中各项的尺度及 Rossby、Ekman 数定义](/images/physical-oceanography/lesson11/slide_004.jpg)
 
-$$
-\delta=\frac{D}{L}\sim\frac{W}{U}.
-$$
+### 1.2 纵横比 $\delta$
 
-- **物理意义**：运动的垂向厚度与水平宽度的比值。
-- **大洋尺度**：水平可达上千公里、垂向通常只有几公里，$\delta\ll1$，几何上可视作一层很薄的流体。
-- **作用**：尤其有利于比较垂直动量方程中各项的量级，是静压近似的重要依据。
-
-### 2. Rossby 数 $Ro$
 
 $$
-Ro=\frac{U^2/L}{FU}=\frac{U}{FL}.
+\boxed{\delta=\frac DL},\qquad D=\text{垂向特征尺度},\ L=\text{水平特征尺度}.
 $$
 
-它比较的是**非线性水平平流加速度与科氏加速度**：
+例如，研究大洋环流时若选 $D\sim10^3\,\mathrm m$、$L\sim10^6\,\mathrm m$，那么 $\delta\sim10^{-3}\ll1$。这说明研究区域在几何上“很薄”。
 
-- $Ro\ll1$：大尺度旋转效应占优势，平流加速度相对较弱。
-- $Ro\sim1$：平流与科氏效应同等重要。
-- $Ro\gg1$：小尺度运动的惯性/平流效应相对更显著。
+**由不可压缩连续方程进一步理解：**
 
-**课堂提问**：Rossby 数是哪两项之比？答案是 $U^2/L$ 与 $FU$；写成 $U/(FL)$ 只是同一个比值的化简。
-
-### 3. 时变 Rossby 数 $Ro_T$
 
 $$
-Ro_T=\frac{U/T}{FU}=\frac{1}{FT}.
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0
+\quad\Longrightarrow\quad\frac UL\sim\frac WD
+\quad\Longrightarrow\quad\boxed{\frac WU\sim\frac DL=\delta}.
 $$
 
-若把 $1/F$ 理解为自转影响的特征调整时间，则
+因此，在该典型尺度估计成立时，$W\sim\delta U$，垂向运动速度通常远小于水平运动速度。**注意：$W\ll U$ 不等于 $w=0$**，垂向速度仍参与物质输运与连续方程。
+
+### 1.3 Rossby 数 $Ro$
+
 
 $$
-Ro_T=\frac{\text{旋转调整的特征时间}}{\text{所研究运动的特征时间}}.
+\boxed{Ro=\frac{U^2/L}{fU}=\frac{U}{fL}}.
 $$
 
-它反映**局地加速度相对科氏加速度的重要性**。要特别注意分子分母的顺序：$Ro_T=1/(FT)$，不能随意反过来写。
+这里严格的尺度比较使用 $|f|$ 的大小；带符号的 $f$ 用于实际动力方程。
 
-### 4. Ekman 数 $E_h$、$E_z$
+- **分子 $U^2/L$**：水平平流加速度的量级（非线性惯性效应）。
+- **分母 $fU$**：科氏加速度的量级。
+- $Ro\ll1$：科氏项相对平流项重要，可做**小 Rossby 数近似**；是否达到严格地转平衡，还要看**时间变化项、摩擦项**等。
+- $Ro\sim1$：两项量级相当，不能忽略惯性。
+- $Ro\gg1$：平流惯性主导，常见于旋转效应较弱的短小尺度流动。
 
-$$
-E_h=\frac{A_hU/L^2}{FU}=\frac{A_h}{FL^2},
-\qquad
-E_z=\frac{A_zU/D^2}{FU}=\frac{A_z}{FD^2}.
-$$
+**例（尺度判断，辅助理解）：** 取 $U=0.1\,\mathrm{m\,s^{-1}}$、$L=10^6\,\mathrm m$、$|f|=10^{-4}\,\mathrm{s^{-1}}$，则 $Ro=10^{-3}$。换成 $L=10\,\mathrm m$，保持另外两量不变，$Ro=100$。可见“能否略去科氏力”高度依赖研究尺度。
 
-- $E_h$：**水平黏性（湍流摩擦）与科氏效应**之比。
-- $E_z$：**垂向黏性（湍流摩擦）与科氏效应**之比。
-- $E\ll1$ 说明在所选择的运动尺度上黏性项相对较弱；靠近海面和海底，速度的垂向变化可能很大，不能仅凭大洋内部的尺度结论删除边界层摩擦。
+### 1.4 时间 Rossby 数 $Ro_T$
 
-### 5. Péclet 数 $Pe_h$、$Pe_z$（课堂补充）
+将局地加速度与科氏项相比：
 
-从温度平流—扩散方程出发：
 
 $$
-\frac{\partial\theta}{\partial t}
-+u\theta_x+v\theta_y+w\theta_z
-=K_h(\theta_{xx}+\theta_{yy})+K_z\theta_{zz}.
+\boxed{Ro_T=\frac{U/T}{fU}=\frac1{fT}}\quad(\text{量级比较取 }|f|).
 $$
 
-比较热量平流与热扩散的特征量级：
+课堂将其解释为**地转调整特征时间 $1/|f|$ 与运动自身时间尺度 $T$ 的比值**：
+
 
 $$
-Pe_h=\frac{U\Theta/L}{K_h\Theta/L^2}=\frac{UL}{K_h},
-\qquad
-Pe_z=\frac{W\Theta/D}{K_z\Theta/D^2}=\frac{WD}{K_z}.
+Ro_T=\frac{T_{\mathrm{rot}}}{T},\qquad T_{\mathrm{rot}}\sim\frac1{|f|}.
 $$
 
-这里 $\Theta$ 为特征温差，$K_h,K_z$ 为**热扩散系数**；$W\sim UD/L$。
+$Ro_T\ll1$ 时，局地加速度相对科氏项较小。**$Ro$ 控制非线性平流，$Ro_T$ 控制局地随时间变化，二者须分开判断。**
 
-- $Pe\ll1$：扩散相对重要，在其他条件适当时可近似 $\nabla^2\theta\approx0$（具体需考虑各向异性）。
-- $Pe\gg1$：平流相对重要；若热扩散可忽略且无热源，沿流体质点有 $D\theta/Dt\approx0$。
+### 1.5 水平、垂向 Ekman 数
 
-![水平与垂向 Péclet 数](/images/physical-oceanography/lesson12/slide_009.jpg)
 
-> **容易混淆**：Rossby 数比较平流与科氏项；Ekman 数比较黏性与科氏项；Péclet 数比较热平流与热扩散。它们使用的特征尺度、比较基准不同，不能相互替代。
+$$
+\boxed{E_h=\frac{A_hU/L^2}{fU}=\frac{A_h}{fL^2}},\qquad
+\boxed{E_v=\frac{A_vU/D^2}{fU}=\frac{A_v}{fD^2}}.
+$$
+
+实际比较力的大小时，同样使用 $|f|$。$A_h,A_v$ 是在所用模型中对应的黏性或有效涡动黏性系数，分别乘水平、垂向的速度二阶导数。
+
+- 物理含义：**摩擦（黏性）加速度与科氏加速度的量级比**。
+- $E\ll1$：相应方向的摩擦相对于旋转效应较弱。
+- $E\gtrsim1$：摩擦不可轻易略去；在海气、海底边界层尤其重要。
+
+注意不要仅凭 $A_h$ 与 $A_v$ 的数值比较 $E_h$、$E_v$：它们的分母尺度分别是 $L^2$ 与 $D^2$，实际主次需要整体估计。课堂按给定方程组展示了两者的比较。
+
+![无量纲数小结：纵横比、Rossby、时间 Rossby、Ekman](/images/physical-oceanography/lesson11/slide_006.jpg)
+
+### 1.6 Péclet 数 $Pe$（课堂补充）
+
+从温度方程的**热平流项与热扩散项**比较：
+
+
+$$
+\frac{\partial\theta}{\partial t}+\mathbf u\cdot\nabla\theta
+=K_h\nabla_h^2\theta+K_v\frac{\partial^2\theta}{\partial z^2}.
+$$
+
+典型量级为 $U\Theta/L$、$W\Theta/D$、$K_h\Theta/L^2$、$K_v\Theta/D^2$；因此
+
+
+$$
+\boxed{Pe_h=\frac{UL}{K_h}},\qquad \boxed{Pe_v=\frac{WD}{K_v}}.
+$$
+
+- $Pe\gg1$：平流热输运相对扩散占优势。
+- $Pe\ll1$：扩散相对平流占优势。
+- **不能把 $Pe\ll1$ 直接理解成温度处处不变**；稳态、边界条件、热源与其它方向的输运都可能决定温度场。
+
+![温度方程的无量纲化及水平、垂向 Péclet 数](/images/physical-oceanography/lesson11/slide_009.jpg)
 
 ---
 
-## 二、四种常用近似（复习）
+## 二、四种常用近似
 
-### 1. 静压近似（静力近似）
+### 2.1 静压近似（hydrostatic approximation）
 
-**条件**：海洋内部的大尺度、低频运动，纵横比小，且垂直加速度等项相对重力和垂向压强梯度足够小。
+**核心物理图像：** 在典型大尺度、纵横比很小且垂向加速度与相关摩擦项都较弱的海洋运动中，垂向主要是**压力梯度力与重力**平衡。
 
-垂直动量方程退化为
+取 $z$ 轴**向上为正**，垂向动量方程的主要部分写作
 
-$$
--\frac{1}{\rho}\frac{\partial p}{\partial z}-g\approx0,
-\qquad
-\boxed{\frac{\partial p}{\partial z}=-\rho g}.
-$$
-
-约定 $z$ 向上为正，因而越往深处（$z$ 越小）压力越大。在海表面 $z=\zeta(x,y,t)$ 满足 $p=p_a$，沿垂向积分：
 
 $$
-p(x,y,z,t)=p_a(x,y,t)+\int_z^{\zeta(x,y,t)}\rho(x,y,z',t)g\,dz'.
+\frac{Dw}{Dt}=-\frac1\rho\frac{\partial p}{\partial z}-g+\text{旋转与摩擦修正项}.
 $$
 
-如果 $\rho$ 为常数：
+在相关项足够小时，得到
+
 
 $$
-p=p_a+\rho g(\zeta-z).
+0=-\frac1\rho\frac{\partial p}{\partial z}-g
+\quad\Longrightarrow\quad\boxed{\frac{\partial p}{\partial z}=-\rho g}.
 $$
 
-如果 $p_a$ 也为水平常数，则
+**为什么有负号？** 因为 $z$ 向上增加时，头顶水柱变短，压力下降。如果把“深度 $h$”定义为**向下为正**，则形式改为 $dp/dh=\rho g$，二者表达相同的物理现象。
+
+海面在 $z=\eta(x,y,t)$，若表面压力为 $p_a$，沿垂向积分：
+
 
 $$
--\frac{1}{\rho}p_x=-g\zeta_x,
-\qquad
--\frac{1}{\rho}p_y=-g\zeta_y.
+p(\eta)-p(z)=\int_z^\eta \frac{\partial p}{\partial z'}dz'
+=-\int_z^\eta\rho g\,dz'
 $$
 
-**为什么水平压强梯度与海面坡度相关？** 海面较高的一侧，其上方水柱通常更高；在固定深度上产生水平压强差，驱动水流。
+所以
 
-![静压近似的积分及水平坡度项](/images/physical-oceanography/lesson12/slide_011.jpg)
-
-> 注意：$p=p_a+\rho g(\zeta-z)$ 需要常密度假设；真实分层海洋应保留密度积分。静压近似本身并不自动要求水平方向静止。
-
-### 2. $f$ 平面近似
-
-科氏参数随纬度变化：
 
 $$
-f=2\Omega\sin\varphi.
+\boxed{p(x,y,z,t)=p_a(x,y,t)+\int_z^{\eta(x,y,t)}\rho(x,y,z',t)g\,dz'}.
 $$
 
-研究海区纬度跨度较小，科氏参数变化可以忽略时，选取参考纬度 $\varphi_0$：
+当 $\rho$ 近似常数、$p_a$ 水平一致：
+
 
 $$
-\boxed{f=f_0=2\Omega\sin\varphi_0}.
+\boxed{p=p_a+\rho g(\eta-z)}.
 $$
 
-**优点**：简化方程，方便寻找解析解；**限制**：不适用于需要刻画显著纬度变化或行星涡度梯度影响的问题。
+**进一步联系水平流动：** 固定 $z$ 求水平导数，$p_x=\rho g\eta_x$、$p_y=\rho g\eta_y$。当水平地转平衡也成立时，
 
-![f 平面近似与参考纬度](/images/physical-oceanography/lesson12/slide_016.jpg)
 
-### 3. $\beta$ 平面近似
+$$
+-fv=-\frac1\rho p_x,\qquad fu=-\frac1\rho p_y
+\quad\Longrightarrow\quad\boxed{u_g=-\frac gf\eta_y,\quad v_g=\frac gf\eta_x}.
+$$
 
-若还需要保留 $f$ 的南北向变化，则在 $\varphi_0$ 处泰勒展开：
+这说明**海面的微小坡度可以对应水平方向的压力梯度，并驱动地转流**。上述最后两式另需 $f\neq0$、忽略水平加速度及摩擦等条件；**静压近似本身只处理垂向力平衡**。
+
+![静压近似、压强垂向积分及由海面起伏形成的压强梯度](/images/physical-oceanography/lesson11/slide_011.jpg)
+
+### 2.2 $f$ 平面近似（$f$-plane）
+
+地球自转产生的科氏参数为
+
+
+$$
+\boxed{f=2\Omega\sin\varphi}.
+$$
+
+如果研究范围内纬度变化较小，取参考纬度 $\varphi_0$：
+
+
+$$
+\boxed{f\approx f_0=2\Omega\sin\varphi_0=\text{常数}}.
+$$
+
+**优点：** 系数恒定，方程求导和求解更容易。**局限：** 无法描述 $f$ 的纬向变化带来的效应。
+
+**课堂例子：** 研究某个纬度附近的小范围海区，$f$ 平面通常可作为第一近似；若研究跨越很大纬度范围的黑潮全程，直接令 $f$ 恒定可能失效。尤其接近赤道时 $f\to0$，以 $1/f$ 为尺度的推导必须谨慎。
+
+![f 平面近似及参考纬度示意](/images/physical-oceanography/lesson11/slide_016.jpg)
+
+### 2.3 $\beta$ 平面近似（$\beta$-plane）：从正弦到线性
+
+**想保留随纬度变化的科氏效应，同时避免直接使用球面三角函数。** 在参考纬度 $\varphi_0$ 附近进行一阶 Taylor 展开：
+
+**第 1 步：** 定义 $f(\varphi)=2\Omega\sin\varphi$。
+
+**第 2 步：** 在 $\varphi_0$ 附近展开：
+
+
+$$
+f(\varphi)\approx f(\varphi_0)+\left.\frac{df}{d\varphi}\right|_{\varphi_0}(\varphi-\varphi_0)
+=2\Omega\sin\varphi_0+2\Omega\cos\varphi_0(\varphi-\varphi_0).
+$$
+
+**第 3 步：** 在局地直角坐标中，令 $y$ 沿正北方向，$a$ 为地球半径。较小的纬度变化满足（角度必须用**弧度**）
+
+
+$$
+y-y_0\approx a(\varphi-\varphi_0).
+$$
+
+**第 4 步：** 代回并整理：
+
+
+$$
+f(y)\approx f_0+\frac{2\Omega\cos\varphi_0}{a}(y-y_0).
+$$
+
+定义
+
+
+$$
+\boxed{\beta=\left.\frac{\partial f}{\partial y}\right|_{y_0}=\frac{2\Omega\cos\varphi_0}{a}}.
+$$
+
+若把坐标原点取在参考纬度（$y_0=0$），即得
+
+
+$$
+\boxed{f=f_0+\beta y},\qquad \frac{\partial f}{\partial x}=0,\quad\frac{\partial f}{\partial y}=\beta.
+$$
+
+**牢记：** $f$ 平面保留 $f_0$，$\beta$ 平面再增加**一阶纬向变化**；它们都属于围绕特定纬度的局地近似，$\beta$ 平面也不能无限制用于全球范围。$\beta$ 的单位为 $\mathrm{m^{-1}s^{-1}}$。
+
+![beta 平面从 Taylor 展开到 f=f0+beta y 的课堂推导](/images/physical-oceanography/lesson11/slide_018.jpg)
+
+### 2.4 Boussinesq 近似：密度变化到底留下了什么？
+
+海水密度写作
+
+
+$$
+\rho=\rho_0+\rho',\qquad \left|\frac{\rho'}{\rho_0}\right|\ll1.
+$$
+
+在常规海水运动中，密度变化相对于平均密度通常较小。对于**惯性项、压力梯度中的分母、连续方程等**，可使用常数参考密度 $\rho_0$；但在**重力/浮力作用**中保留密度异常 $\rho'$。
+
+**具体为什么不能把 $\rho'$ 到处都删掉？**
+
+从垂向力项写起，$\rho\mathbf g/\rho_0$ 可分解为：
+
+
+$$
+-\frac{\rho}{\rho_0}g=-\frac{\rho_0+\rho'}{\rho_0}g=-g-\frac{\rho'}{\rho_0}g.
+$$
+
+其中 $-g$ 可与参考静压压力场平衡；剩余的异常项
+
+
+$$
+\boxed{b=-g\frac{\rho'}{\rho_0}}
+$$
+
+叫做**浮力加速度（buoyancy）**：若 $\rho'<0$（相对环境较轻），则 $b>0$（向上）。若把整个密度差造成的浮力也删去，会丢掉海洋**层结、斜压效应以及很多密度驱动运动**。
+
+因此，一种常见的 Boussinesq 动量方程表达是
+
+
+$$
+\boxed{\frac{D\mathbf u}{Dt}+f\mathbf k\times\mathbf u
+=-\frac1{\rho_0}\nabla p'+b\mathbf k+\text{黏性项}}
+$$
+
+这里 $p'$ 表示扣除参考静压后的压力。若像课堂课件那样使用**总压力** $p$，则垂向写作
+
+
+$$
+\frac{Dw}{Dt}=-\frac1{\rho_0}\frac{\partial p}{\partial z}-\frac\rho{\rho_0}g+\cdots.
+$$
+
+**适用条件：** 密度相对扰动小、非压缩效应适合忽略。跨淡水和盐水的强密度梯度、很强的压缩变化或某些特殊对流问题，需要重新评估近似是否有效。**Boussinesq 近似与静压近似可以同时采用，也可以分别采用。**
+
+![Boussinesq 近似：参考密度与保留浮力项](/images/physical-oceanography/lesson11/slide_019.jpg)
+
+---
+
+## 三、常用的几种简化方程组
+
+### 3.1 读简化方程之前，先明确“哪些项可删”
+
+比较两个方程时，优先观察**动量方程**，再核对连续方程、盐热输运、状态方程是否保留。老师特别提问：
+
+- **平流（advection）/对流/非线性项**：$u u_x+v u_y+w u_z$，由于两个流速量相乘而产生非线性。
+- **局地时间变化项**：$\partial_tu$，即便平流可忽略，也可能继续保留。
+- **水平、垂向摩擦项**：根据尺度和边界层的重要性分别判断。
+- **科氏项**：大尺度通常重要，小尺度且 $Ro\gg1$ 时可能忽略。
+
+> 重要辨析：“大尺度”是给**尺度分析**提供前提；是否能删去具体项，最终仍要比较相关 $Ro,Ro_T,E_h,E_v$ 等大小。不能凭“大尺度”三个字自动删除所有惯性项或所有摩擦项。
+
+### 3.2 大尺度运动方程组
+
+在课堂选用的简化条件下，忽略**非线性平流、相应的摩擦项和垂向加速度**，**保留局地时间变化**及科氏力与水平压力梯度，得到
+
+
+$$
+\boxed{\begin{aligned}
+\frac{\partial u}{\partial t}-fv&=-\frac1\rho\frac{\partial p}{\partial x},\\
+\frac{\partial v}{\partial t}+fu&=-\frac1\rho\frac{\partial p}{\partial y},\\
+0&=-\frac1\rho\frac{\partial p}{\partial z}-g,\\
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}&=0.
+\end{aligned}}
+$$
+
+盐热输运与状态方程在这套基本方程中**仍保留**：
+
+
+$$
+\frac{Ds}{Dt}=K_{sh}(s_{xx}+s_{yy})+K_{sv}s_{zz},\quad
+\frac{D\theta}{Dt}=K_{\theta h}(\theta_{xx}+\theta_{yy})+K_{\theta v}\theta_{zz},\quad
+\rho=\rho(\theta,s,p).
+$$
+
+**为什么还保留 $\partial_tu$？** 因为小 $Ro$ 表示**平流**相对科氏效应小，无法单凭这一点推出 $Ro_T\ll1$。如果时间变化也弱，可进一步得到地转平衡。
+
+![课件：大尺度运动方程组，包括动量、连续、盐热输运和状态方程](/images/physical-oceanography/lesson11/slide_041.jpg)
+
+### 3.3 水平运动考虑湍流摩擦的大尺度方程组
+
+课件第二套方程保留上面的大尺度近似，另外**在水平动量方程右侧保留水平/垂向涡动摩擦扩散**：
+
 
 $$
 \begin{aligned}
-f(\varphi)&=2\Omega\sin\varphi\\
-&\approx2\Omega\sin\varphi_0
-+2\Omega\cos\varphi_0(\varphi-\varphi_0).
+\partial_tu-fv&=-\rho^{-1}p_x+A_h(u_{xx}+u_{yy})+A_vu_{zz},\\
+\partial_tv+fu&=-\rho^{-1}p_y+A_h(v_{xx}+v_{yy})+A_vv_{zz},\\
+0&=-\rho^{-1}p_z-g.
 \end{aligned}
 $$
 
-在局部区域内令 $y-y_0\approx a(\varphi-\varphi_0)$，这里 $a$ 为地球半径、纬度采用弧度，得到
+**容易混淆的点：** “水平运动考虑摩擦”说的是**摩擦力出现在 $u,v$ 两个水平动量方程中**；不意味着其中只能有水平二阶导数。水平动量的摩擦仍可能来自**垂向的剪切 $u_{zz},v_{zz}$**。课堂的第三行**垂向动量方程**则不考虑相应的摩擦修正。
+
+![水平运动考虑湍流摩擦的大尺度方程组](/images/physical-oceanography/lesson11/slide_046.jpg)
+
+### 3.4 小尺度运动方程组
+
+当所研究运动很小、持续时间短、$Ro\gg1$，科氏效应相对惯性小，课件考虑**删除科氏加速度项**，保留局地与平流加速度、压力梯度、重力及黏性作用。例如
+
 
 $$
-\boxed{f=f_0+\beta(y-y_0)},
-\qquad
-\boxed{\beta=\frac{2\Omega\cos\varphi_0}{a}}.
+\boxed{\begin{aligned}
+\partial_tu+u u_x+v u_y+w u_z&=-\rho^{-1}p_x+A_h\nabla_h^2u+A_vu_{zz},\\
+\partial_tv+u v_x+v v_y+w v_z&=-\rho^{-1}p_y+A_h\nabla_h^2v+A_vv_{zz},\\
+\partial_tw+u w_x+v w_y+w w_z&=-\rho^{-1}p_z-g+A_h\nabla_h^2w+A_vw_{zz}.
+\end{aligned}}
 $$
 
-若坐标原点位于参考纬度 $y_0=0$：
+课件同时配有连续方程、盐热方程，具体见下图。**小尺度也要区分高 Reynolds 数和低 Reynolds 数**：某些微小尺度下黏性可非常重要；“尺度小”不能自动等价于“层流”或“忽略黏性”。
 
-$$
-f=f_0+\beta y.
-$$
-
-**关键区别**：$f$ 平面把 $f$ 看作常数；$\beta$ 平面保留其局部**线性纬向梯度**，可研究 Rossby 波及相关的大尺度变化。
-
-![beta 平面的一阶展开推导](/images/physical-oceanography/lesson12/slide_018.jpg)
-
-### 4. Boussinesq 近似
-
-在海水密度变化相对基准密度很小时，写作
-
-$$
-\rho=\rho_0+\rho',
-\qquad
-\left|\frac{\rho'}{\rho_0}\right|\ll1.
-$$
-
-运动方程中的惯性和通常的压强梯度系数等使用 $\rho_0$，**但浮力中保留密度异常**。以剔除参考静水压力后的方程为例：
-
-$$
-\frac{D\mathbf{u}}{Dt}+f\mathbf{k}\times\mathbf{u}
-=-\frac{1}{\rho_0}\nabla p'
--\frac{\rho'}{\rho_0}g\mathbf{k}
-+\text{黏性及其他外力}.
-$$
-
-这里 $\mathbf{k}$ 指向上方，$p'$ 是相对于参考静压的压力扰动。密度较小（$\rho'<0$）对应向上的浮力异常。
-
-**适用条件**：密度相对变化小，且没有必须保留整体压缩性效应的问题。课堂举例：一般海水环流适用；若淡水与高盐水强烈混合、密度差很大，需重新评估该近似，不能直接套用。
-
-![Boussinesq 近似及保留浮力项](/images/physical-oceanography/lesson12/slide_019.jpg)
+![小尺度运动方程组与保留的非线性项](/images/physical-oceanography/lesson11/slide_047.jpg)
 
 ---
+## 四、平均场方程：雷诺平均与湍流闭合
 
-## 三、几种简化运动方程组
+### 4.1 为什么平均流方程比瞬时流方程多了几项？
 
-老师强调：**方程组从完整形式删去哪一项，必须能根据尺度分析解释**。
+**现实海洋通常有湍流脉动。** 如果每一个小涡旋都精细求解，计算量十分巨大；很多海洋问题更关心某段时间内**平均的速度、盐度和温度**。于是把任意瞬时量分解为
 
-### 1. 大尺度运动方程组（直角坐标）
-
-典型的低 Rossby 数、静压、水平摩擦可忽略的大洋内部运动，得到类似线性地转—静力形式：
 
 $$
-\begin{cases}
-\displaystyle \frac{\partial u}{\partial t}-fv=-\frac{1}{\rho_0}p_x,\\[4pt]
-\displaystyle \frac{\partial v}{\partial t}+fu=-\frac{1}{\rho_0}p_y,\\[4pt]
-\displaystyle p_z=-\rho g,\\[4pt]
-\displaystyle u_x+v_y+w_z=0.
-\end{cases}
+\boxed{q(\mathbf x,t)=\overline q(\mathbf x,t)+q'(\mathbf x,t)}.
 $$
 
-再联立盐量扩散、热传导及状态方程 $\rho=\rho(\theta,S,p)$ 构成封闭系统（仍需要初始条件与边界条件）。
+例如
 
-- **保留**：局地变化、主要的水平科氏作用、压强梯度和静力平衡。
-- **舍去**：相对较弱的非线性平流项与黏性项。
-- **不能机械理解为“所有大尺度都没有平流”**：海流的时间尺度、锋面和涡旋等情形会影响实际保留项；这里描述课件提供的特定简化版本。
-
-![大尺度运动方程组（课件原式）](/images/physical-oceanography/lesson12/slide_041.jpg)
-
-### 2. 水平运动保留湍流摩擦的大尺度方程组
-
-在前述近似下，允许**水平速度的动量方程**包含湍流摩擦：
 
 $$
-\begin{cases}
-\displaystyle u_t-fv=-\frac{1}{\rho_0}p_x+A_h\nabla_h^2u+A_z u_{zz},\\
-\displaystyle v_t+fu=-\frac{1}{\rho_0}p_y+A_h\nabla_h^2v+A_z v_{zz},\\
-\displaystyle p_z=-\rho g.
-\end{cases}
+u=\overline u+u',\quad v=\overline v+v',\quad w=\overline w+w',\quad
+s=\overline s+s',\quad \theta=\overline\theta+\theta',\quad p=\overline p+p'.
 $$
 
-这描述了课件的“水平运动考虑湍流摩擦”模型：**水平方向的两个动量方程保留摩擦，垂向动量方程仍采用静压近似**。$A_h\nabla_h^2$ 与 $A_z\partial_{zz}$ 分别是水平、垂向的动量扩散对**水平流速**的作用；不要混淆“水平运动方程里的垂向摩擦”和“垂向运动方程里的摩擦”。
+平均符号 $\overline{\;\cdot\;}$ 指所选时间或统计平均；脉动定义使 $\overline{q'}=0$。这里需要平均算子满足通常的雷诺规则，并假定相关空间微分与平均可交换。
 
-![水平运动考虑湍流摩擦的大尺度方程](/images/physical-oceanography/lesson12/slide_046.jpg)
+**关键：** 虽然 $\overline{u'}=0$、$\overline{v'}=0$，一般却有
 
-### 3. 小尺度运动方程组
-
-在水平尺度较小、$Ro$ 较大的流动中，科氏加速度可能相对平流项很小，可忽略主要科氏项而保留加速度、压力梯度及必要的黏性扩散。具体哪项保留取决于时间尺度和 Reynolds 数等。
-
-> **课堂比较**：研究上千公里尺度大洋环流时，自转效应常常十分重要；研究几厘米、几米的局部湍流时，主导平衡常由惯性、压强和黏性决定。
-
-![课件中的小尺度运动方程组](/images/physical-oceanography/lesson12/slide_047.jpg)
-
----
-
-## 四、Boussinesq 近似下的雷诺平均方程
-
-### 1. 为什么要做时间平均？
-
-实际海洋速度、温度、盐度等存在快速的湍流脉动。若只关心长期平均环流，把任一变量分为平均量与脉动量：
 
 $$
-u=\bar u+u',\quad v=\bar v+v',\quad w=\bar w+w',
-\quad\theta=\bar\theta+\theta',\quad S=\bar S+S'.
+\boxed{\overline{u'v'}\neq0,\qquad\overline{u's'}\neq0,\qquad\overline{u'\theta'}\neq0}.
 $$
 
-根据定义：
+“平均脉动为零”仅表示正负脉动平均抵消；它们的乘积仍可能具有**相关性**，正是这种相关性导致动量和物质的湍流输运。
 
-$$
-\overline{u'}=\overline{v'}=\overline{\theta'}=0.
-$$
+### 4.2 Boussinesq 近似下的瞬时方程
 
-但两个脉动量的乘积的平均值一般**不会**消失：
+课堂首先以 Boussinesq 形式列出直角坐标系的瞬时基本方程，再做平均：
 
-$$
-\overline{u'w'}\ne0.
-$$
-
-这正是雷诺平均方程与瞬时方程的关键区别。
-
-### 2. 一个最重要的推导：为什么多了 $\overline{u'w'}$？
-
-对不可压缩流，先将动量平流项写为通量散度（以 $x$ 方向动量的垂向输运为例）：
-
-$$
-w\frac{\partial u}{\partial z}
-\quad\longrightarrow\quad
-\frac{\partial(wu)}{\partial z}
-\quad(\text{完整方程需与其余方向合并}).
-$$
-
-将速度代入：
 
 $$
 \begin{aligned}
-\overline{wu}
-&=\overline{(\bar w+w')(\bar u+u')}\\
-&=\bar w\bar u+\bar w\,\overline{u'}
-+\bar u\,\overline{w'}+\overline{w'u'}\\
-&=\bar w\bar u+\overline{w'u'}.
+\frac{Du}{Dt}-fv+\widetilde f w&=-\frac1{\rho_0}\frac{\partial p}{\partial x}+\mathcal D_u,\\
+\frac{Dv}{Dt}+fu&=-\frac1{\rho_0}\frac{\partial p}{\partial y}+\mathcal D_v,\\
+\frac{Dw}{Dt}-\widetilde f u&=-\frac1{\rho_0}\frac{\partial p}{\partial z}-\frac\rho{\rho_0}g+\mathcal D_w,\\
+\nabla\cdot\mathbf u&=0,\\
+\frac{Ds}{Dt}&=K_s\nabla^2s,\qquad \frac{D\theta}{Dt}=K_\theta\nabla^2\theta,\\
+\rho&=\rho(\theta,s,p).
 \end{aligned}
 $$
 
-因此，平均后的动量方程中出现额外通量项
+这里 $\mathcal D_u,\mathcal D_v,\mathcal D_w$ 表示课件中给出的分子黏性/有效扩散项；上式按课件给定的 $f,\widetilde f$ 符号和 $x,y,z$ 坐标约定书写，此处主要关注**时间平均后新增的脉动乘积项**。
+
+![Boussinesq 近似下的瞬时控制方程组](/images/physical-oceanography/lesson11/slide_049.jpg)
+
+### 4.3 重点推导：从 $u\,\partial_xu$ 到雷诺应力项
+
+初次学习最容易困惑：**为什么平均之后，会凭空出现 $\partial_x\overline{u'^2}$ 这样的项？**
+
+以下先对 $u$ 方向的 $x$ 平流分量逐步推导。
+
+**第 1 步：雷诺分解。**
+
 
 $$
--\frac{\partial\overline{u'w'}}{\partial z}.
+u=\overline u+u'.
 $$
 
-同理，三个空间方向都会有 $-\partial_j\overline{u_i'u_j'}$。它们描述**湍流脉动对平均动量的输运**，通常合称雷诺应力项（按密度乘上 $-\rho_0$ 可表为应力）。
+**第 2 步：展开原来的乘积。**
 
-### 3. 雷诺平均后的基本结构
-
-用向量写最简洁。对 Boussinesq 流：
 
 $$
-\nabla\cdot\bar{\mathbf u}=0,
+u\frac{\partial u}{\partial x}
+=(\overline u+u')\left(\frac{\partial\overline u}{\partial x}+\frac{\partial u'}{\partial x}\right).
 $$
 
-$$
-\frac{\partial\bar u_i}{\partial t}
-+\bar u_j\frac{\partial\bar u_i}{\partial x_j}
-+(f\mathbf{k}\times\bar{\mathbf u})_i
-=-\frac{1}{\rho_0}\frac{\partial\bar p'}{\partial x_i}
-+b\delta_{i3}+\text{分子黏性项}
--\frac{\partial\overline{u_i'u_j'}}{\partial x_j}.
-$$
+展开为四项：
 
-其中 $b=-g\bar\rho'/\rho_0$ 为浮力异常，重复指标 $j$ 代表求和；此式省略了课件更一般形式中的若干地球曲率、位势与旋转修正，只突出本课需要掌握的湍流平均结构。
-
-热量与盐量同样多出湍流标量通量：
 
 $$
-\frac{D\bar\theta}{Dt}
-=\text{分子热扩散}
--\nabla\cdot\overline{\mathbf u'\theta'},
+=\overline u\frac{\partial\overline u}{\partial x}
++\overline u\frac{\partial u'}{\partial x}
++u'\frac{\partial\overline u}{\partial x}
++u'\frac{\partial u'}{\partial x}.
 $$
 
-$$
-\frac{D\bar S}{Dt}
-=\text{分子盐扩散}
--\nabla\cdot\overline{\mathbf u'S'}.
-$$
+**第 3 步：时间平均。** 因 $\overline{u'}=0$，中间两项平均为零；剩下
 
-![Boussinesq 近似下雷诺平均方程（课件分量式）](/images/physical-oceanography/lesson12/slide_050.jpg)
-
-### 4. 如何处理难以直接计算的脉动通量？
-
-引入**梯度扩散（涡黏性）参数化**，例如：
 
 $$
--\overline{u'w'}=K_M\frac{\partial\bar u}{\partial z},
-\qquad
--\overline{w'\theta'}=K_H\frac{\partial\bar\theta}{\partial z}.
+\overline{u\frac{\partial u}{\partial x}}=
+\overline u\frac{\partial\overline u}{\partial x}
++\overline{u'\frac{\partial u'}{\partial x}}.
 $$
 
-- $K_M$：湍流动量交换（涡黏性）系数；
-- $K_H$：湍流热扩散系数；
-- 盐的湍流扩散可以另记 $K_S$，未必等于 $K_H$。
+**第 4 步：利用乘积求导规则。**
 
-其逻辑为：将未知的“脉动乘积”用可计算的“平均梯度 × 系数”近似表示，系数需由经验、观测或更复杂的湍流模型确定。
-
-> **辨析**：$\overline{u'w'}$ 可能非零；$\overline{u'}=0$ 并不能推出它为零。参数化也不代表严格恒等关系。
-
-![引入湍流系数，对动量及热盐通量作梯度近似](/images/physical-oceanography/lesson12/slide_052.jpg)
-
----
-
-## 五、垂向边界层与对数边界层
-
-### 1. 为什么大洋内部可忽略摩擦，边界层却不能？
-
-海面受到风应力，海底存在固体边界。即使很薄的一层内速度变化也可能很大：
 
 $$
-\left|\frac{\partial\bar u}{\partial z}\right|\ \text{很大}
+u'\frac{\partial u'}{\partial x}=\frac12\frac{\partial(u'^2)}{\partial x}
 \quad\Longrightarrow\quad
-\left|K_M\frac{\partial\bar u}{\partial z}\right|\ \text{可能不可忽略}.
+\boxed{\overline{u'\frac{\partial u'}{\partial x}}=\frac12\frac{\partial\overline{u'^2}}{\partial x}}.
 $$
 
-海底近壁处的平均速度在满足无滑移条件时趋于零，离开底部后迅速增大。在适当的充分发展湍流边界层条件下，可出现经典的**对数速度分布**。
+不过，**仅看 $x$ 项，还不是最后课件写出的 $\partial_x\overline{u'^2}$**。因为 $u$ 方向还有 $v\partial_yu$、$w\partial_zu$，三项需要**一起使用不可压缩连续方程**整理。
 
-### 2. 垂向边界层一维模型
+利用
 
-在水平变化弱、平均垂向速度近似为零、忽略水平平流和部分外力的情形下，课件给出
-
-$$
-\frac{\partial\bar u}{\partial t}-f\bar v
-=\frac{\partial}{\partial z}\left(K_M\frac{\partial\bar u}{\partial z}\right),
-$$
 
 $$
-\frac{\partial\bar v}{\partial t}+f\bar u
-=\frac{\partial}{\partial z}\left(K_M\frac{\partial\bar v}{\partial z}\right).
+u_j\partial_j u_i=\partial_j(u_i u_j)-u_i\underbrace{\partial_j u_j}_{0},
 $$
 
-盐、温度的对应模型为
+可将所有平流合成通量散度：
 
-$$
-\frac{\partial\bar S}{\partial t}
-=\frac{\partial}{\partial z}\left(K_S\frac{\partial\bar S}{\partial z}\right),
-\qquad
-\frac{\partial\bar\theta}{\partial t}
-=\frac{\partial}{\partial z}\left(K_H\frac{\partial\bar\theta}{\partial z}\right).
-$$
-
-**物理含义**：平均场的局地变化由垂向湍流动量或热盐通量的辐合/辐散决定；水平动量还受到科氏偏转。
-
-![课件：垂向边界层平均场模型](/images/physical-oceanography/lesson12/slide_060.jpg)
-
-### 3. 对数边界层（课堂简介）
-
-在近海底的湍流恒应力层中，可利用混合长度思想得到典型形式
-
-$$
-\bar U(z)=\frac{u_*}{\kappa}\ln\frac{z_b}{z_0},
-$$
-
-- $z_b$：距海底的高度（防止与课程中“竖直坐标 $z$”混淆）；
-- $z_0$：粗糙度长度；
-- $u_*=(|\tau_b|/\rho_0)^{1/2}$：摩擦速度；
-- $\kappa$：von Kármán 常数，典型取值约 $0.4$。
-
-该对数律需要近壁充分发展湍流、近似恒应力等条件。老师说明**本节只作介绍，后续课程还会展开**。
-
-![课件：海底对数边界层及粗糙度](/images/physical-oceanography/lesson12/slide_061.jpg)
-
----
-
-## 六、波浪动力学概述
-
-### 1. 本章安排与为什么研究海浪
-
-课件从这一页正式进入**第六章 波浪动力学**，章节结构为：
-
-1. 第一节：概述；
-2. 第二节：控制方程与边界条件；
-3. 第三节：小振幅波动理论（线性波动理论）；
-4. 第四节：有限振幅波动理论简介。
-
-![第六章框架](/images/physical-oceanography/lesson12/slide_063.jpg)
-
-海浪是海气交界面上的常见波动。研究其动力学有如下原因：
-
-- **海气动量、能量及物质交换**：风向海浪输入能量，波浪破碎又增强上层湍流、混合与气体交换；
-- **海洋上层动力**：改变近表层混合和波流相互作用，部分能量可进入海洋内部；
-- **海洋遥感**：海面粗糙度和白沫改变电磁波散射，波高又是重要的反演参数；
-- **海洋军事与海洋工程**：波浪噪声影响声学探测，大浪和破碎浪影响舰船航行、码头、桥梁与海岸工程安全；
-- **海洋灾害**：强风暴波浪可造成显著海岸损害。
-
-课堂示例：海浪破碎形成气泡和白沫，会显著改变海气交换；老师还用**青岛栈桥遭大浪破坏**以及《神奈川冲浪里》的浪峰、浪谷和卷浪形态说明海浪的实际表现。
-
-![破碎波：影响海表湍流和物质交换](/images/physical-oceanography/lesson12/slide_065.jpg)
-
-![葛饰北斋《神奈川冲浪里》：浪峰、卷浪和破碎](/images/physical-oceanography/lesson12/slide_072.jpg)
-
-### 2. 海浪的定义：风浪与涌浪
-
-课堂主要讨论**风生成的海面重力波**：风提供能量，重力提供使海面趋向平衡的回复作用。
-
-**风浪（wind sea）**：在当地风场持续作用下形成、仍受当地风持续输入能量的海浪。
-
-**涌浪（swell）**：先前或远处风场生成，离开主要生浪区或当地风已减弱，仍能在海面上传播的海浪。
-
-“无风不起浪”对应风场生浪过程；“无风三尺浪”形象地说明**当地无风时仍可能出现远处传播来的涌浪**。两者可以同时存在，也可叠加成为观测到的海况。
-
-> **范围说明**：本章的“海浪”主要指风生表面重力波。海面上也存在海啸、潮汐等其他成因的长波，不能概括为所有海面波动都由风生成。
-
-![风浪与涌浪的概念和典型周期范围](/images/physical-oceanography/lesson12/slide_073.jpg)
-
-### 3. 海浪的能量与尺度谱
-
-不同海洋波动具有不同特征时间尺度；课件列举毛细波、风浪、涌浪、海啸和潮汐等。老师强调风生波动蕴藏大量能量，其对海岸工程和航行的影响十分重要。
-
-![不同波动类型的周期与能量示意（课件图）](/images/physical-oceanography/lesson12/slide_074.jpg)
-
-> “风浪周期约 1 秒、涌浪约 10 秒”是老师用于帮助区分的典型数量级，不属于所有海域的严格边界。实际两者周期范围可能重叠。
-
-### 4. 规则波的基本要素
-
-先研究一维规则正弦波：
-
-$$
-\zeta(x,t)=a\cos(kx-\omega t+\phi_0).
-$$
-
-- $\zeta$：自由表面相对平均海面的位移；
-- $a$：**振幅**，平衡面到波峰的高度；
-- $H$：**波高**，一个波峰至相邻波谷的高度，正弦波有 $H=2a$；
-- $L$（或 $\lambda$）：**波长**，相邻两个波峰之间的水平距离；
-- $T$：**周期**，固定点上相邻两个波峰经过的时间间隔；
-- $h$：**水深**，平均水面至海底的距离；
-- $k=2\pi/L$：波数；$\omega=2\pi/T$：角频率；$\phi_0$：初相位。
-
-![波浪基本几何要素和传播示意](/images/physical-oceanography/lesson12/slide_078.jpg)
-
-**两个常用组合量**：
-
-$$
-\text{波陡}=\frac{H}{L},
-\qquad
-\text{相速度（波速） }c=\frac{L}{T}=\frac{\omega}{k}.
-$$
-
-- **波陡 $H/L$**：衡量波面陡峭程度，与破碎倾向有关；
-- **相速度 $c$**：波峰传播的速度；与海水质点的水平流速 $u$ 不相同。
-
-老师强调后续波动理论离不开 $L,T,h$ 等特征量，这些量通过**色散关系**相互联系；目前仅介绍定义，后续课程推导关系式。
-
-### 5. 为什么真实海面不是一条完美正弦曲线？
-
-海面是大量不同**频率、振幅、传播方向和相位**的波共同叠加的结果。单个规则波可用正弦函数近似，观测到的海面通常呈**不规则随机起伏**。
-
-$$
-\zeta(x,t)=\sum_{n=1}^{N}a_n\cos(k_nx-\omega_nt+\phi_n)
-$$
-
-这是理解随机海浪的基础（二维海面还要考虑不同传播方向）。
-
-![实测海面时间序列：不规则波高起伏](/images/physical-oceanography/lesson12/slide_080.jpg)
-
-**课堂演示：两个波如何叠加？**
-
-- **同相**：相同频率、相同振幅的两个波峰对齐，合成振幅加大；
-- **反相**：两波相差 $\pi$，且振幅相同，理想情况下完全抵消；
-- **不同频率**：产生随时间变化的加强/减弱，形成看似复杂的不规则波形。
-
-![同相、反相及不同频率波的叠加示意](/images/physical-oceanography/lesson12/slide_084.jpg)
-
-![不同方向波列的叠加示意](/images/physical-oceanography/lesson12/slide_086.jpg)
-
-例如两列同频等幅波：
 
 $$
 \begin{aligned}
-\zeta_1&=a\cos(kx-\omega t),\\
-\zeta_2&=a\cos(kx-\omega t+\Delta\phi),\\
-\zeta_1+\zeta_2
-&=2a\cos\left(\frac{\Delta\phi}{2}\right)
-\cos\left(kx-\omega t+\frac{\Delta\phi}{2}\right).
+\overline{\mathbf u\cdot\nabla u}
+&=\nabla\cdot\overline{u\mathbf u}\\
+&=\nabla\cdot\left(\overline u\,\overline{\mathbf u}+\overline{u'\mathbf u'}\right)\\
+&=\overline{\mathbf u}\cdot\nabla\overline u
++\frac{\partial\overline{u'u'}}{\partial x}
++\frac{\partial\overline{u'v'}}{\partial y}
++\frac{\partial\overline{u'w'}}{\partial z}.
 \end{aligned}
 $$
 
-故合成波振幅为 $2a|\cos(\Delta\phi/2)|$。相位差为 $0$ 时最大，为 $\pi$ 时完全抵消。
+于是，把新增项移到动量方程右侧：
 
-### 6. 风浪成长的三项控制因素
-
-老师反复强调：在其他条件相同时，**风速、风区、风时**共同控制风浪成长。
-
-| 概念 | 定义 | 课堂例子 |
-| --- | --- | --- |
-| 风速（wind speed） | 海面上方风的强度，常采用海面上方 10 m 风速 $U_{10}$ | 同样条件下，10 m/s 的风通常比 1 m/s 的风产生更强的波浪 |
-| 风区（fetch） | 一定风况沿波浪传播方向持续作用的**有效距离** | 离岸风从岸边开始作用于海面，风区常较短；开阔海面向岸风可有很长风区 |
-| 风时（duration） | 风持续作用于海面的**时间** | 同样风速，持续一小时通常比一分钟更有利于波浪成长 |
-
-![风区与风时的示意](/images/physical-oceanography/lesson12/slide_088.jpg)
-
-**南大洋举例**：南大洋中高纬西风带绕南极洲分布、海上陆地阻隔少，风有机会沿很长距离持续作用在海面上，因而常见较大的风浪和涌浪。与北半球存在大陆阻挡的中纬度海域形成对比。
-
-### 7. 波浪从产生到消亡
-
-课堂将海浪生命周期描述为四个阶段：
-
-1. **初始阶段**：风吹过平静海面，产生微小扰动，出现毛细波并发展出初始重力波。
-2. **成长阶段**：风持续供能，波高、典型波长和周期逐渐增大。
-3. **充分成长阶段（fully developed sea）**：风输入能量与破碎等耗散达到统计平衡，固定风况下波浪整体统计特征不再持续增长。
-4. **衰减/传播阶段**：风减弱、停止或波浪离开风区，一部分波浪耗散，一部分作为涌浪传播到远处。
-
-![风浪成长过程与充分成长海况](/images/physical-oceanography/lesson12/slide_089.jpg)
-
-![充分成长、破碎及消亡阶段](/images/physical-oceanography/lesson12/slide_090.jpg)
-
-**为什么风区或风时无限增大，波浪也不会无限增高？** 因为风场供给波浪的能量终将与破碎、湍流耗散等损失达到动态平衡。这里的“停止增长”指统计状态稳定，并非每一列单独的波固定不变。
-
-### 8. 波浪破碎：波陡与其他判据
-
-课件介绍了几何判据（波陡）、运动学判据及动力学判据。课堂采用典型上限的**量级判断**：
 
 $$
-\frac{H}{L}\lesssim\frac17.
+\boxed{\begin{aligned}
+\frac{\partial\overline u}{\partial t}
++\overline u\,\overline u_x+\overline v\,\overline u_y+\overline w\,\overline u_z
+=&-\frac1{\rho_0}\overline p_x+f\overline v-\widetilde f\overline w+\mathcal D_{\overline u}\\
+&-\partial_x\overline{u'^2}-\partial_y\overline{u'v'}-\partial_z\overline{u'w'}.
+\end{aligned}}
 $$
 
-波陡增加意味着波峰越来越尖，超出相应条件下的极限时可能发生破碎。
+同理，$v$、$w$ 方程右边分别出现 $-\partial_j\overline{v'u_j'}$ 和 $-\partial_j\overline{w'u_j'}$。其中形如 $-\rho_0\overline{u_i'u_j'}$ 的量称为**雷诺应力（Reynolds stress）**，它表示湍流脉动带来的平均动量输运。
 
-> **重要前提**：$1/7$ 是常用的理想化深水波破碎经验阈值量级，实际破碎界限受到水深、波形、非线性、海底坡度、风场和局部流场等影响；浅水波不可无条件套用该数。
+> **读图提醒：** 课件第 50 张的 $v$、$w$ 分量个别压强梯度下标看起来重复写成 $\partial/\partial x$；按直角坐标系各分量的标准写法，应分别是 $\partial p/\partial y$ 和 $\partial p/\partial z$。这属于按方程结构对课件做的校核，请以老师后续最终课件为准。
 
-### 9. 波龄（wave age）
+![课堂逐项列出的雷诺平均动量方程与雷诺应力散度](/images/physical-oceanography/lesson11/slide_050.jpg)
 
-课件用**峰值波的相速度与海面 10 m 风速的比值**表示波龄：
+### 4.4 盐、热输运的平均方程：新项是什么？
 
-$$
-\boxed{A=\frac{c_p}{U_{10}}},
-\qquad
-c_p=\frac{L_p}{T_p}.
-$$
+瞬时盐度方程以通用形式写作
 
-其中下标 $p$ 指谱峰，即能量最显著的波动成分。课堂给出一种用于辨识风浪和涌浪的**经验描述**：波龄随风浪发展趋于增大，约 $0.7$–$0.8$ 可作为充分发展情形的示意数量级，超过约 $1.2$ 常提示涌浪特征。
-
-![波龄、充分成长以及风浪/涌浪区别](/images/physical-oceanography/lesson12/slide_091.jpg)
-
-**为什么波龄较大可能是涌浪？** 当波浪已经离开生浪区，局地风速可能小于波浪的相速度，$c_p/U_{10}$ 就会增大。
-
-> 波龄分界值依赖采用的风速、波谱及经验标准。$c_p/U_{10}>1$ 并不违反物理定律，也不能推出波浪必然不是风生的；实际海况中波可以通过色散传播，且波的相速度并不是风把能量输入波浪时的简单“追赶速度”。若 $U_{10}$ 很小，波龄比值甚至不适合单独分类。
-
-### 10. 有效波高、有效周期与海况等级
-
-**有效波高（significant wave height）**：经典的时域定义 $H_{1/3}$，把观测得到的单个波高从大到小排列，取**最高三分之一波高的算术平均**。
 
 $$
-H_{1/3}=\frac{1}{N/3}\sum_{i\in\text{最高 }1/3\text{ 波}}H_i.
+\frac{\partial s}{\partial t}+\mathbf u\cdot\nabla s=K_s\nabla^2s.
 $$
 
-课堂说“对应的周期为有效周期”，可理解为选出那些高波后，对其相应周期计算代表值（具体平均定义需与采用的统计标准一致）。另一常用统计量为谱有效波高 $H_{m0}=4\sqrt{m_0}$，在随机海浪理论中会进一步学习；两种量在典型窄带随机海况下接近，但定义不同。
+对不可压缩流动，使用前面相同的通量形式和平均规则：
 
-![有效波高和海浪等级的概念](/images/physical-oceanography/lesson12/slide_092.jpg)
 
-课件给出不同浪级（海况级）与波高范围的对照表，辅助描述海面有无白沫、破碎浪、卷浪以及海浪滔天等状态。理解重点是：**用统计波高描述不规则海面整体强弱**，不应只挑其中最大的一个瞬时浪高。
+$$
+\boxed{\frac{\partial\overline s}{\partial t}
++\overline{\mathbf u}\cdot\nabla\overline s
+=K_s\nabla^2\overline s
+-\nabla\cdot\overline{\mathbf u's'}}.
+$$
 
-![海况（波级）分级课件对照表](/images/physical-oceanography/lesson12/slide_094.jpg)
+其中
 
-### 11. 波浪研究的两类方法
 
-- **理论方法**：从运动方程和自由海面、海底等边界条件出发，在小振幅等假设下求解规则波，得到传播、速度和压力分布的解析关系。
-- **统计方法**：处理实际不规则海浪，把海面视为许多不同频率、振幅、相位及方向的波动叠加，用波谱和统计量描述能量分布。
+$$
+-\nabla\cdot\overline{\mathbf u's'}
+=-\partial_x\overline{u's'}-\partial_y\overline{v's'}-\partial_z\overline{w's'}.
+$$
 
-![理论方法与统计方法](/images/physical-oceanography/lesson12/slide_095.jpg)
+热传导/温度方程同理：
 
-**衔接**：本节完成海浪的基本概念；后续先研究规则波，再研究随机波谱。
+
+$$
+\boxed{\frac{\partial\overline\theta}{\partial t}
++\overline{\mathbf u}\cdot\nabla\overline\theta
+=K_\theta\nabla^2\overline\theta
+-\nabla\cdot\overline{\mathbf u'\theta'}}.
+$$
+
+它们分别表示：**湍流盐通量** $\overline{\mathbf u's'}$ 与 **湍流热通量** $\overline{\mathbf u'\theta'}$ 对平均场的贡献。连续方程仍为
+
+
+$$
+\boxed{\partial_x\overline u+\partial_y\overline v+\partial_z\overline w=0}.
+$$
+
+![雷诺平均后的盐量、热量输运方程](/images/physical-oceanography/lesson11/slide_051.jpg)
+
+### 4.5 为什么必须“参数化”雷诺应力？
+
+如果只想求 $\overline u,\overline v,\overline w$，平均之后却出现新的未知量 $\overline{u'^2}$、$\overline{u'v'}$、$\overline{u'w'}$ 等。这就是**湍流闭合问题（closure problem）**。
+
+课堂介绍的**涡动黏性 / 梯度扩散假设**：用平均量梯度来近似难以直接求出的脉动相关项，例如
+
+
+$$
+\boxed{-\overline{u'w'}=A_v\frac{\partial\overline u}{\partial z}},\qquad
+\boxed{-\overline{w'\theta'}=K_{\theta v}\frac{\partial\overline\theta}{\partial z}},\qquad
+\boxed{-\overline{w's'}=K_{sv}\frac{\partial\overline s}{\partial z}}.
+$$
+
+$A$ 是动量涡动黏性系数，$K_s$ 是盐扩散系数，$K_\theta$ 是热扩散系数。课堂还把不同方向写成 $A_{ij},K_{si},K_{\theta i}$，说明湍流混合可能具有**方向差异（各向异性）**。
+
+例如把 $-\overline{u'w'}=A_v\overline u_z$ 代入平均 $u$ 方程中的垂向雷诺应力散度：
+
+
+$$
+-\partial_z\overline{u'w'}=\partial_z\left(A_v\partial_z\overline u\right).
+$$
+
+如果 $A_v$ 还是常数，进一步成为
+
+
+$$
+\boxed{-\partial_z\overline{u'w'}=A_v\partial_{zz}\overline u}.
+$$
+
+**这一步解释了**：为什么平均流方程里常出现形式类似分子黏性的二阶导数，但采用的是**涡动黏性系数**。需要注意：将每个 $-\overline{u_i'u_j'}$ 一概写成单个梯度乘系数，是课件介绍的**简化闭合**；严格张量形式一般需要考虑对称应变率以及各向同性部分，适用范围受到流动结构限制。
+
+![课件：雷诺应力、湍流盐通量和热通量的梯度参数化](/images/physical-oceanography/lesson11/slide_052.jpg)
+
+![参数化后 Boussinesq 雷诺平均方程的形式](/images/physical-oceanography/lesson11/slide_054.jpg)
+
+### 4.6 平均流和瞬时流究竟哪里相同、哪里不同？
+
+| 比较项 | 瞬时流 | 雷诺平均流 |
+|---|---|---|
+| 速度、盐度、温度 | $u,s,\theta$ 等瞬时值 | $\overline u,\overline s,\overline\theta$ 等平均值 |
+| 连续方程 | $\nabla\cdot\mathbf u=0$ | $\nabla\cdot\overline{\mathbf u}=0$ |
+| 平流项 | 速度与瞬时场梯度相乘 | 平均速度与平均场梯度相乘，另有脉动相关输运 |
+| 动量方程新增项 | 无“雷诺平均产生的额外项” | $-\partial_j\overline{u_i'u_j'}$ |
+| 盐、热方程新增项 | 无平均产生的湍流相关项 | $-\nabla\cdot\overline{\mathbf u's'}$ 与 $-\nabla\cdot\overline{\mathbf u'\theta'}$ |
+| 求解困难 | 小尺度波动细节繁多 | 新增未知脉动相关项，需要闭合模型 |
+
+**课堂总结**：在 Boussinesq 近似下完成雷诺平均，最终可得到与前面学习过的、经过适当密度简化后的平均方程**形式一致**的结果。老师强调：**湍流摩擦、盐通量、热通量的参数化思路相似，但各自系数有区别。**
 
 ---
 
-## 七、课堂思考题
+## 五、垂向边界层模型与对数速度分布
 
-### 风速 $U_{10}=20\,\mathrm{m\,s^{-1}}$ 持续作用，最大可能的波高和波长是多少？
+### 5.1 为什么边界附近的摩擦很重要？
 
-老师提出此题，并提示可**暂取波龄 $A=c_p/U_{10}=1$**。如果进一步假定**深水重力波的线性色散关系**（该关系将在下一讲正式推导）：
+大洋内部，速度梯度有时较缓，摩擦在主导平衡中可忽略；但在海气界面、海底附近，速度会在很短的垂向距离内发生明显改变。因为
 
-$$
-\omega^2=gk,
-\qquad
-c_p=\frac{\omega}{k}=\sqrt{\frac{gL_p}{2\pi}}.
-$$
-
-由波龄为 $1$，得到 $c_p=20\,\mathrm{m\,s^{-1}}$，因此
 
 $$
-L_p=\frac{2\pi c_p^2}{g}
-\approx\frac{2\pi\times400}{9.81}
-\approx256\,\mathrm m.
+\tau\sim\rho A_v\frac{\partial\overline u}{\partial z},
 $$
 
+即使 $A_v$ 不大，**很大的垂向速度梯度**仍可能使剪切应力很重要。
+
+课堂介绍**垂向平均场边界层模型**：对于薄边界层，设平均场主要随 $z$ 变化、垂向速度相对较小，即
+
+
 $$
-T_p=\frac{L_p}{c_p}\approx12.8\,\mathrm s.
+|\partial_x\overline q|,|\partial_y\overline q|\ll|\partial_z\overline q|,\qquad \overline w\approx0.
 $$
 
-**对于波高**，若机械地把课堂给出的极限波陡 $H/L\approx1/7$ 当作破碎上界，可得到一个有条件的几何估计：
+在所列的进一步假设下，水平动量方程可写成“水平科氏作用与垂向摩擦”的平衡形式，例如
+
 
 $$
-H_{\mathrm{lim}}\approx\frac{L_p}{7}\approx36.6\,\mathrm m.
+\partial_t\overline u-f\overline v=\partial_z\left(A_v\partial_z\overline u\right),\quad
+\partial_t\overline v+f\overline u=\partial_z\left(A_v\partial_z\overline v\right),
 $$
 
-但是这个数值**不能理解为在 20 m/s 的风下实际可达到的充分发展有效波高**：它只来自“波龄取 1 + 深水线性色散关系 + 极限波陡”的连锁假设。真实海况还需风输入、破碎耗散、风区、风时和波谱参数化才能确定 $H_s$。课堂尚未给出这些经验系数，所以**仅凭风速无法唯一求得实际最大波高**。
+而标量场近似满足
+
+
+$$
+\partial_t\overline s=\partial_z(K_{sv}\partial_z\overline s),\qquad
+\partial_t\overline\theta=\partial_z(K_{\theta v}\partial_z\overline\theta).
+$$
+
+这里体现的是课件展示的**边界层化简思路**，而非任意海区通用的完整边界层方程；不同风应力、压力梯度、平流与边界条件会改变具体保留项。
+
+![垂向边界层平均场模型：以垂向湍流输运为主](/images/physical-oceanography/lesson11/slide_060.jpg)
+
+### 5.2 对数边界层：从应力假设到速度剖面
+
+在海底边界层，以 $d\ge0$ 表示**距海底的向上距离**，海底粗糙度用 $z_0$ 表示。假设应力在近底某一区间近似不随高度变化：
+
+
+$$
+\boxed{-\overline{u'w'}=u_*^2=A_v\frac{d\overline u}{dd}}.
+$$
+
+$u_*$ 称**摩擦速度**，单位仍是 $\mathrm{m\,s^{-1}}$；与实际平均流速 $\overline u$ 不同，其平方对应单位密度的剪切应力。引入混合长度假设：
+
+
+$$
+\boxed{A_v=\ell u_*,\qquad \ell=\kappa(d+z_0)}.
+$$
+
+其中 $\kappa$ 是 **von Kármán 常数**（典型约 $0.4$）、$\ell$ 是湍流混合长度。
+
+**第 1 步：** 代入前面的应力关系：
+
+
+$$
+u_*^2=\kappa(d+z_0)u_*\frac{d\overline u}{dd}.
+$$
+
+**第 2 步：** 两边约去一个 $u_*$：
+
+
+$$
+\boxed{\frac{d\overline u}{dd}=\frac{u_*}{\kappa(d+z_0)}}.
+$$
+
+**第 3 步：** 积分：
+
+
+$$
+\overline u(d)=\frac{u_*}{\kappa}\ln(d+z_0)+C.
+$$
+
+此处 $\ln$ 的自变量必须最终写成**无量纲的比值**。以方便的参考边界条件 $\overline u(0)=0$ 为例，常数
+
+
+$$
+C=-\frac{u_*}{\kappa}\ln z_0.
+$$
+
+得到
+
+
+$$
+\boxed{\overline u(d)=\frac{u_*}{\kappa}\ln\left(\frac{d+z_0}{z_0}\right)}.
+$$
+
+当 $d\gg z_0$，得到常见的**对数速度分布**：
+
+
+$$
+\overline u(d)\approx\frac{u_*}{\kappa}\ln\left(\frac d{z_0}\right).
+$$
+
+> **课件书写小提示：** 投影片最后直接给出含 $\ln(|z|+z_0)$ 的关系，省略了积分常数/参考长度。严格写法应如上用比值构成无量纲对数。实际海底存在黏性底层、粗糙元影响及对数层有效高度范围，不能把此关系从海底一直外推到全部水深。
+
+![课堂对数边界层模型、摩擦速度、Karman 常数与近海底速度公式](/images/physical-oceanography/lesson11/slide_061.jpg)
 
 ---
-## 八、第二次作业：题目及参考解答
+## 六、第六章波浪动力学：概述
 
-> 以下题目按课件“第三—五章作业（第二次）”的原意整理；老师未提供可核查的教材题号，因此以**课堂 PPT 列出的题目**为准。参考答案结合本讲复习和既有方程推导编写，部分内容比课件要求更详细，便于自学。涉及符号正负号时统一采用 $x$ 向东、$y$ 向北、$z$ 向上。
+### 6.1 课程框架与研究目标
 
-![第二次作业的 7 道题（课件原图）](/images/physical-oceanography/lesson12/slide_023.jpg)
+老师正式进入**第六章《波浪动力学》**。投影片的章节框架为：
 
-### 题 1：作用于海水微团的力有哪些？简述各力的定义、表达式和特征。
+1. **第一节 概述**：为什么研究海浪、海浪基本分类、波浪参数、成长与破碎。
+2. **第二节 控制方程与边界条件**：把此前的海水运动方程与海面的边界条件具体应用于波浪。
+3. **第三节 小振幅波动理论（线性波动理论）**：在振幅较小的假设下求解。
+4. **第四节 有限振幅波动理论简介**：在小振幅近似不足时考虑波的非线性特征。
 
-**答：**在地球自转坐标系中，常见的体积力（单位质量意义下的加速度）与表面应力如下。
+本节主要是第一节。老师预告下周一（10 月 26 日）讲规则波的求解，下周三（10 月 28 日）介绍随机海浪的统计方法；**课堂安排可能调整，以后续通知为准**。
 
-| 力或作用 | 单位质量的典型表达式 | 物理来源与特征 |
-| --- | --- | --- |
-| 压强梯度力 | $-\nabla p/\rho$ | 指向低压方向；由邻近水体在微团表面的压力形成，垂向常与重力近似平衡 |
-| 重力 | $\mathbf g=-g\mathbf k$ | 地球引力和地球自转离心作用通常合并为有效重力；海水始终受到 |
-| 科氏惯性力 | $-2\boldsymbol\Omega\times\mathbf u$ | 自转坐标系中出现；与流速垂直，不直接做功，尺度约 $fU$ |
-| 离心惯性力 | $-\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf r)$ | 与转轴距离有关；通常吸收进有效重力/重力位中，不单独重复计算 |
-| 黏性与湍流应力 | $\nabla\cdot\boldsymbol\tau/\rho$ | 动量通过分子作用或湍流交换；边界层和湍流混合区较重要 |
-| 潮汐等外部引潮作用 | $-\nabla\Phi_T$ | 月球、太阳差异引力的作用；研究潮汐时必须考虑 |
+![第六章《波浪动力学》章节框架](/images/physical-oceanography/lesson11/slide_063.jpg)
 
-若采用常见的 $f$ 平面及水平速度 $\mathbf u_h=(u,v,0)$，科氏加速度在水平面的分量为
+### 6.2 海浪是什么？为什么值得研究？
 
-$$
-(fv,-fu,0)
-$$
+**海浪**是发生在海气界面的海面波动。课堂主要讨论**由风生成、以重力为主要恢复力的表面重力波**。
 
-（即移至方程右侧时）；在北半球表现为水流运动方向的右偏效应。
+直观理解：风向海面输送能量，水面被扰动后抬起；重力倾向于使被抬高的水面恢复到平衡状态，水体惯性又使其越过平衡位置，因此形成往复传播的波动。对于更短的毛细波，**表面张力**也会成为重要恢复力，因而“海面所有波动都纯粹由重力恢复”并不成立。
 
-**注意表达习惯**：“压强梯度力”与“黏性应力”是水团表面受力的连续介质表示；其除以密度后成为运动方程中的**加速度**，不能直接把单位混用。
+海浪的现实作用主要集中在以下几个方面：
 
-### 题 2：写出描述海水运动的控制方程（运动方程）的向量形式，解释每一项的物理意义。
+- **海洋上层混合与动力过程**：波浪破碎会卷入气泡、产生湍流，增强上层海水的混合，也会影响波流相互作用。
+- **海气之间的质量、动量、能量交换**：风向海浪输入动量；浪花和气泡加速气体与物质交换，对海气热量、水汽以及 CO₂ 通量具有影响。
+- **海洋遥感**：海浪改变海面粗糙度，影响雷达和微波散射；小波与破碎形成的白沫也改变电磁散射特征。反过来，部分卫星观测可反演波高与波浪状态。
+- **航行与军事应用**：大浪、破碎波影响船舶稳定性、船载设备、海上作业，海面噪声与粗糙度也影响部分声学及雷达应用。
+- **海岸工程与防灾减灾**：大浪及破碎波产生冲击荷载，影响海岸、码头、桥梁、海上平台的安全设计。
 
-**答：**采用旋转坐标系、有效重力和黏性应力张量的通用形式：
+![海气耦合与海浪在海洋上层过程中的作用](/images/physical-oceanography/lesson11/slide_064.jpg)
 
-$$
-\boxed{
-\frac{\partial\mathbf u}{\partial t}
-+(\mathbf u\cdot\nabla)\mathbf u
-+2\boldsymbol\Omega\times\mathbf u
-=-\frac{1}{\rho}\nabla p
-+\mathbf g
-+\frac{1}{\rho}\nabla\cdot\boldsymbol\tau
--\nabla\Phi_T
-}.
-$$
+**课堂实例与图像：**
 
-- $\partial\mathbf u/\partial t$：**局地加速度**（固定位置速度随时间变化）；
-- $(\mathbf u\cdot\nabla)\mathbf u$：**平流加速度/对流加速度**（水团移动进入不同速度区域产生的变化）；
-- $2\boldsymbol\Omega\times\mathbf u$：**科氏加速度项**（写在等号左侧）；
-- $-\nabla p/\rho$：**压强梯度加速度**；
-- $\mathbf g$：**有效重力加速度**；
-- $(\nabla\cdot\boldsymbol\tau)/\rho$：**摩擦及应力散度的作用**；
-- $-\nabla\Phi_T$：若研究潮汐时可增加的**引潮位梯度项**。
+- **波浪破碎（breaking）**：原先较为光滑的浪峰卷曲、破碎，形成白沫、浪花和气泡，强化局部湍流。
+- **海气交换**：破碎波将水滴抛向空气、把空气卷入水中，增加海气两相的接触与交换。
+- **遥感**：白沫/破碎浪与海面粗糙度变化会影响雷达后向散射。
+- **2013 年青岛栈桥受浪破坏**：老师用栈桥部分结构受损的照片说明，波浪荷载可以对海岸建筑产生显著破坏。
 
-记 $D/Dt=\partial_t+\mathbf u\cdot\nabla$，可以简写为
+![破碎波示意：浪峰卷曲与白沫](/images/physical-oceanography/lesson11/slide_065.jpg)
 
-$$
-\frac{D\mathbf u}{Dt}
-+2\boldsymbol\Omega\times\mathbf u
-=-\frac{1}{\rho}\nabla p+\mathbf g
-+\frac{1}{\rho}\nabla\cdot\boldsymbol\tau-\nabla\Phi_T.
-$$
+![浪花、气泡参与海气交换的课堂示意](/images/physical-oceanography/lesson11/slide_066.jpg)
 
-课堂要求：**手写答案必须用箭头明确标出矢量**（例如 $\vec{u}$、$\vec{g}$、$\vec\Omega$），避免粗体、普通字体在卷面上难以区分。若题目仅要求基本 N–S 方程，可按课堂约定省略单独列出的潮汐位项。
+![海洋遥感中的表面粗糙度和破碎泡沫](/images/physical-oceanography/lesson11/slide_067.jpg)
 
-### 题 3：基于热量守恒，导出海水热传导方程。
+![青岛栈桥受海浪冲击的课堂实例照片](/images/physical-oceanography/lesson11/slide_076.jpg)
 
-**答：**设温度为 $\theta$，定压比热为 $c_p$，热量单位体积含量近似为 $\rho c_p\theta$（以固定参考温度为零点）。考虑固定控制体 $V$，热量变化由**平流输运**和**扩散热通量**造成：
+老师还展示了葛饰北斋的《神奈川冲浪里》（*The Great Wave off Kanagawa*）。观察画面中的**浪峰、浪谷、迎浪面与背浪面、浪峰倒卷和破碎白沫**，便能把抽象的波浪术语与直观图形联系起来。
 
-$$
-\frac{d}{dt}\iiint_V\rho c_p\theta\,dV
-=-\iint_{\partial V}\rho c_p\theta\,\mathbf u\cdot\mathbf n\,dA
--\iint_{\partial V}\mathbf q\cdot\mathbf n\,dA.
-$$
+![《神奈川冲浪里》：观察波峰、卷曲与破碎白沫](/images/physical-oceanography/lesson11/slide_072.jpg)
 
-这里 $\mathbf n$ 为外法线，$\mathbf q$ 为**热传导通量矢量**，流出控制体的通量取正。若采用傅里叶定律
+### 6.3 风浪与涌浪：两个俗语表达了什么？
 
-$$
-\mathbf q=-\rho c_p\mathbf K\nabla\theta,
-$$
+课堂用“**无风不起浪**”和“**无风三尺浪**”引出两类风生成的海浪。
 
-并对右侧应用散度定理，再利用质量守恒
+| 类型 | 风浪（wind sea） | 涌浪（swell） |
+|---|---|---|
+| 定义 | 处于当地风直接作用下，从风中吸收能量的波浪 | 由先前/远处风场生成，离开发生地，或当地风已减弱、转向后继续传播的波浪 |
+| 外观 | 较不规则，常夹杂短波 | 往往较长、较整齐、方向比较集中 |
+| 周期与波长 | 通常偏短，但范围有重叠 | 通常偏长，能传播到很远的地方 |
+| 能量来源 | 正在从当地风吸收 | 主要来自原生成海域，沿途传播并耗散 |
 
-$$
-\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf u)=0,
-$$
+**举例：** 在某海区吹起强风，风区内生成的波浪叫**风浪**；这些波从原来有风的区域向远处传播，到达某个几乎无风的海岸时，仍可能有大浪，这些就是**涌浪**。因此当地没有风，海面仍能有浪。
 
-得
+课堂用风浪约数秒、涌浪约十秒的数量级作直观比较；**两者不存在只靠某个固定周期就能完全区分的界线**，还要考虑风向、波向、相速与当地风场。
 
-$$
-\rho c_p\left(\frac{\partial\theta}{\partial t}
-+\mathbf u\cdot\nabla\theta\right)
-=\nabla\cdot(\rho c_p\mathbf K\nabla\theta).
-$$
+![风浪与涌浪及其波能频谱的位置](/images/physical-oceanography/lesson11/slide_074.jpg)
 
-在 $\rho,c_p,K_h,K_z$ 取常数、忽略内部热源和黏性生热等附加项时：
+### 6.4 海洋中的波动有很多种：波浪能谱的观察
 
-$$
-\boxed{
-\frac{\partial\theta}{\partial t}
-+u\theta_x+v\theta_y+w\theta_z
-=K_h(\theta_{xx}+\theta_{yy})+K_z\theta_{zz}
-}.
-$$
+课件展示了横轴为波动周期、纵轴为能量（或能量密度）的**海洋波动频谱示意**。不同尺度上有：
 
-**物理意义**：左侧是流体质点温度变化率；右侧是水平方向与垂向的热扩散。课堂图将扩散过程与单位面积的热流量 $H_n$ 联系起来；真正要掌握的是“**热储量变化 = 流入流出净热通量**”以及由积分式过渡到微分式的步骤。
+- 短周期毛细波：表面张力的作用明显。
+- 风浪与涌浪：课堂强调海表波动能量的重要集中区。
+- 更长周期的海面与海洋波动，包括某些长波、海啸与潮汐过程。
 
-![热量守恒积分表达与热传导方程](/images/physical-oceanography/lesson12/slide_026.jpg)
+**理解要点：** 对不同机制和周期的波动，要采用相应动力学描述。课件用能量图强调风浪的重要性；其给出的总能量类比主要用于课堂形象说明，比较时仍需明确统计海域、积分时间及能量定义。
 
-### 题 4：导出自由海面有质量交换的运动学边界条件和温度边界条件。
+![不同周期海洋波动的能量分布示意](/images/physical-oceanography/lesson11/slide_075.jpg)
 
-**答：先定义符号和正方向，再分别推导。**
+### 6.5 波的基本要素：$L,H,a,T,h,c$
 
-设自由表面为
+老师请同学到黑板画规则正弦波，并标注**波长、波高、振幅、周期、波陡、相速度**。
 
-$$
-F(x,y,z,t)=z-\zeta(x,y,t)=0.
-$$
+![波浪要素：相邻波峰、波长、波高、周期等](/images/physical-oceanography/lesson11/slide_078.jpg)
 
-其中 $\zeta$ 为海面高度；$\mathbf u=(u,v,w)$ 为水体流速；$\mathbf C$ 为海面几何界面的移动速度；$\mathbf n$ 为**由水指向空气的外法线**。
+| 记号 | 名称 | 定义 | 单位 |
+|---|---|---|---|
+| $L$（也写 $\lambda$） | **波长** | 同一时刻，相邻两个波峰（或同位相点）间的水平距离 | m |
+| $H$ | **波高** | 相邻波峰到波谷的垂直高度差 | m |
+| $a$ | **振幅** | 规则正弦波相对平均水位的最大位移，$H=2a$ | m |
+| $T$ | **周期** | 固定位置前后两个同位相状态经历的时间 | s |
+| $h$ | **水深** | 平均海面到海底的垂直距离 | m |
+| $H/L$ | **波陡** | 波高与波长之比，表示浪的陡峭程度 | 无量纲 |
+| $c$ | **相速度** | 相同波相位（如波峰）的传播速度，$c=L/T$ | m/s |
 
-#### （1）先推无质量交换的运动学条件
+**容易混淆的三个概念：**
 
-若水质点始终位于界面上，则
+1. **波高 $H$ 与振幅 $a$**：对于对称正弦波，$H=2a$；对不对称破碎波不能机械套用。
+2. **周期 $T$ 与波长 $L$**：前者是在固定位置**随时间观察**，后者是在固定时刻**沿空间测量**。
+3. **相速度 $c$ 与海水流速 $u$**：$c$ 表示**波峰/相位向前传播**的速度，水质点通常有轨道运动，不会整体以 $c$ 一路跟着波峰前进。
 
-$$
-\frac{DF}{Dt}=F_t+\mathbf u\cdot\nabla F=0.
-$$
+**规则波的数学表示：**
 
-由于 $F_t=-\zeta_t$、$\nabla F=(-\zeta_x,-\zeta_y,1)$：
 
 $$
--\zeta_t-u\zeta_x-v\zeta_y+w=0.
+\boxed{\eta(x,t)=a\cos(kx-\omega t+\phi)},\quad
+k=\frac{2\pi}{L},\ \omega=\frac{2\pi}{T},\ c=\frac\omega k=\frac LT.
 $$
+
+这里 $\eta$ 表示相对平均海面的位移，$\phi$ 是初相位，$k$ 为波数，$\omega$ 为角频率。
 
-因此
+**关于“波浪三要素”**：课堂进一步提到 $L,T,h$ 作为研究规则波传播的重要量。在线性**表面重力波**、无流且满足通常理想流体假设时，色散关系为
 
+
 $$
-\boxed{\zeta_t+u\zeta_x+v\zeta_y=w}\quad(z=\zeta).
+\boxed{\omega^2=gk\tanh(kh)}.
 $$
 
-#### （2）有蒸发、降水等质量交换
+知道水深 $h$ 和周期 $T$，即可通过色散关系求波数 $k$、波长 $L$。但**这些量不能独立确定波高 $H$**；振幅还由风能输入、初始条件与波浪能量等决定。本公式属于理解本讲波浪参数的**理论补充**，详细推导安排在下一讲。
 
-定义 $b$ 为**单位水平面积、单位时间向外损失的水质量**，蒸发 $b>0$，降水 $b<0$；单位 $\mathrm{kg\,m^{-2}\,s^{-1}}$。界面法向质量通量满足
+### 6.6 为什么真实海面测到的曲线不像正弦波？
 
-$$
-\rho(\mathbf u-\mathbf C)\cdot\mathbf n=b\cos\gamma,
-$$
+如果只存在单一规则波，固定位置的水位记录应近似表现为等间隔、等幅度的正弦起伏。但课件展示的**实测海面水位时间序列**，波峰高低变化，振幅和周期也经常不规律。
+
+![课堂水位仪记录：真实海面起伏是不规则的](/images/physical-oceanography/lesson11/slide_080.jpg)
 
-其中 $\cos\gamma=1/\sqrt{1+\zeta_x^2+\zeta_y^2}$ 为海面外法线与竖直方向的夹角余弦。又因为
+**原因是多个波动分量的叠加（superposition）**。用最简单的两个分量说明：
 
+
 $$
-(\mathbf u-\mathbf C)\cdot\mathbf n
-=\frac{w-\zeta_t-u\zeta_x-v\zeta_y}
-{\sqrt{1+\zeta_x^2+\zeta_y^2}},
+\eta_1=a_1\cos(k_1x-\omega_1t+\phi_1),\qquad
+\eta_2=a_2\cos(k_2x-\omega_2t+\phi_2).
 $$
+
+在近似线性、可叠加的情况下，
 
-约去公共的 $\cos\gamma$，得到
 
 $$
-\boxed{\zeta_t+u\zeta_x+v\zeta_y-w=-\frac b\rho}.
+\boxed{\eta=\eta_1+\eta_2}.
 $$
 
-**判号检查**：在水平静水面、$u=v=w=0$ 且蒸发 $b>0$ 时，$\zeta_t=-b/\rho<0$，海面下降，符合直觉。
+**课堂图例可以分成三种：**
 
-![自由海面运动学条件（无质量交换）](/images/physical-oceanography/lesson12/slide_031.jpg)
+1. **同频同相（in phase）**：两个波峰同时出现，振幅相加，形成增强。
+2. **同频反相（out of phase）**：波峰与波谷对应，等振幅情况下可以完全抵消。
+3. **不同频率、波长和相位**：叠加之后有些时刻增强、有些时刻减弱，形成复杂起伏。
 
-![有质量交换时水体与界面的相对速度、法线方向](/images/physical-oceanography/lesson12/slide_034.jpg)
+![波的相长、相消与不同波叠加的示意图](/images/physical-oceanography/lesson11/slide_086.jpg)
 
-#### （3）温度边界条件：用热通量守恒写出
+对**相同频率和波数**的两波，合成振幅可写为
 
-令单位面积上的**向海面外侧总热通量**为 $Q_{\rm out}$，水体携带的显热通量与湍流/分子热扩散通量之和满足
 
 $$
-\left[\rho c_p\theta(\mathbf u-\mathbf C)
--\rho c_pK_H\nabla\theta\right]\cdot\mathbf n
-=q_{\rm out,n}.
+\boxed{A=\sqrt{a_1^2+a_2^2+2a_1a_2\cos(\phi_1-\phi_2)}}.
 $$
 
-若换算到单位水平面积，且 $Q_{\rm out}$ 包括跨界面的相应显热、潜热与辐射收支，可把纯导热/湍流通量的边界条件单独写作
+当 $\Delta\phi=0$，$A=a_1+a_2$；当 $\Delta\phi=\pi$，$A=|a_1-a_2|$。这说明相位关系能够决定波浪是**增强还是抵消**。
 
-$$
-\boxed{-\rho c_pK_H\,\nabla\theta\cdot\mathbf n
-=Q_{\rm out,diff}}
-$$
+**与随机海浪的关系：** 海上风场变化、传播方向和能量分布都十分复杂，波浪可表示为许多不同频率、方向、振幅与随机相位的波分量叠加。接下来研究的随机海浪需要利用**谱分析与统计量**，才能描述其整体特征。
 
-其中 $Q_{\rm out,diff}$ 表示扣除随质量交换携带的焓后、由水体内部导热/湍流扩散补给界面的向外热通量；采用小坡度海面 $\mathbf n\approx\mathbf k$ 时
+### 6.7 风浪的成长：风速、风区、风时
 
-$$
--\rho c_pK_H\frac{\partial\theta}{\partial z}
-=Q_{\rm out,diff}.
-$$
+课堂提出：风浪的**波高、周期、波长**在发展初期通常会随风能输入增加而增大，取决于以下三方面：
 
-**特别说明**：课件第 32–36 页详细演示的是**盐量边界条件**，作业原题第 4 题却写的是“温度边界条件”。因此，上面的温度部分依据热量守恒补充，需以课程此前给出的热通量记号与正号约定为准。教材若把净入海热通量记作 $Q_{\rm net}$，则 $Q_{\rm net}=-Q_{\rm out,diff}$（还需明确潜热是否已经计入）。不要直接把两种符号 convention 混写。
+**（1）风速 $U_{10}$**：通常使用海面上 **10 m 高度**处的风速衡量当地风强弱。在其他条件相近时，风越强，向波浪输入的能量通常越多。
 
-#### （4）额外整理：课堂实际演示的盐量边界条件
+**（2）风区（fetch）**：状态近似相同的风沿某一方向持续吹过水面的**有效空间距离**。风区越长，波浪沿途被风持续作用的距离越长。
 
-空气与海水交换的是**淡水**，通常无直接跨界面的盐质量通量。考虑盐的向外平流通量与扩散通量：
+**（3）风时（duration）**：风以近似相同状态在特定海域持续作用的**时间**。风吹的时间短，波浪可能还未充分发展。
 
-$$
-\left[\rho S(\mathbf u-\mathbf C)-\rho K_S\nabla S\right]\cdot\mathbf n=0.
-$$
+课堂举例：
 
-利用前面的运动学边界条件，得到
+- 在同样风速下，吹 **1 分钟**与吹 **1 小时**，海浪成长程度通常不同。
+- **离岸风**从岸边向海上吹，近岸有效风区从海岸开始累计，可能较短；**向岸风**从外海吹向海岸，海面上的有效作用距离常常较长。具体仍取决于海岸几何、风向与风场范围。
+- **南大洋西风带**：老师以广阔、较少受大陆阻断的绕极海域说明，长风区可支持较大的涌浪。它是风区影响波高的典型地理例子。
 
-$$
-bS\cos\gamma-\rho K_S\nabla S\cdot\mathbf n=0,
-$$
+![风区 fetch 和风时 duration 的课堂示意](/images/physical-oceanography/lesson11/slide_088.jpg)
 
-$$
-\boxed{K_S\nabla S\cdot\mathbf n=\frac{bS}{\rho}\cos\gamma}.
-$$
+### 6.8 海浪成长的四个阶段
 
-这说明蒸发 $b>0$ 时，海表有趋向增盐的作用，而雨水输入通常有淡化作用。它和温度边界条件一样，都是**守恒通量在海面上的限制条件**。
+1. **初始阶段**：风作用于平静海面，先形成微小扰动、毛细波和初始重力波。
+2. **发展阶段**：风持续向海浪提供能量，波高、波长及典型周期逐渐增大。
+3. **充分发展阶段（fully developed sea）**：在给定风条件下，波浪受到的输入、耗散与谱内非线性传递达到近似平衡，统计意义上的海况不再继续明显增长。
+4. **衰减与传播阶段**：风减弱或停止后，一部分波浪随耗散而减弱，另一部分以涌浪形式向更远海域传播。
 
-![课堂详细展示的海面盐量边界条件](/images/physical-oceanography/lesson12/slide_036.jpg)
+![风浪从初始、发展到充分发展、衰减的课堂图解](/images/physical-oceanography/lesson11/slide_089.jpg)
 
-### 题 5：写出直角坐标系下海水平均流的基本方程组，说明各项意义、与瞬时流的异同，并导出自由海面时间平均盐量边界条件。
+**老师提出的问题：** 如果风区无限长、风时无限久，风浪能不能无限增长？
 
-**答：**设 $u=\bar u+u'$，对其余变量也作相同分解；在 Boussinesq、不可压缩的简化下：
+**答案：不能简单认为可以无限增长。** 在给定风况下，发展过程中存在能量平衡及破碎耗散，能够达到统计意义上的充分发展状态。这一状态的形成**不意味着每一个波都停止变化**，局部仍有强弱波的起伏。
 
-**连续性方程**：
+### 6.9 波浪破碎（breaking）与波陡
 
-$$
-\boxed{\bar u_x+\bar v_y+\bar w_z=0}.
-$$
+波浪变陡到一定程度时，波峰前倾、卷曲，可能发生破碎。课堂介绍三类判断思路：
+
+- **几何判据**：考察波高与波长之比 $H/L$；
+- **运动学判据**：关注波峰附近水质点运动与波峰传播之间的关系；
+- **动力学判据**：关注流动动力状态何时难以维持稳定波形。
 
-**水平动量方程（直角坐标分量式）**：
+课堂给出的**经典几何极限近似**为
 
+
 $$
-\begin{aligned}
-\frac{\partial\bar u}{\partial t}
-+\bar u\frac{\partial\bar u}{\partial x}
-+\bar v\frac{\partial\bar u}{\partial y}
-+\bar w\frac{\partial\bar u}{\partial z}
--f\bar v
-&=-\frac1{\rho_0}\frac{\partial\bar p}{\partial x}
-+\nu\nabla^2\bar u\\
-&\quad-\frac{\partial\overline{u'u'}}{\partial x}
--\frac{\partial\overline{u'v'}}{\partial y}
--\frac{\partial\overline{u'w'}}{\partial z},
-\end{aligned}
+\boxed{\frac HL\lesssim\frac17}.
 $$
+
+**使用边界：** 这一近似对应经典极限陡峭波的数量级，主要联系深水周期重力波的理论讨论；**不能用作所有水深、所有随机波浪破碎的统一硬阈值**。浅水浪在近岸破碎时，水深及地形也十分重要。
 
+海浪的完整过程可简要概括为：**生成 → 发展 → 传播 → 破碎/耗散 → 消亡**。
+
+### 6.10 波龄 $\beta$（wave age）：怎样判断风浪成长状态？
+
+实际海上风区和风时难以准确观测，因此课件用**波浪相速相对于当地风速的比值**来表征风浪成长状态。
+
+定义主频（或谱峰）处的相速度：
+
+
 $$
-\begin{aligned}
-\frac{\partial\bar v}{\partial t}
-+\bar u\frac{\partial\bar v}{\partial x}
-+\bar v\frac{\partial\bar v}{\partial y}
-+\bar w\frac{\partial\bar v}{\partial z}
-+f\bar u
-&=-\frac1{\rho_0}\frac{\partial\bar p}{\partial y}
-+\nu\nabla^2\bar v\\
-&\quad-\frac{\partial\overline{u'v'}}{\partial x}
--\frac{\partial\overline{v'v'}}{\partial y}
--\frac{\partial\overline{v'w'}}{\partial z}.
-\end{aligned}
+c_p=\frac{L_p}{T_p}=\frac{\omega_p}{k_p}.
 $$
+
+风龄/波龄（本课叫**波龄**）定义为
 
-**垂向动量方程**（保留垂直加速度的版本）：
 
 $$
-\begin{aligned}
-\frac{\partial\bar w}{\partial t}
-+\bar u\frac{\partial\bar w}{\partial x}
-+\bar v\frac{\partial\bar w}{\partial y}
-+\bar w\frac{\partial\bar w}{\partial z}
-&=-\frac1{\rho_0}\frac{\partial\bar p}{\partial z}
--g+\nu\nabla^2\bar w\\
-&\quad-\frac{\partial\overline{u'w'}}{\partial x}
--\frac{\partial\overline{v'w'}}{\partial y}
--\frac{\partial\overline{w'w'}}{\partial z}.
-\end{aligned}
+\boxed{\beta_{\mathrm{age}}=\frac{c_p}{U_{10}}}.
 $$
+
+其中 $U_{10}$ 是 10 m 高度的当地风速。$c_p$ 代表谱峰波的**相速度**，而 $U_{10}$ 代表局地风速。
+
+课堂的经验描述：在一些风浪成长状态下，$\beta_{\mathrm{age}}$ 随成长增大；老师提到 **0.7—0.8** 可作为估算时的典型量级，**约 1.2** 用作课件中风浪/涌浪的经验区分。
+
+**直观理解：**
 
-这里采用传统近似科氏形式，只保留 $f$ 的垂直分量；如果再采用静压近似，垂向方程可以进一步写作 $\bar p_z=-\bar\rho g$。配合热、盐平均输运方程及状态方程，构成所需方程组：
+- $c_p/U_{10}$ 较小：谱峰波传播相速相对于当地风较慢，通常表示仍受到当地风显著作用。
+- $c_p/U_{10}$ 较大：波峰传播较快，可能来自远处风场，具有涌浪特征。
 
+> **严格性提醒：** $c_p/U_{10}=1.2$ 并非所有海区通用的定义性分界，真实分类还涉及局地风与波传播的夹角及风海—涌浪频谱划分。并且**此处的 $\beta$ 是波龄，和前文 $\beta=\partial f/\partial y$ 的行星涡度梯度完全不同**，两者只是在课件中使用了相同希腊字母。
+
+![波龄 beta=cp/U10 的定义及课堂思考题](/images/physical-oceanography/lesson11/slide_091.jpg)
+
+#### 课堂思考题：$U_{10}=20\,\mathrm{m/s}$，最大波高和波长是多少？
+
+老师提出问题，并提示：**可以先粗略假设 $c_p/U_{10}\approx1$，再利用 $c_p=L_p/T_p$ 推算，但求波高还需要经验关系**。课堂尚未给出完整数值答案，下一节课将继续讨论。
+
+**可先做的理论演算（补充；不是课堂公布的标准答案）：** 假设是**无流的深水线性重力波**，其色散关系可化简为
+
+
 $$
-\frac{D\bar S}{Dt}
-=K_h\nabla_h^2\bar S+K_z\bar S_{zz}
--\nabla\cdot\overline{\mathbf u'S'},
+\omega^2=gk,\quad c_p=\frac\omega k=\sqrt{\frac gk}=\frac{gT_p}{2\pi},\quad L_p=\frac{2\pi c_p^2}{g}.
 $$
 
+再假设 $\beta_{\mathrm{age}}=1$、$c_p=U_{10}=20\,\mathrm{m/s}$，则
+
+
 $$
-\frac{D\bar\theta}{Dt}
-=K_h\nabla_h^2\bar\theta+K_z\bar\theta_{zz}
--\nabla\cdot\overline{\mathbf u'\theta'}.
+T_p=\frac{2\pi c_p}{g}\approx12.8\,\mathrm s,\qquad
+\boxed{L_p=\frac{2\pi(20)^2}{9.81}\approx256\,\mathrm m}.
 $$
-
-**状态方程**写为 $\bar\rho\approx\rho(\bar\theta,\bar S,\bar p)$，需记得对非线性状态方程严格做平均时可能出现额外脉动相关效应；这里采用课堂常见的平均状态近似。
 
-上面热盐方程的 $K$ 只是示意，它们各自应采用对应的盐、热扩散系数；分子扩散与湍流扩散必须避免重复计算。
+**能够得到的是这组假设下的特征波长与周期。** 仅凭 $U_{10}=20\,\mathrm{m/s}$ 无法唯一求出“最大波高”，还需要风区、风时、波能谱或经验成长关系。即便用 $H/L\sim1/7$ 得到约 $37\,\mathrm m$，它也只是特定理想深水极限陡度的形式估计，**不能视为这个风速下真实海况的最大波高**。
 
-**平均流与瞬时流的异同**：
+### 6.11 有效波高（significant wave height）：为何取“最高三分之一”？
 
-1. 方程仍满足质量、动量和热盐守恒，科氏、压力、重力等项仍存在；
-2. 每个被平均变量需在符号上加横线，**横线代表时间平均，箭头代表矢量**；
-3. 最大区别是增加了 $-\partial_j\overline{u_i'u_j'}$ 等**雷诺应力散度**以及热、盐湍流通量；
-4. 使用梯度扩散近似后，可用 $K_M,K_H,K_S$ 等参数表示原本难以求取的脉动相关量。
+真实海面每个波的波高都不同。因此需要一个**统计量**代表海况。课堂重点介绍：
 
-![直角坐标系下时间平均运动方程（课件原式）](/images/physical-oceanography/lesson12/slide_039.jpg)
+**有效波高 $H_{1/3}$**：把某一观测记录中的**单个波高**从大到小排列，取**最高三分之一波浪的平均波高**：
 
-**自由海面平均盐量边界**：瞬时盐通量无穿透条件为
 
 $$
-\left[\rho S(\mathbf u-\mathbf C)-\rho K_S\nabla S\right]\cdot\mathbf n=0.
+\boxed{H_{1/3}=\frac1M\sum_{i=1}^{M}H_{(i)}},\qquad M\approx N/3.
 $$
 
-对该条件作时间平均，有
+这里 $H_{(1)}\ge H_{(2)}\ge\cdots\ge H_{(N)}$ 为排序后的**单个波高**。与这部分波浪相关的平均周期可定义**有效波周期**，具体统计定义依观测规范而定。
 
+**例（便于理解的示例数据）：** 若量到 9 个单个波高（米）：
+
+
 $$
-\boxed{
-\overline{\left[\rho S(\mathbf u-\mathbf C)
--\rho K_S\nabla S\right]\cdot\mathbf n}=0
-}.
+1.2,\ 2.0,\ 0.9,\ 1.5,\ 2.4,\ 1.8,\ 0.7,\ 2.1,\ 1.4,
 $$
 
-这是一般的**守恒形式**。若假设海面坡度很小、$\rho$ 和 $K_S$ 可视为常数、界面移动和湍流相关量可在同一参考面处理，则展开平流盐通量得到
+排在最高三分之一的三个是 $2.4,2.1,2.0$，所以
 
+
 $$
-\bar S\,\overline{(\mathbf u-\mathbf C)\cdot\mathbf n}
-+\overline{S'(\mathbf u'-\mathbf C')\cdot\mathbf n}
--K_S\nabla\bar S\cdot\mathbf n\approx0.
+H_{1/3}=\frac{2.4+2.1+2.0}{3}\approx\boxed{2.17\,\mathrm m}.
 $$
+
+**关键校核：** 课堂口头讲述在说明叠加之后提到“把正弦波分量按波高排列”，容易引起误解。严格的**时域 $H_{1/3}$**是从记录中识别**单个实际波（如相邻上跨零点间）**、计算单波波高后排序；**不能直接把傅里叶分解出的正弦分量振幅排序充当 $H_{1/3}$**。
 
-若进一步忽略上述脉动协方差、设 $\cos\gamma\approx1$，并沿用题 4 的蒸发 $b>0$ 约定，则
+随机波理论中，还常用基于能谱零阶矩的
 
+
 $$
-\boxed{K_S\frac{\partial\bar S}{\partial z}
-\approx\frac{\bar b\,\bar S}{\rho}}.
+H_{m0}=4\sqrt{m_0}.
 $$
 
-**注意**：直接将瞬时边界公式中的所有变量加横线，一般会漏掉脉动相关项；严谨推导要先平均**通量**，再说明闭合近似。
+在某些波谱假设下，$H_{m0}$ 与 $H_{1/3}$ 接近，但二者的**统计构造不同**。该谱定义属于拓展内容，后续讲随机海浪时再系统掌握。
 
-### 题 6：简述简化海水方程组的尺度分析思路；简述 Rossby 数与 Ekman 数的定义和物理意义。
+![有效波高、真实水位记录与海浪统计的课堂示例](/images/physical-oceanography/lesson11/slide_092.jpg)
 
-**答：**
+### 6.12 海况等级与浪级
 
-1. 选择研究现象的典型尺度 $L,D,U,W,T$ 及适当的压力和黏性系数尺度。
-2. 对每一个加速度、压力梯度、科氏与黏性项估算量级，例如 $U/T$、$U^2/L$、$fU$、$A_hU/L^2$。
-3. 使用不可压缩连续性关系 $W/U\sim D/L$。
-4. 以典型科氏加速度 $FU$ 等作参考量，构造无量纲系数 $Ro,Ro_T,E_h,E_z,\delta$。
-5. 根据这些系数的大小和研究条件，删去相对小项；同时核对边界层、初始条件及所求现象是否要求保留特殊小项。
+课件通过表格说明，按典型波高与海面的外观可将海况划分为不同等级：从**无浪、微浪、小浪、中浪**，到带有白沫、浪峰倒卷的大浪与狂浪。等级越高通常伴随更高的波高和更强的海上活动风险。
 
-核心公式：
+![课件海况/波级分级表及对应描述](/images/physical-oceanography/lesson11/slide_094.jpg)
 
-$$
-\boxed{Ro=\frac{U}{FL}},
-\qquad
-\boxed{E_h=\frac{A_h}{FL^2}},
-\qquad
-\boxed{E_z=\frac{A_z}{FD^2}}.
-$$
+**阅读这张表时注意：** 风级与海况级相关，但并非一一固定对应；浪还受风区、风时、涌浪、海底地形等影响。老师通过表格强调**外观描述与量化波高相联系**，具体等级区间按相应标准使用，不能只凭瞬时局地风速认定浪级。
+
+### 6.13 波浪研究的两条路线：理论方法与统计方法
+
+**理论方法（课堂后续的规则波）：**
 
-**物理意义**：Rossby 数控制非线性平流相对于旋转效应的大小；Ekman 数控制黏性作用相对于旋转效应的大小。$Ro\ll1$ 常对应较强旋转约束，$E\ll1$ 常对应内部黏性相对弱。
+- 把前面学过的**连续方程、动量方程与自由海面边界条件**用于海浪运动。
+- 依据问题做物理近似；例如理想流体、不可压缩、适当的无旋条件、小振幅线性化等。
+- 求解规则波，获得波的传播速度、流场及压力变化等关系。
 
-### 题 7：什么是 $f$ 平面、$\beta$ 平面、静力及 Boussinesq 近似？分别分析适用条件。
+**统计方法（课堂后续的随机海浪）：**
 
-**答：**
+- 实际海面是大量不同波高、周期、方向、相位的波叠加。
+- 综合观测资料与波浪理论，通过**波谱分析（wave spectrum）**描述能量随频率和方向的分布。
+- 计算有效波高、主周期等能够表征海况的统计量。
 
-| 近似 | 主要表达式 | 典型适用条件与注意事项 |
-| --- | --- | --- |
-| $f$ 平面 | $f=f_0$ | 研究区域纬度跨度小、$f$ 的变化不显著；无法表现纬向行星涡度梯度的效应 |
-| $\beta$ 平面 | $f=f_0+\beta y$ | 以参考纬度局部展开、区域足够小使高阶项可忽略，同时希望保留 $f$ 的线性纬向变化 |
-| 静压/静力 | $p_z=-\rho g$ | 大尺度、低频、纵横比小，垂直加速度和其他垂向非静力项很弱；强对流和快速短波需谨慎 |
-| Boussinesq | $\rho\approx\rho_0$，浮力保留 $\rho'$ | 密度相对变化小，密度异常对重力浮力仍然重要；强烈压缩或大密度对比问题需另作检验 |
+![老师对理论方法与统计方法的最终总结](/images/physical-oceanography/lesson11/slide_095.jpg)
 
-**考场建议**：每个近似尽量写出“定义公式 + 忽略了什么 + 什么时候有效 + 何种情况不适用”。
+两条路线的关系：规则波理论提供波动单元的动力学基础；统计方法用于描述自然海面的复杂与随机性。后续学习时先理解**一个规则波如何运动**，再理解**许多波分量如何构成随机海面**。
 
 ---
 
-## 本讲学习自检
+## 七、课堂重点与易错点
 
-学完这份笔记，应能不用翻课件回答：
+| 容易混淆的概念 | 正确理解 |
+|---|---|
+| $Ro$ 与 $Ro_T$ | $Ro$ 对应**平流惯性/科氏项**；$Ro_T$ 对应**局地时间项/科氏项** |
+| 纵横比 $\delta\ll1$ | 说明水平尺度远大于垂向尺度，在配合连续方程时通常意味着 $W/U\sim\delta$；不能直接推出 $w=0$ |
+| 静压近似 | 只直接给出**垂向压力—重力平衡**；水平动力仍需其余方程 |
+| $f$ 平面与 $\beta$ 平面 | 前者 $f=f_0$；后者 $f=f_0+\beta y$；都依赖局地适用条件 |
+| Boussinesq 近似 | 大多数项以 $\rho_0$ 近似，保留**浮力中的密度异常** |
+| 平流项被忽略 | 不能据此把盐热输运、局地时间项全部删掉 |
+| 平均 $\overline{u'}=0$ | 不意味着 $\overline{u'v'}=0$；相关脉动量正是雷诺应力来源 |
+| 分子黏性 $\nu$ 与湍流涡动黏性 $A_v$ | 物理起源不同；涡动黏性用于平均场的湍流参数化 |
+| $\ln(|z|+z_0)$ | 完整的对数律应保留积分常数/参考长度，避免对带单位量直接取对数 |
+| 风浪与涌浪 | 以当地风直接输入与波浪来源区分，不能用唯一固定周期阈值替代 |
+| 相速度 $c$ 与流速 $u$ | 相位传播速度与水质点运动速度是不同物理量 |
+| $\beta$ 平面的 $\beta$ 与波龄 $\beta$ | 前者单位 $\mathrm{m^{-1}s^{-1}}$，后者无量纲，毫无直接定义关系 |
+| 有效波高 $H_{1/3}$ | 从**单个实测波高**排序取最高三分之一的平均，不是对傅里叶分量振幅排序 |
+| $H/L\approx1/7$ | 特定理想波理论的极限陡度数量级，不是所有海况通用破碎阈值 |
 
-- 为什么 $Ro=U/(FL)$？它和时变 Rossby 数分别比较什么？
-- 何时能从垂向动量方程得到 $p_z=-\rho g$？怎样沿深度积分？
-- $f$ 平面与 $\beta$ 平面如何由 $f=2\Omega\sin\varphi$ 推导？
-- Boussinesq 近似为什么必须保留浮力中的 $\rho'$？
-- 雷诺平均后 $\overline{u'w'}$ 来自哪一步展开？
-- 有蒸发/降雨时，为什么自由海面的运动学条件右侧要出现 $-b/\rho$？
-- 波高、振幅、波长、周期、波速及波陡分别是什么？
-- 为什么当地无风仍可能有涌浪？为什么无限增大风时未必无限增大波高？
-- 有效波高 $H_{1/3}$ 具体怎样从一系列观测波高算出？
+### 本课完整知识链回看
 
-*记录说明：本稿按课件演示与 2026-10-21 课堂录音整理。机器转写中“罗斯被数”“贝克莱数”“不辞n sq”等分别按课件明确的 Rossby、Péclet、Boussinesq 术语统一；部分课件公式的疑似下标、方向及符号笔误已按方程一致性改正。参考笔记提供的是 Markdown 版式参照（其实际内容为另一门课程），未将其内容混入本课程知识点。*
+**第三至第五章收尾：** 从受力与控制方程出发，利用尺度分析确定近似；从 $f$/$\beta$ 平面、静压和 Boussinesq 近似得到不同简化方程组；对瞬时流做雷诺平均，出现雷诺应力与湍流盐热通量；再通过涡动黏性和梯度扩散进行参数化，在海洋边界层得到对数速度剖面等模型。
+
+**第六章开端：** 海浪是海气界面重要的动力过程；风浪和涌浪具有不同的局地风能输入背景；规则波以 $L,H,T,a,c$ 等参数描述，随机波需要考虑叠加与统计；成长受风速、风区、风时控制，最终有充分发展和破碎耗散，并用波龄、有效波高描述海况。
+
+---
+
+## 八、依据作业的自测清单
+
+完成本讲学习后，建议不看笔记尝试回答：
+
+- [ ] 我能写出 $Ro,Ro_T,E_h,E_v,Pe_h,Pe_v$，从方程每一项的尺度推回其定义。
+- [ ] 我能从 $\partial_zp=-\rho g$ 积分推出海面下任意位置的静压，并解释为什么随深度增大。
+- [ ] 我能从 $f=2\Omega\sin\varphi$ 一步步推到 $f=f_0+\beta y$，说明 $y$ 与纬度的关系。
+- [ ] 我能明确指出 Boussinesq 近似中**密度扰动保留在哪一项**，以及为什么。
+- [ ] 我能针对大尺度、小尺度和考虑水平动量摩擦的大尺度方程，指出具体被删掉的项。
+- [ ] 我能从 $u=\overline u+u'$ 推导出平均动量方程的 $-\partial_j\overline{u_i'u_j'}$。
+- [ ] 我能解释为何平均盐、热方程多出 $-\nabla\cdot\overline{\mathbf u's'}$ 和 $-\nabla\cdot\overline{\mathbf u'\theta'}$。
+- [ ] 我能从 $-\overline{u'w'}=u_*^2=A_v\partial_z\overline u$ 推导对数剖面，并正确写出无量纲的对数自变量。
+- [ ] 我能画一张规则波，标清波长、波高、振幅、周期、波陡和相速度。
+- [ ] 我能举例解释风浪/涌浪的区别、波的增强/抵消，以及为什么实测海面是随机起伏。
+- [ ] 我能解释风速、风区、风时与充分发展的关系，写出波龄 $c_p/U_{10}$、有效波高 $H_{1/3}$ 的定义。
+- [ ] 我能准确说出作业中哪些题**必须展示推导过程**，并在向量记号及平均号的使用上不出错。
+
+
+### 作业题 3、4 的课堂复习补记：怎样展示“推导过程”？
+
+老师在讲作业时再次投出此前章节的部分 PPT，特意强调**热传导方程应从热量守恒推出来**，有质量交换边界条件也应解释中间步骤。
+
+#### 热传导方程：热量守恒 $\rightarrow$ 连续性方程 $\rightarrow$ 温度方程
+
+设单位体积热量 $e=\rho c_p\theta$，海水平流输送的热量通量为 $\rho c_p\theta\mathbf u$，传导热通量为 $\mathbf q=-k\nabla\theta$。在没有额外体热源、并把 $c_p$ 视为常数的简化情况下：
+
+**第 1 步：任意控制体积的热量收支**
+
+
+$$
+\frac{d}{dt}\int_V\rho c_p\theta\,dV
+=-\oint_{\partial V}\left(\rho c_p\theta\mathbf u+\mathbf q\right)\cdot\mathbf n\,dA.
+$$
+
+**第 2 步：用高斯散度定理把面积分变为体积分**
+
+
+$$
+\int_V\left[\frac{\partial(\rho c_p\theta)}{\partial t}
++\nabla\cdot(\rho c_p\theta\mathbf u)
++\nabla\cdot\mathbf q\right]dV=0.
+$$
+
+**第 3 步：因为控制体积任意，所以被积函数为零**
+
+
+$$
+\frac{\partial(\rho c_p\theta)}{\partial t}
++\nabla\cdot(\rho c_p\theta\mathbf u)=\nabla\cdot(k\nabla\theta).
+$$
+
+**第 4 步：将左侧乘积按连续性方程展开**
+
+
+$$
+\rho c_p\left(\frac{\partial\theta}{\partial t}+\mathbf u\cdot\nabla\theta\right)
++c_p\theta\underbrace{\left[\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf u)\right]}_{=0}
+=\nabla\cdot(k\nabla\theta).
+$$
+
+若 $\rho,c_p,k$ 为常数，得到
+
+
+$$
+\boxed{\frac{D\theta}{Dt}=\kappa_T\nabla^2\theta},\qquad
+\kappa_T=\frac{k}{\rho c_p}.
+$$
+
+这是课堂复习所说的“**热量守恒 + 高斯公式 + 连续性方程消项**”的完整主线。实际海洋还可包含太阳辐射、盐度及压缩等影响；课堂作业基础推导应先说明自己采用了哪些简化。
+
+![老师复习作业时展示的热量守恒积分表达式](/images/physical-oceanography/lesson11/slide_026.jpg)
+
+#### 有质量交换的自由海面运动学条件
+
+令海面位置满足
+
+
+$$
+F(x,y,z,t)=z-\eta(x,y,t)=0.
+$$
+
+无质量交换时，海水质点沿自由表面运动，因此 $DF/Dt=0$，展开得到
+
+
+$$
+\boxed{\eta_t+u\eta_x+v\eta_y-w=0}.
+$$
+
+有质量交换时，令课件中的 $b$ 为法向淡水质量通量参数（符号方向按课件定义），并使用界面速度 $\mathbf C$ 与海水速度 $\mathbf u$：
+
+
+$$
+ (\mathbf u-\mathbf C)\cdot\mathbf n=\frac b\rho\cos\gamma,
+\quad \mathbf n=\frac{\nabla F}{|\nabla F|},\quad
+\mathbf C\cdot\mathbf n=-\frac{F_t}{|\nabla F|}.
+$$
+
+代入、乘以 $|\nabla F|$，再用 $F_z=1$：
+
+
+$$
+F_t+\mathbf u\cdot\nabla F=\frac b\rho F_z=\frac b\rho.
+$$
+
+对 $F=z-\eta$ 展开：
+
+
+$$
+-\eta_t-u\eta_x-v\eta_y+w=\frac b\rho.
+$$
+
+最终
+
+
+$$
+\boxed{\eta_t+u\eta_x+v\eta_y-w=-\frac b\rho}.
+$$
+
+这里的右端号数与**质量通量 $b$ 的符号约定**直接相关。可用“只有蒸发、没有水平方向运动”作检验：若 $b>0$ 表示**净质量流出海洋**，则 $\eta_t=-b/\rho<0$，海面下降，符合直觉。
+
+![课堂复习：从自由海面函数 F=z-eta 推出有质量交换时的运动学边界条件](/images/physical-oceanography/lesson11/slide_034.jpg)
+
+**有关标量边界条件的资料差异：** 这次作业列表第 4 题的投影片写的是“**温度边界条件**”，而老师在复习时切换的几张演示页详细写的是**盐量边界条件**：盐本身不随纯淡水蒸发/降雨而直接穿越界面，但淡水质量交换会影响海面盐度通量边界条件。老师给出的一个表达是
+
+
+$$
+\boxed{\nabla s\cdot\mathbf n=\frac{bs}{\rho K_s}\cos\gamma}
+$$
+
+（课件用 $k_D=k/\rho$ 表示盐扩散系数，正负号依前述通量约定）。
+
+![课堂展示的海面盐量通量边界条件推导](/images/physical-oceanography/lesson11/slide_036.jpg)
+
+**温度边界条件**需要包含界面热通量（传导、感热、潜热、辐射以及伴随质量交换的焓输运等），具体表达取决于热通量符号和参考焓定义。这次课堂投影片与转写在此处**没有完整展示一个明确的温度边界方程推导**，因此不能用上面**盐量边界条件**直接替代作业题 4 的温度条件；建议结合上一讲边界条件课件完成该题，并向助教核对题面。
+
+> **资料与准确性说明：** 笔记根据 2026-10-21 的**100 张课堂截屏式 PPT**及约 **1 小时 37 分**的 Word 录音转写整理。Word 中的转写文字已从 OOXML 正文成功抽取，录音转写共约 **2.5 万字符**；课件中的图示按原始幻灯片编号引用。机器转写对专有名词（Rossby、Boussinesq、Péclet、von Kármán 等）存在误识别，笔记依据课堂上下文和公式纠正。标记为“补充”“校核”“严格性提醒”的段落属于为自学补足的标准理论解释或谨慎修正，**不应视为老师逐字讲述**。第六章后续线性波求解与随机波谱理论尚未在本节展开。

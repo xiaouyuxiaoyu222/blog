@@ -1,5 +1,5 @@
 ---
-title: Oceanography-Lesson12：波浪动力学：线性波动理论与波群
+title: Oceanography-Lesson13：波浪动力学：线性波动理论与波群
 published: 2026-10-26
 description: "物理海洋学第13讲：有效波高、海浪控制方程与边界条件、线性波解、浅深水波、质点轨迹、波动能量、驻波、频散及群速度。"
 tags: [物理海洋学]

@@ -1,5 +1,5 @@
 ---
-title: IMicroeconomics-Lesson4：WARP、斯勒茨基补偿与需求定律
+title: IMicroeconomics-Lesson5：WARP、斯勒茨基补偿与需求定律
 published: 2026-10-12
 description: 中级微观经济学第4次课程笔记：显示偏好WARP、斯勒茨基补偿、需求定律、综合指数、序数效用与效用最大化，结合2026-10-12课堂转写。
 tags: [中级微观经济学]

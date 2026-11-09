@@ -2,7 +2,7 @@
 title: MacroEconomics-Lesson7：中国宏观经济短期形势与 IS 曲线
 published: 2026-10-29
 description: "结合2026年前三季度宏观数据理解三驾马车；从产品市场均衡出发，掌握IS曲线的代数与几何推导、经济含义、斜率和移动。"
-tags: [宏观经济学（甲）]
+tags: [宏观经济学]
 category: 课程笔记
 draft: false
 ---

@@ -1,5 +1,5 @@
 ---
-title: IMicroeconomics-Lesson5：效用最大化、需求与斯勒茨基方程
+title: IMicroeconomics-Lesson6：效用最大化、需求与斯勒茨基方程
 published: 2026-10-19
 description: 叶建亮老师第5次课；效用最大化的最优条件、影子价格、常见效用函数的需求推导、价格提供线、斯勒茨基补偿与价格效应分解。
 tags: [中级微观经济学]

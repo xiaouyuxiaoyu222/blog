@@ -2,7 +2,7 @@
 title: "RemoteSensing-Test: 海洋遥感技术与应用 | 期末默写与自测题库（点击展开答案）"
 published: 2026-11-02
 description: 基于本学期十份课程PPT整理的逐章闭卷默写清单、公式推导、曲线判读与综合计算题；所有答案默认折叠。
-tags: [海洋遥感]
+tags: [海洋遥感技术与应用]
 category: 课程笔记
 draft: false
 ---

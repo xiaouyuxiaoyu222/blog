@@ -4,7 +4,7 @@ description: AD曲线、AS曲线、AD-AS均衡、失业的定义与分类、凯�
 draft: false
 published: 2026-11-19
 tags:
-- 宏观经济学（甲）
+- 宏观经济学
 title: MacroEconomics-Lesson10：AD-AS模型与失业
 ---
 
